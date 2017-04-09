@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[PGP]]></title>
+      <url>https://liyin.date/2017/04/02/pgp/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="什么是-PGP-？它能做什么？"><a href="#什么是-PGP-？它能做什么？" class="headerlink" title="什么是 PGP ？它能做什么？"></a>什么是 PGP ？它能做什么？</h1><p>PGP 是 Pretty Good Privacy 的缩写，它是一套用于消息加密、验证的数据交换方法。遵守 OpenPGP 数据加解密标准 (RFC 4880) 。<br>PGP 可以用作 加密、数字签名、认证。</p>
+<h1 id="使用-PGP-与我通讯"><a href="#使用-PGP-与我通讯" class="headerlink" title="使用 PGP 与我通讯"></a>使用 PGP 与我通讯</h1><p>首先下载我的 <a href="/myfiles/attachment/PGP_Public">PGP 公钥</a> 并导入到你的 PGP 加密程序中。<br>注意验证我的公钥指纹为 <code>1735 F315 2977 7C2A F325  9C87 7C57 6AE6 F1FA C85A</code>，如果指纹一致说明你下载的公钥没有被篡改。<br>使用这个公钥加密你的信息，并发送到 <code>wmliyin@outlook.com</code> 主题带有 <code>PGP</code> 字样即可被我的邮箱自动分类。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 安全 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> PGP </tag>
+            
+            <tag> 安全 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[QubesOS]]></title>
+      <url>https://liyin.date/2017/03/22/QubesOS/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>最近折腾完 Alpine Linux 之后，我开始正式在电脑上安装双系统，我不太喜欢 Ubuntu 操作系统，所以先尝试了 Debian ，不过 Debian 在我的电脑上安装 Nvidia 驱动程序时发生了严重错误，造成 X 桌面崩溃无法启动。我本着试试小众系统的想法，从 “粉碎棱镜” 网站得知了一个叫做 <code>Qubes OS</code> 的安全操作系统，介绍上写着这个系统使用 XEN 隔离每个程序。Qubes OS 认为，没有任何一个软件是安全的，所以 Qubes 使用虚拟机和安全复制模式隔离所有应用程序和用户数据。</p>
+<h1 id="Qubes-OS-是什么"><a href="#Qubes-OS-是什么" class="headerlink" title="Qubes OS 是什么"></a>Qubes OS 是什么</h1><blockquote>
+<p>Qubes OS是一个面向安全的桌面操作系统，旨在通过隔离提供安全保障。<br>Qubes 通过隔离来保障安全性，并假设不可能有完美的，无漏洞的桌面环境。因为桌面环境有数百万行的代码并与数十亿的软件/硬件密切相关。这些关联中的任何一个关键错误都可能足以让恶意软件控制计算机。<br>为了保护桌面计算机的安全，Qubes 隔离了各种操作环境，因此，如果其中一个操作环境被黑，恶意软件只能得到该环境内的数据。<br>在 Qubes 中，有两个层面的隔离：硬件控制器被隔离到功能域（图形界面，网络，存储），而用户的数字生活由不同的信任级别隔离。例如：工作域（信任度最高），购物域，随机域（信任度最低）。每个域都在独立的虚拟机中运行。<br>———— 维基百科</p>
+</blockquote>
+<p>具体请参看 <a href="https://en.wikipedia.org/wiki/Qubes_OS" target="_blank" rel="external">这里</a></p>
+<h1 id="安装-Qubes"><a href="#安装-Qubes" class="headerlink" title="安装 Qubes"></a>安装 Qubes</h1><h2 id="准备分区"><a href="#准备分区" class="headerlink" title="准备分区"></a>准备分区</h2><p>首先准备出一个足够大的分区，我把电脑的最后一个分区清空，分配了大概 120G 的存储空间用来安装 Qubes</p>
+<h2 id="准备安装程序"><a href="#准备安装程序" class="headerlink" title="准备安装程序"></a>准备安装程序</h2><p>因为这次是直接安装到电脑的硬盘而不是虚拟机，所以需要将 iso 文件写入到 U盘 中并引导，U盘写入使用 <code>Rufus</code> 工具来完成  </p>
+<h2 id="下载光盘镜像-与-Rufus"><a href="#下载光盘镜像-与-Rufus" class="headerlink" title="下载光盘镜像 与 Rufus"></a>下载光盘镜像 与 Rufus</h2><p>Qubes OS 的官方网站在 <a href="https://www.qubes-os.org/" target="_blank" rel="external">Qubes OS Offical</a> ，截止当前 2017年3月20日，最新版本为 <strong>Qubes Release 3.2</strong> ，你看到这篇文章的时候很可能已经有比这个版本更新的版本了。选择 iso 进行下载即可。<br>Rufus 在 <a href="https://rufus.akeo.ie/?locale=zh_CN" target="_blank" rel="external">这里</a> 下载，这个软件有中文语言，非常好用。  </p>
+<h2 id="写入启动U盘"><a href="#写入启动U盘" class="headerlink" title="写入启动U盘"></a>写入启动U盘</h2><p>打开 Rufus ，插入U盘，Rufus 会自动识别你的U盘，写入过程会格式化你的U盘，所以确保你的U盘中已经没有你需要的文件。<br>在 Rufus 窗口下方选择 iso 文件并点击开始，这时候 Rufus 会提示你这个镜像是一个混合模式的镜像，询问你是使用 ISO 模式还是 DD模式，这里需要注意的是 Qubes 系统引导必须使用 <code>DD模式</code> 才能成功引导。选择 <code>DD模式</code> 并开始写入。<br><img src="/2017/03/22/QubesOS/Qubes-1.png" alt="Qubes-1.png" title=""></p>
+<blockquote>
+<p>注意： DD模式写入后会导致你的U盘不可被修改，Windows下也无法正常格式化恢复你的U盘，只能在 Linux 下通过 <code>mkfs.vfat</code> 命令格式化U盘。  </p>
+</blockquote>
+<h2 id="BIOS安装设置"><a href="#BIOS安装设置" class="headerlink" title="BIOS安装设置"></a>BIOS安装设置</h2><p>根据你的电脑说明书的方式进入 BIOS ，选择启动选项，关闭 <code>Secure Boot（安全引导）</code>，这里你可以保持 UEFI 引导模式，不需要旧式引导模式。<br>同时开启CPU的虚拟化技术 VT-x 或其他类似的选项。</p>
+<h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><p>插入你的 Qubes 安装U盘并重启，你会进入 Qubes 安装界面，Qubes 系统基于 <code>Fedora 23</code> ，使用 RedHat 系的图形化安装界面，如果你曾经安装过 CentOS 或者 RHEL 你就会发现这个界面非常的熟悉。需要注意的是，由于我是安装双系统，所以在硬盘分区选择手动模式，选择未分配的区域分别创建下列分区</p>
+<ul>
+<li>/boot/efi 500M</li>
+<li>swap 10G</li>
+<li>/ 剩余的都分配给它</li>
+</ul>
+<p>设置完成后点击 Done 开始安装 Qubes。<br>这个步骤大概需要1-2个小时。  </p>
+<h1 id="配置-Qubes"><a href="#配置-Qubes" class="headerlink" title="配置 Qubes"></a>配置 Qubes</h1><h2 id="启动-Qubes"><a href="#启动-Qubes" class="headerlink" title="启动 Qubes"></a>启动 Qubes</h2><p>安装结束后，默认你的电脑应该会重启到原来的 Windows 系统上，开机时按 Esc 暂停启动，并选择从 EFI 文件启动，选择新的 EFI 分区并选择 <code>xen.efi</code> 启动 Qubes</p>
+<blockquote>
+<p>如果你不进行其他配置，以后想进入 Qubes OS 都是这样操作。</p>
+</blockquote>
+<p>首次进入系统的时候，Qubes 会询问你进行默认的系统配置，我的设置是配置 <code>网络虚拟机</code> 与 <code>防火墙虚拟机</code> ，取消了 <code>Whonix 虚拟机</code> 的配置，有关 Whonix 虚拟机的相关信息请看 <a href="https://en.wikipedia.org/wiki/Whonix" target="_blank" rel="external">这里</a><br>首次配置结束后就成功进入了 Qubes 系统。</p>
+<h2 id="进入-Qubes-桌面"><a href="#进入-Qubes-桌面" class="headerlink" title="进入 Qubes 桌面"></a>进入 Qubes 桌面</h2><p>进入 Qubes 桌面之后，你会看到 <code>Qubes VM Manager</code> 自动弹出，并显示启动了 <code>dom0</code> <code>sys-net</code> <code>sys-firewall</code> 三个虚拟机，在左上角菜单中可以启动不同的虚拟区域以运行软件。<br><img src="/2017/03/22/QubesOS/Qubes-2.png" alt="Qubes-2.png" title=""></p>
+<h2 id="连接网络"><a href="#连接网络" class="headerlink" title="连接网络"></a>连接网络</h2><p>这一步困扰了我比较长的时间，后来我发现这需要在左上的菜单中选择 <code>sys-net</code> 虚拟机 <code>Add-Shortcut</code> 并添加 <code>Network Manager</code> ，这样你就能配置你的网络连接了。<br><img src="/2017/03/22/QubesOS/Qubes-3.png" alt="Qubes-3.png" title=""></p>
+<h2 id="安装应用程序"><a href="#安装应用程序" class="headerlink" title="安装应用程序"></a>安装应用程序</h2><p>因为 Qubes 是基于 Fedora 23 操作系统，所以包管理器命令是 <code>dnf</code> 。在 Qubes 中，所有工作虚拟机都是基于 <code>TemplateVM</code> 即<code>模板虚拟机</code>启动的，工作虚拟机只会保存用户文件而不会保存你安装的程序，如果你需要安装到模板虚拟机。然后关闭你的工作虚拟机并重启打开，即可同步你的软件。</p>
+<h2 id="向-dom0-安装软件或更新-dom0"><a href="#向-dom0-安装软件或更新-dom0" class="headerlink" title="向 dom0 安装软件或更新 dom0"></a>向 dom0 安装软件或更新 dom0</h2><p>因为安全性保护，<code>dom0</code> 系统并不连接网络，更新系统可以在 <code>Qubes VM Manager</code> 中右键 <code>dom0</code> 并选择 <code>Update VM</code>。稍后，Qubes 会自动在 <code>sys-firewall</code> 虚拟机中启动下载程序并将文件传输到 <code>dom0</code> 再安装系统更新，当然如果你想要使用命令行，则可以使用 <code>sudo qubes-dom0-update</code> 命令，这个命令也可以用来安装程序到 <code>dom0</code>，执行 <code>sudo qubes-dom0-update 软件包</code> 即可。</p>
+<h1 id="Qubes-特性与功能"><a href="#Qubes-特性与功能" class="headerlink" title="Qubes 特性与功能"></a>Qubes 特性与功能</h1><h2 id="安全剪贴板"><a href="#安全剪贴板" class="headerlink" title="安全剪贴板"></a>安全剪贴板</h2><p>当然，Qubes 中每一个虚拟机的剪贴板是独立的，如果你想跨虚拟机复制文字怎么办呢，答案就是使用全局复制，先将你想复制的文字复制到当前虚拟机的剪贴板中，然后按下 <code>Ctrl + Shift + C</code> ，右上角会提示已复制到全局剪贴板，然后转到目标虚拟机窗口，按下全局粘贴快捷键 <code>Ctrl + Shift + V</code> 然后就可以用粘贴功能粘贴文字了。注意，<code>dom0</code> 的复制只能在右上 Q 标志上右键 <code>copy dom0 clipboard</code> 来进行复制。</p>
+<h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><p>安全剪贴板功能并不能复制文件，你需要打开文件管理器右键发送到 VM，或者使用 <code>qvm-copy-file 虚拟机名 文件名</code> 。文件会被保存在目标虚拟机的 <code>~/home/用户名/QubesIncoming</code> 文件夹下。</p>
+<h2 id="中文输入"><a href="#中文输入" class="headerlink" title="中文输入"></a>中文输入</h2><p>作为非英语母语的人来说，输入法必不可少，那么如何安装中文语言输入呢？<br>启动你的模板虚拟机，然后输入 <code>dnf install ibus-pinyin ibus-qt4</code> ，安装结束后关闭你的模板虚拟机并重启你的工作虚拟机。<br>打开工作虚拟机的命令行，输入 <code>ibus-setup</code> 在弹出的窗口中选择 <code>Yes</code> 然后在配置界面 <code>Input Method</code> 添加一个 <code>Chinese - Pinyin</code> 即可使用中文输入。<br><img src="/2017/03/22/QubesOS/Qubes-4.png" alt="Qubes-4.png" title=""> </p>
+<h1 id="所以呢"><a href="#所以呢" class="headerlink" title="所以呢"></a>所以呢</h1><img src="/2017/03/22/QubesOS/Qubes-5.png" alt="Qubes-5.png" title="">  
+<p>我试用了大概1个星期，感觉上 Qubes 的使用并不是很方便，而且内存占用巨大，启动后基本上要占用超过 5G 的内存，运行 Firefox 或者其他软件之后这种现象更加严重。 VM 之间的传输非常不方便，作为日常试用会大幅度的降低效率，不适合作为平时日常使用的操作系统使用。<br>不过作为安全性来说我认为还是非常不错的，这应该又是一个安全到几乎偏执的一个操作系统。<br>再见 Qubes OS ，你好 OpenSUSE。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Linux </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[友链安全标记 & 友链检查器]]></title>
+      <url>https://liyin.date/2017/03/19/linkChecker/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>最近我对的友链页做了2个小修改</p>
+<h1 id="友链安全标记"><a href="#友链安全标记" class="headerlink" title="友链安全标记"></a>友链安全标记</h1><p>友链页面上所有与我交换友链时使用 <code>https</code> 的站点会在名称后显示一个绿色的安全锁标识，至于为何我如此看重 <code>https</code> 请看 neoFelhz 的这篇文章 <a href="https://blog.nfz.moe/archives/the-importance-of-using-https.html" target="_blank" rel="external">不仅仅是锦上添花 ———— 谈启用 HTTPS 的重要性</a> 。</p>
+<h1 id="友链检查器"><a href="#友链检查器" class="headerlink" title="友链检查器"></a>友链检查器</h1><p>友链检查器使用 <code>TravisCI</code> + <code>Github Pages</code> 的方法，后端使用 <code>Python</code> 检查链接的可用性并生成 jsonp 文件，然后放置在 <code>Github Pages</code> 上。<br>友链页上的 javascript 代码会自动读取并识别相应的卡片，然后将非 200 回复（3xx 的跳转会被追踪到目标）的友链卡片透明度设置为 <code>0.4</code>。<br>TravisCI 每天自动执行一次友链检查器。<br>代码已使用 GPLv3 协议开源至 <a href="https://github.com/cubesky/linkChecker" target="_blank" rel="external">Github</a><br>最后一次构建状态 <a href="https://travis-ci.org/cubesky/linkChecker" target="_blank" rel="external"><img src="https://travis-ci.org/cubesky/linkChecker.svg?branch=master" alt="Build Status"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 博客升级 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo-material-theme </tag>
+            
+            <tag> Javascript </tag>
+            
+            <tag> Python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Alpine Linux 折腾记]]></title>
+      <url>https://liyin.date/2017/03/18/Alpine-Linux-%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="什么是-Alpine-Linux"><a href="#什么是-Alpine-Linux" class="headerlink" title="什么是 Alpine Linux"></a>什么是 Alpine Linux</h1><p>Alpine Linux 是一个基于 Linux 内核的 GNU/Linux 发行版，采用 musl libc 和 busybox ，特点是小巧轻便，主要内核仅仅只有5M，非常适合一些嵌入式设备或者容器服务中用作基础系统，这样可以大幅度减小硬盘占用和内存占用。<br>Alpine Linux 有很多版本</p>
+<ul>
+<li>Mini Root FileSystem 最小的版本，仅包含内核，只用于构建 Docker 镜像</li>
+<li>Standard 最小的可启动镜像，需要网络才能安装</li>
+<li>Vanilla 包含一个原版基础内核</li>
+<li>Extended 拓展版本，带有更多软件包</li>
+<li>Virtual 与 Standard 类似，但更小，更适用于虚拟系统使用</li>
+<li>Xen 内置 Xen Hypervisor 支持</li>
+<li>Raspberry Pi 带有树莓派内核的版本</li>
+<li>Generic ARM 带有默认 ARM 内核，带有 uboot 加载器</li>
+</ul>
+<h1 id="折腾记"><a href="#折腾记" class="headerlink" title="折腾记"></a>折腾记</h1><p>这次我是在 Hyper-V 虚拟机中运行的 Alpine Linux，这中间还是有一些坑需要注意的。</p>
+<h2 id="下载-Alpine-Linux"><a href="#下载-Alpine-Linux" class="headerlink" title="下载 Alpine Linux"></a>下载 Alpine Linux</h2><p>到 <a href="https://alpinelinux.org/downloads/" target="_blank" rel="external">Alpine Linux 下载页</a> 选择下载适合自己的版本，需要注意的是，如果你跟我一样是在 Hyper-V 虚拟机中运行 Alpine Linux ，那么请选择 Vanilla 版本，其他版本都不能正常加载。</p>
+<h2 id="创建虚拟机"><a href="#创建虚拟机" class="headerlink" title="创建虚拟机"></a>创建虚拟机</h2><p>创建虚拟机并载入 Alpine Linux 镜像。</p>
+<h2 id="安装-Alpine-Linux"><a href="#安装-Alpine-Linux" class="headerlink" title="安装 Alpine Linux"></a>安装 Alpine Linux</h2><p>先执行</p>
+<pre class="line-numbers language-bash"><code class="language-bash">setup-alpine
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>根据自己的提示分别设置<code>键盘</code>、<code>主机名</code>、<code>网卡</code>、<code>Root密码</code>、<code>repo 网址</code> 等信息，最后会问安装模式，选择 <code>sys</code> 来把系统安装到硬盘。<br>至此，Apline Linux 已安装到你的电脑</p>
+<h2 id="配置-Xfce"><a href="#配置-Xfce" class="headerlink" title="配置 Xfce"></a>配置 Xfce</h2><blockquote>
+<p>首先需要记住一点，Alpine Linux 的包管理命令是 <code>apk</code> ，安装命令为 <code>apk add xxx</code> 与其他主流 GNU/Linux 不同。</p>
+</blockquote>
+<h3 id="安装-Xfce"><a href="#安装-Xfce" class="headerlink" title="安装 Xfce"></a>安装 Xfce</h3><p>运行下面的命令并保持网络连接，几分钟后就会完成安装</p>
+<pre class="line-numbers language-bash"><code class="language-bash">setup-xorg-base
+apk add xfce4
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="安装显示驱动"><a href="#安装显示驱动" class="headerlink" title="安装显示驱动"></a>安装显示驱动</h3><p>执行下列命令以安装显示驱动程序</p>
+<pre class="line-numbers language-bash"><code class="language-bash">apk add xf86-video-sis xf86-video-vesa xf86-video-ark
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="安装鼠标键盘驱动"><a href="#安装鼠标键盘驱动" class="headerlink" title="安装鼠标键盘驱动"></a>安装鼠标键盘驱动</h3><pre class="line-numbers language-bash"><code class="language-bash">apk add xf86-input-mouse xf86-input-keyboard
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在 HyperV 中安装鼠标键盘驱动需要额外安装 <code>xf86-input-vmmouse</code></p>
+<pre class="line-numbers language-bash"><code class="language-bash">apk add xf86-input-vmmouse
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="创建桌面用户"><a href="#创建桌面用户" class="headerlink" title="创建桌面用户"></a>创建桌面用户</h3><p>如，我们创建一个名为 CubeSky 的用户，用户名为 cubesky</p>
+<pre class="line-numbers language-bash"><code class="language-bash">adduser -g <span class="token string">'CubeSky'</span> cubesky
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后给予这个用户 sudo 权限，编辑 <code>/etc/sudoers</code><br>添加</p>
+<pre><code>cubesky ALL=(ALL) ALL
+</code></pre><h3 id="启动输入法"><a href="#启动输入法" class="headerlink" title="启动输入法"></a>启动输入法</h3><pre class="line-numbers language-bash"><code class="language-bash">rc-service dbus start
+rc-update add dbus
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="启动桌面"><a href="#启动桌面" class="headerlink" title="启动桌面"></a>启动桌面</h3><p>执行</p>
+<pre class="line-numbers language-bash"><code class="language-bash">rc-service lxdm start
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后你就应该看见以下界面<br><img src="/2017/03/18/Alpine-Linux-折腾记/Alpine-Linux-1.png" alt="Alpine-Linux-1.png" title=""><br>然后选择一个用户登录，一般情况下你应该会发现，这里没法进入桌面，这也是官方 wiki 没有写的一个地方。<br>在左下角 Desktop 项，将 <code>Default</code> 更改为 <code>Xfce Session</code> ，即可正常登录。<br><img src="/2017/03/18/Alpine-Linux-折腾记/Alpine-Linux-2.png" alt="Alpine-Linux-2.png" title=""></p>
+<h1 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h1><p>至此 Alpine Linux 配置完成。<br>占用内存仅仅 37M ，非常的小巧。适合用在树莓派或者其他低内存设备上。</p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>Alpine Linux 并未提供中文输入法，你无法在 Alpine Linux 中输入中文！<br>我自己尝试编译 ibus 但是缺少大量依赖，于是我又去编译依赖库，然后依赖库又有依赖库….<br>最终我放弃编译输入法….</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Linux </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[加入了喵窝~]]></title>
+      <url>https://liyin.date/2017/02/24/%E5%8A%A0%E5%85%A5%E4%BA%86%E5%96%B5%E7%AA%9D/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="喵窝是什么"><a href="#喵窝是什么" class="headerlink" title="喵窝是什么"></a>喵窝是什么</h1><p>喵窝是 NyaaCat 社区 的 Minecraft 服务器，在<a href="https://nyaa.cat" target="_blank" rel="external">这里</a></p>
+<h1 id="这几天"><a href="#这几天" class="headerlink" title="这几天"></a>这几天</h1><p>喵先是提交了新玩家加入申请，谢谢 神楽坂雅詩 （雅诗姐姐~） 的邀请~<br>进入服务器之后，（也许是新人少吗？）一下来了很多人~ YUKIQAQ 热情的为我介绍了喵窝的各个设施，还带我参观了各个不同的城市和村落，让我对不同的风格有了大概的印象。（然后并没有足够的资金买….）<br>刚刚来到喵窝不久，还有很多地方可供我发掘，慢慢来吧~</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 闲聊 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Minecraft </tag>
+            
+            <tag> 喵窝 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[博客升级 1.3.0 & HMTHelper]]></title>
+      <url>https://liyin.date/2017/02/24/%E5%8D%9A%E5%AE%A2%E5%8D%87%E7%BA%A7-1-3-0-HMTHelper/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>经过了1个月的难产… <code>hexo-material-theme</code> 迎来了一个大版本升级 <code>1.3.0</code> 。在这次的升级中修复了古老的代码染色 bug ，开发了新插件用于支持博文置顶，增加了 <code>Disqus</code> 的评论点击加载（访客模式绝赞开发中！），全自定义侧边栏，剩下的就是一些小修补。同时，我们引入了加载队列来防止 <code>js</code> 文件在页面未完成渲染之前集中加载造成某些关键功能使用不流畅。<br>而本博客也在前天（2017-02-22）升级到了新版本。</p>
+<blockquote>
+<p>本来写的昨天，一看表已经过零点了…..</p>
+</blockquote>
+<p>同时，首页的一言横幅也被我重构，现在使用我开发的 <code>Hexo-Material Head Helper JS</code> 进行加载控制，不再在所有页面加载整个文件后再判断，大幅度降低相关文件读取时间。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 博客升级 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo-material-theme </tag>
+            
+            <tag> 主题 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[启用了新主页]]></title>
+      <url>https://liyin.date/2017/02/20/%E5%90%AF%E7%94%A8%E4%BA%86%E6%96%B0%E4%B8%BB%E9%A1%B5/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
+<p>嗯，我承认是因为我域名买多了….</p>
+</blockquote>
+<p>因为需要的网站入口可能会越来越多，所以考虑了一下，写了个个人入口页面，可以到达我的所有服务。<br>我自己很少写前端的，偶尔写的几个前端是用 LayoutIt 那个 Bootstrap 可视化布局工具拽出来的，所以这次也打算自己从头写下试试….<br>于是乎 <a href="https://liyin.party" target="_blank" rel="external">天空传送</a> 诞生了~<br>使用了 <a href="http://materializecss.com/" target="_blank" rel="external">Materializecss</a>  ，不过感觉做的依然不是很美观……（残念…</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 闲聊 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 闲聊 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[瞎想 2017_2_7]]></title>
+      <url>https://liyin.date/2017/02/11/thinking-2017-02-07/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>很多人都向往大海，很多人都喜爱着大海，一到海边我们就脱下鞋子飞快的踏进海水里嬉戏玩耍。<br>曾几何时，我也如此喜欢着大海，在平静的海洋中游泳，在大浪翻滚的海水中开心的玩耍。<br>但我又从什么时候开始失去了对大海和沙滩的热爱呢？<br>现在的我远离着大海，远离着沙滩，无论是在北戴河亦或是在厦门，我都不想踏入沙滩半步。到底是什么时候我开始发生了这样的变化?<br>是讨厌海水的咸味？还是讨厌沙滩中隐藏的刺痛脚底的贝壳？还是以往在海中游泳过后粘湿的身体？<br>又抑或是我根本就不喜欢浸泡在水中？<br>这一切我都不得而知，我只知道自己变了，却不知道自己变成了什么…….<br>而我现在又在向往着什么呢？<br>向往着天空？还是向往着宇宙？<br>从高空看向地面，城市是多么的宏大，多么的美丽，一处处灯光点亮了黑夜。无数条路灯编织出了城市中光的艺术。一处处灯光象征着人类在此处定居，在此处发展。<br>抬头仰望星空却因为城市的灯光遮住了星空中的光辉，我们到哪才能看到一个完整又美丽的星空呢？<br>飞翔在天空之间，俯视大地观人类之发展，仰望天空感宇宙之星辰。<br>宇宙中与我们相似的生命有多少，我们不得而知，我们是否孤独亦不得而知。我们仅仅知道，我们生存于这颗星球，我们在影响着这颗星球。在这颗星球上也只有我们能如此了吧…..</p>
+<p><em>天空之间 2017年2月7日 23点39分 于 厦门返回北京的飞机上 记</em></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 闲聊 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 闲聊 </tag>
+            
+            <tag> 瞎想 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[正方教务系统登录页修复]]></title>
+      <url>https://liyin.date/2017/01/31/zf-loginpage-fix/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>哼，我看着正方教务系统不爽很久了，特别是那个登录页，输入框不齐，验证码飘在输入框中间，看着无比的难受。<br><img src="/2017/01/31/zf-loginpage-fix/ZF-Loginpage-Fix-2.png" alt="ZF-Loginpage-Fix-2.png" title=""><br>然后，某次正方系统更新之后，浏览器的自动填充也遇到了问题<br><img src="/2017/01/31/zf-loginpage-fix/ZF-Loginpage-Fix-3.png" alt="ZF-Loginpage-Fix-3.png" title=""><br>而我呢，又是一个密码管理器的重度使用者（每个网站都使用不同的密码，密码强度平均 100%），这就逼着我去修复这个令人不爽的自动填充问题。</p>
+<blockquote>
+<p><strong>一切能显示在浏览器上的元素都能被修改，只要网站需要让浏览器正常显示内容，那他就得符合浏览器的规范</strong><br><strong>你不能修改服务器上的内容，但你能修改浏览器显示给你的内容</strong></p>
+</blockquote>
+<p>所以，这时候我们就要打开 Chrome 按下 F12 启动开发者工具，来检查这个网页的各种元素和请求。<br>当我看到正方教务系统登录页的 DOM 之后…<br><img src="/2017/01/31/zf-loginpage-fix/ZF-Loginpage-Fix-4.png" alt="ZF-Loginpage-Fix-4.png" title=""></p>
+<p>喵喵喵？正方的前端用 dd 列表标签做分割？说好的 div 呢？<br><img src="/2017/01/31/zf-loginpage-fix/ZF-Loginpage-Fix-5.png" alt="ZF-Loginpage-Fix-5.png" title=""></p>
+<p>然后就是这段，也不对齐，也不去除注释的 Javascript 代码，仔细一看…….<br>为什么会有两个密码输入框…..<br><img src="/2017/01/31/zf-loginpage-fix/ZF-Loginpage-Fix-6.png" alt="ZF-Loginpage-Fix-6.png" title=""><br><em>注：图中 <code>style</code> 内的 <code>base64</code> 编码的图片是密码管理器插入的，与正方系统无关</em></p>
+<p>而且还调用了上面那段混乱的 Javascript 代码的 <code>update</code> 和 <code>sava</code> 函数…..<br>然后 <code>update</code> 和 <code>sava</code> 函数的作用就是把两个输入框的 <code>display</code> 样式设置为 <code>none</code> 或者 <code>inline</code>。完全意义不明啊！<br>这也是自动密码填充问题的罪魁祸首，于是我将 <code>type</code> 不为 <code>password</code> 的输入框删掉，再次尝试填充，成功了！<br>然后，我按了下 <code>Tab</code> 键想切换到验证码输入框中，这时！<br><img src="/2017/01/31/zf-loginpage-fix/ZF-Loginpage-Fix-7.png" alt="ZF-Loginpage-Fix-7.png" title=""><br>密码框不见了！<br>这是个大问题啊，我立刻想到这是那段 <code>js</code> 代码惹的祸，于是</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">update<span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>覆盖掉 <code>update</code> 函数的实现，让它失去作用。由于默认的真实密码是被隐藏的，所以要加一句</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#TextBox2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'display'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>让输入框可见。<br>这时候我打开了 <code>Tempermonkey</code> 这是一个用户脚本管理插件，他可以在目标页自动插入对应的 <code>.user.js</code> 用户脚本。<br>先新建一个脚本，并设置下可用范围<br><img src="/2017/01/31/zf-loginpage-fix/ZF-Loginpage-Fix-8.png" alt="ZF-Loginpage-Fix-8.png" title=""></p>
+<p>然后，由于正方系统没有使用 <code>jQuery</code> 所以，我需要增加一个 <code>jquery</code> 的引用<br><img src="/2017/01/31/zf-loginpage-fix/ZF-Loginpage-Fix-9.png" alt="ZF-Loginpage-Fix-9.png" title=""></p>
+<p>然后就可以在函数体内增加自动注入的脚本（详见下方安装脚本）</p>
+<p>反正已经搞定了自动填充，那就把剩下的看着不爽的问题也解决下吧~<br>首先就是，文本框<strong>不一样长</strong>啊！（摔<br>强迫症感觉很不爽啊！<br>于是，现在！立刻！马上！加入了如下代码</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#TextBox2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'width'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样，密码框就和用户名框一样长了。<br>剩下的就是更正验证码区的问题了，其实这个地方的主要问题就是！<br><strong>谁写的 <code>style</code> ！给我站出来！会不会用对齐！会不会用相对布局！会不会用绝对布局！</strong><br><strong>在验证码框的顶层元素上加相对布局，再给验证码图标放个绝对布局，你怎么不上天呢！</strong><br>经过了15分钟的修正后验证码的位置恢复了正常<br><img src="/2017/01/31/zf-loginpage-fix/ZF-Loginpage-Fix-10.png" alt="ZF-Loginpage-Fix-10.png" title="">)</p>
+<p>因为要做成脚本嘛，所以也再在页面底部加些脚本加载信息，提示用户正方教务的登录页做的多么的<strong>烂</strong>！<br><strong>烂</strong>到需要让用户自己写脚本来矫正这些问题！</p>
+<p>最终效果<br><img src="/2017/01/31/zf-loginpage-fix/ZF-Loginpage-Fix-1.png" alt="ZF-Loginpage-Fix-1.png" title=""><br>左边是修复之前/右边是修复之后</p>
+<p>不多说了，脚本在下方，安装了 <code>Tempermonkey</code> 用户脚本管理器之后，点击下面的安装按钮就会弹出脚本安装页了~<br>不用担心有任何的风险，代码全部未加密、未混淆，你可以自己修改它。他也不会向任何服务器发送你的信息，正方教务系统也不会知道你正在使用这个脚本，放心大胆的去使用吧！</p>
+<p><link rel="stylesheet" href="/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="/myfiles/userjs/FixZFLoginpage.user.js">安装 正方教务系统登录页修复脚本</a>  </p>
+<hr>
+<p>2017/3/4 更新<br>增加了验证码识别</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Javascipt 书签工具 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+            <tag> 正方教务 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[用 Docker 搭建 Minecraft 服务端]]></title>
+      <url>https://liyin.date/2017/01/21/Minecraft-with-Docker/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="为什么要写这个"><a href="#为什么要写这个" class="headerlink" title="为什么要写这个"></a>为什么要写这个</h1><p>因为到了假期，NV 假期服务器即将开服啦~<br>以往我们使用的是很坑很坑的阿里云，各种卡顿，价格昂贵，所以这次我想到可以使用 Docker 容器来架设服务器，于是就有了这篇文章~<br>如果你想加入服务器游玩的话，请看最后一节，服务器的QQ群~ </p>
+<h1 id="Docker-是什么"><a href="#Docker-是什么" class="headerlink" title="Docker 是什么"></a>Docker 是什么</h1><img src="/2017/01/21/Minecraft-with-Docker/Minecraft-With-Docker-Docker.svg" alt="Docker" title="Docker"> 
+<p>Docker 是一个虚拟化容器，他提供一种轻量级应用运行环境，保持开发环境和生产环境的一致化。它与虚拟机的最大区别在于，每个容器不包含自己的操作系统内核，而是由宿主系统提供内核运行，这让容器可以在相同的硬件条件下进行更细颗粒度的资源调节，充分使用系统资源。</p>
+<h1 id="Minecraft"><a href="#Minecraft" class="headerlink" title="Minecraft"></a>Minecraft</h1><img src="/2017/01/21/Minecraft-with-Docker/Minecraft-With-Docker-Minecraft.svg" alt="Minecraft" title="Minecraft"> 
+<p>Minecraft 是由 Mojang 公司开发的一款沙盒类开放世界游戏，现在已被 Microsoft 公司收购。在 MCP 计划的带领下涌现了很多优秀的 Mod 对游戏的可玩性有着巨大的提升，在此期间，Mod 加载器 ModLoader 、 Forge 、 LiteLoader 陆续出现，让各个 Mod 得到了协调统一。同时，在服务端方面出现了 Bukkit 、 Spigot 、 Sponge 等支持插件的服务端，让游戏服务器更容易管理。<br>在漫长的岁月中 Minecraft 从最初的版本发展到了 1.11.2 ，经历了 1.2.5 Mod 时代的辉煌。<br>同时，Minecraft 本体也历经 红石更新 / 地形更新 / 寒霜更新 / 战斗更新 / 冒险更新 一步一步的完善。<br>Mod 加载器也从最初的 ModLoader 变为 ModLoader 与 Forge 并存，到 1.5 时代 ModLoader 停止开发，退出了历史舞台，Forge 提供了 FML (ForgeModLoader) 来兼容 ModLoader 开发的 Mod。<br>到现在 LiteLoader 作为可与 Forge 加载器共存在同一个游戏中，让玩家同时享受2种加载器带来的 Mod。</p>
+<h1 id="SpongeForge"><a href="#SpongeForge" class="headerlink" title="SpongeForge"></a>SpongeForge</h1><p>SpongeForge 是新一代的服务端插件解决方案，他解决了历史遗留中插件和 Mod 共存下的种种难处，这也是现在 1.10 版本以上的服务端插件加载方案。同时，我今天也将使用它构建一个同时支持插件和 Mod 的服务端。<br>SpongeForge 官网：<a href="https://www.spongepowered.org" target="_blank" rel="external">点击此处</a></p>
+<p><em>PS 为什么这些外国人开发的服务端都跟水过不去….</em><br>水桶 –&gt; 水龙头 –&gt; 炼药锅 –&gt; 海绵</p>
+<h1 id="如何搭建"><a href="#如何搭建" class="headerlink" title="如何搭建"></a>如何搭建</h1><p>说了那么多，我们该开始真正的搭建一个服务端了！<br>我这次以 1.10.2 为例  </p>
+<h2 id="搭建服务端"><a href="#搭建服务端" class="headerlink" title="搭建服务端"></a>搭建服务端</h2><p>因为我们需要一个同时支持插件和 Mod 的服务端，所以我先去找了下在 1.7 时代最常用的服务端 <code>KCauldron</code> ，然而，他并不支持 1.10.2 ，所以，我换了一种方案——使用 Forge + SpongeForge 同时支持插件和 Mod 。</p>
+<h3 id="下载-Forge-服务端"><a href="#下载-Forge-服务端" class="headerlink" title="下载 Forge 服务端"></a>下载 <code>Forge</code> 服务端</h3><img src="/2017/01/21/Minecraft-with-Docker/Minecraft-With-Docker-Forge.png" alt="Minecraft-With-Docker-Forge.png" title="">  
+<p>先来到 <code>Forge</code> 的<a href="https://files.minecraftforge.net" target="_blank" rel="external">下载页</a>，下载 1.10.2 版的 <code>Forge Installer</code> ，然后双击打开会看到下图。<br><img src="/2017/01/21/Minecraft-with-Docker/Minecraft-With-Docker-ForgeInstaller.png" alt="Minecraft-With-Docker-ForgeInstaller.png" title=""><br>选择 <code>Install Server</code> ，然后选择一个空目录，点击 <code>确定</code> 即可完成服务端的下载。  </p>
+<h3 id="首次运行"><a href="#首次运行" class="headerlink" title="首次运行"></a>首次运行</h3><p>现在，执行 <code>java -jar forge-1.10.2-12.18.3.2185-universal.jar</code> (中间的版本号请自己根据情况修改) ，会发现服务端启动了几秒之后自动退出了，这是到底为什么呢？  </p>
+<h3 id="同意-EULA"><a href="#同意-EULA" class="headerlink" title="同意 EULA"></a>同意 EULA</h3><p>这是因为 1.7 版本以上的服务端必须同意 Mojang 的用户协议才能启动，现在会发现根目录下多出了 <code>eula.txt</code> 文件，打开这个文件，更改里面的 <code>eula=false</code> 为 <code>eula=true</code> 后，再次启动服务端，就会发现服务端已经被成功启动了。 </p>
+<h3 id="安装-Mod"><a href="#安装-Mod" class="headerlink" title="安装 Mod"></a>安装 Mod</h3><p>这一步我相信只做过客户端整合的人都会非常熟悉，把你需要的 Mod 放入 <code>mods</code> 文件夹，并确认版本符合就可以了。<br>当然，有些 Mod 并不支持服务端，这时你只能忍痛去掉他们了。</p>
+<h3 id="安装插件支持"><a href="#安装插件支持" class="headerlink" title="安装插件支持"></a>安装插件支持</h3><p>由于 1.10.2 这里使用 SpongeForge 来支持插件，所以到 <a href="https://www.spongepowered.org/downloads" target="_blank" rel="external">SpongeForge 下载页</a>下载 <code>SpongeForge</code> 并放入 mods 文件夹即可。</p>
+<h3 id="寻找并安装插件"><a href="#寻找并安装插件" class="headerlink" title="寻找并安装插件"></a>寻找并安装插件</h3><p>这里和安装 Mod 一样，只需要找到对应版本的插件放入服务端的 mods 文件夹里就可以了。<br><a href="https://forums.spongepowered.org/c/plugins/plugin-releases" target="_blank" rel="external">Sponge 插件列表</a>  </p>
+<h2 id="配置服务端"><a href="#配置服务端" class="headerlink" title="配置服务端"></a>配置服务端</h2><h3 id="服务端设置"><a href="#服务端设置" class="headerlink" title="服务端设置"></a>服务端设置</h3><p>因为服务端的默认设置不太符合中国国情<del>（咳咳）</del> 所以，我们需要做一些修改。<br>打开 <code>server.properties</code> 文件，修改以下配置  </p>
+<pre class="line-numbers language-yaml"><code class="language-yaml">online = false <span class="token comment" spellcheck="true">#关闭正版验证</span>
+motd = Winter Vacation Server 2017 <span class="token comment" spellcheck="true">#标语</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="插件设置"><a href="#插件设置" class="headerlink" title="插件设置"></a>插件设置</h3><p>最终我选择了 <code>Nucleus the Ultimate Essentials</code> <code>Inspector</code> <code>FlexibleLogin</code> <code>PermissionManager</code> <code>WorldEdit</code> <code>Web-API</code> 这几个插件  </p>
+<h4 id="Nucleus-the-Ultimate-Essentials"><a href="#Nucleus-the-Ultimate-Essentials" class="headerlink" title="Nucleus the Ultimate Essentials"></a>Nucleus the Ultimate Essentials</h4><p>这是一个游戏内基础命令插件，我相信，用过以前 <code>Essentials</code> 插件的人应该不会陌生。 </p>
+<h4 id="Inspector"><a href="#Inspector" class="headerlink" title="Inspector"></a>Inspector</h4><p>一个记录插件，用于记录用户状态变化，方块变化，并可以查询和回档。</p>
+<h4 id="FlexibleLogin"><a href="#FlexibleLogin" class="headerlink" title="FlexibleLogin"></a>FlexibleLogin</h4><p>因为关闭了正版验证，所以我们需要额外的登录插件来实现登录，<code>FlexibleLogin</code> 正是 <code>Sponge</code> 体系下的登录认证插件，它甚至支持 <code>TOTP</code> 模式创建动态登录密码。</p>
+<h4 id="PermissionManager"><a href="#PermissionManager" class="headerlink" title="PermissionManager"></a>PermissionManager</h4><p>用于管理权限，细致的调整玩家可以使用的功能和命令。  </p>
+<h4 id="WorldEdit"><a href="#WorldEdit" class="headerlink" title="WorldEdit"></a>WorldEdit</h4><p>我相信各位建筑师和腐竹们应该不会陌生，游戏内方便的大范围地形修改插件。  </p>
+<h4 id="Web-API"><a href="#Web-API" class="headerlink" title="Web-API"></a>Web-API</h4><p>因为 Docker 化之后没法直接访问控制台，所以我们需要一个替代控制台的方案，<code>Web-API</code> 是个不错的选择。<br>这个插件为了安全可以设置访问密钥，访问 <a href="https://valandur.github.io/Web-API/redoc.html" target="_blank" rel="external">帮助文档</a>   以获得更多消息<br>访问 <code>http://127.0.0.1:8080/api/cmd</code> 来执行命令并获取返回值</p>
+<h3 id="权限调配"><a href="#权限调配" class="headerlink" title="权限调配"></a>权限调配</h3><p>先创建3个组，分别为 <code>players</code> <code>builders</code> <code>admin</code></p>
+<h4 id="players-组"><a href="#players-组" class="headerlink" title="players 组"></a>players 组</h4><p>将这个组设置为基础，这是所有玩家的基础组，拥有基础权限</p>
+<pre><code>nucleus.suicide.exempt.*
+inspector.toggle
+nucleus.teleport.tpahere.exempt.cost
+inspector.use
+nucleus.teleport.tpahere.base
+nucleus.home.list.base
+nucleus.home.base
+nucleus.spawn.exempt.cost
+nucleus.teleport.tpa.exempt.cost
+nucleus.teleport.tpaccept.base
+nucleus.home.set.base
+nucleus.teleport.tpa.base
+nucleus.hat.base
+nucleus.spawn.base
+nucleus.warp.base
+nucleus.home.set.exempt.*
+nucleus.teleport.teleport.exempt.cost
+nucleus.home.exempt.cost
+</code></pre><p>主要涵盖查询方块状态、传送、设置家、使用hat命令</p>
+<h4 id="builder-组"><a href="#builder-组" class="headerlink" title="builder 组"></a>builder 组</h4><p>这个组的权限从 <code>players</code> 继承而来并拥有以下额外权限</p>
+<pre><code>worldedit.*
+nucleus.fly.exempt.*
+nucleus.fly.base
+</code></pre><p>主要允许建筑师使用 <code>WorldEdit</code> 插件来完成建筑，同时给予飞行权限</p>
+<h4 id="admin-组"><a href="#admin-组" class="headerlink" title="admin 组"></a>admin 组</h4><p>给予 <code>*</code> 权限，是服务器的管理者 </p>
+<h4 id="Sponge-下的权限管理"><a href="#Sponge-下的权限管理" class="headerlink" title="Sponge 下的权限管理"></a>Sponge 下的权限管理</h4><p>在 Sponge 下，一旦启动权限插件，op权限就会大部分失效，需要执行权限插件的添加权限命令，为管理员添加 <code>*</code> 权限才能正常工作</p>
+<pre><code>/pm users your_username set permission *
+</code></pre><p>如果你已经创建了权限组，则可以使用下面的命令将一个人添加到组</p>
+<pre><code>/pm users your_username add group your_groupname
+</code></pre><h2 id="选择-Docker-镜像"><a href="#选择-Docker-镜像" class="headerlink" title="选择 Docker 镜像"></a>选择 Docker 镜像</h2><p>Docker 的起始是由一个基础镜像开始的，你可以选择 <code>Ubuntu</code> 镜像从头开始配置，或者找一个符合你要求的镜像开始配置，我这次选择的是 <code>psiag/oracle-java</code> 镜像开始的，这个镜像包含配置好的 <code>java 8</code> 可以直接使用。  </p>
+<h2 id="编写打包脚本"><a href="#编写打包脚本" class="headerlink" title="编写打包脚本"></a>编写打包脚本</h2><p>因为 <code>Dockerfile</code> 编写时可以使用 <code>ADD</code> 或者 <code>COPY</code> 来添加文件到镜像，我选择的是使用 <code>ADD</code> 命令解包一个 tar 文件并添加到镜像。<br>先使用 <code>tar -cvf 目标 文件1 文件2 ...</code> 命令，将需要的文件打包为 tar 。<br>一个服务端中我们需要以下文件和文件夹  </p>
+<blockquote>
+<p>config<br>crash-reports (空文件夹)<br>libraries<br>mods<br>world (空文件夹)<br>eula.txt<br>forge-1.10.2-12.18.3.2185-universal.jar<br>minecraft_server.1.10.2.jar<br>server.properties  </p>
+</blockquote>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">tar</span> -cvf Server.tar config crash-reports libraries mods world eula.txt forge-1.10.2-12.18.3.2185-universal.jar minecraft_server.1.10.2.jar server.properties
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样就会打包出 <code>Server.tar</code> 文件<br>然后我们可以把 Docker 构建命令也放进 sh 脚本中，最终文件为下面这样<br><code>build.sh</code> </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">tar</span> -cvf Server.tar config crash-reports libraries mods world eula.txt forge-1.10.2-12.18.3.2185-universal.jar minecraft_server.1.10.2.jar server.properties  
+docker build -t thisimagetag <span class="token keyword">.</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>注：thisimagetag 换成你想设置的标签 </p>
+<h2 id="编写-Dockerfile"><a href="#编写-Dockerfile" class="headerlink" title="编写 Dockerfile"></a>编写 Dockerfile</h2><p>在相同目录下创建一个 <code>Dockerfile</code> 文件，放入以下内容  </p>
+<pre class="line-numbers language-docker"><code class="language-docker"><span class="token keyword">FROM</span> psiag/oracle<span class="token punctuation">-</span>java  
+<span class="token keyword">MAINTAINER</span> cubesky  
+<span class="token keyword">ADD</span> Server.tar /mcserver  
+<span class="token keyword">EXPOSE</span> 25565  
+<span class="token keyword">EXPOSE</span> 8080  
+<span class="token keyword">WORKDIR</span> /mcserver/  
+<span class="token keyword">VOLUME</span> /mcserver/world  
+<span class="token keyword">VOLUME</span> /mcserver/crash<span class="token punctuation">-</span>reports  
+<span class="token keyword">CMD</span> <span class="token punctuation">[</span><span class="token string">"/usr/bin/java"</span><span class="token punctuation">,</span><span class="token string">"-jar"</span><span class="token punctuation">,</span><span class="token string">"forge-1.10.2-12.18.3.2185-universal.jar"</span><span class="token punctuation">,</span><span class="token string">"nogui"</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Dockerfile-解释"><a href="#Dockerfile-解释" class="headerlink" title="Dockerfile 解释"></a>Dockerfile 解释</h3><ol>
+<li>使用  <code>FROM</code>  引入带有  <code>java 8</code> 的镜像  </li>
+<li>使用  <code>MAINTAINER</code> 来标记作者  </li>
+<li>使用  <code>ADD</code>  命令来添加文件到镜像  </li>
+<li>使用  <code>EXPOSE</code>  来定义需要暴露给公网的端口，在这个镜像中使用了以下端口  <ul>
+<li>8080  <code>Web-API</code> 的控制接口  </li>
+<li>25565  <code>Minecraft</code> 的连接端口  </li>
+</ul>
+</li>
+<li>使用  <code>VOLUME</code>  声明需要持久化的文件，一般来说，将 world 文件夹持久化，防止丢失地图就可以了  </li>
+<li>使用  <code>CMD</code> 定义启动点  </li>
+</ol>
+<h2 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h2><p>因为我们之前已经写好了构建脚本，现在执行  <code>sudo sh build.sh</code> 就能开始构建了，喝杯咖啡等下吧~（因为  <code>docker</code> 命令需要最高权限，所以请使用  <code>sudo</code> 命令启动脚本）</p>
+<h2 id="上传镜像-（可选）"><a href="#上传镜像-（可选）" class="headerlink" title="上传镜像 （可选）"></a>上传镜像 （可选）</h2><p>在你的构建服务器上执行下面的命令来登陆到 docker 注册服务</p>
+<pre class="line-numbers language-bash"><code class="language-bash">docker login 注册服务地址
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>按照提示输入用户名和密码<br>然后执行以下命令来标记要上传的镜像（最后的<code>标签</code>可以省略）</p>
+<pre class="line-numbers language-bash"><code class="language-bash">docker tag thisimagetag 注册服务地址/用户名/镜像标记名:标签
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>最后使用 </p>
+<pre class="line-numbers language-bash"><code class="language-bash">docker push 注册服务地址/用户名/镜像标记名:标签
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>来完成推送镜像到注册服务<br><strong>注：这一步取决于你的网络和注册服务的网络情况，推送镜像可能需要数十分钟</strong>  </p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><h3 id="命令行运行"><a href="#命令行运行" class="headerlink" title="命令行运行"></a>命令行运行</h3><p>先创建一个 world 的空文件夹，然后执行  </p>
+<pre class="line-numbers language-bash"><code class="language-bash">docker run --name mc -d -v world:/mcserver/world -p 25565:25565 -p 8080:8080 -it thisimagetag
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>就可以直接启动服务端了~ （thisimagetag 是这个镜像的标签）</p>
+<h3 id="使用云"><a href="#使用云" class="headerlink" title="使用云"></a>使用云</h3><p>如果你使用容器云 CaaS 那么在你上一步上传镜像之后，需要在面板上进行如下操作 </p>
+<ol>
+<li>创建一个存储卷 </li>
+<li>到应用面板中部署你刚刚上传的镜像，我个人推荐选择 1核 4G内存 以上的容器。 </li>
+<li>设置容器端口转发生效 </li>
+<li>设置容器为有状态服务，将 /mcserver/world 挂载点挂载到存储卷  </li>
+<li>启动容器，等待部署完成  </li>
+<li>Enjoy!    </li>
+</ol>
+<h1 id="欢迎来到-NV假期休闲服"><a href="#欢迎来到-NV假期休闲服" class="headerlink" title="欢迎来到 NV假期休闲服"></a>欢迎来到 NV假期休闲服</h1><p>欢迎到我们的服务器游玩<br>群号码：579263743<br>或者可以扫描加群二维码<br><img src="/2017/01/21/Minecraft-with-Docker/Minecraft-With-Docker-Qrcode.jpg" alt="579263743" title="579263743"><br>点击这个链接也可以哦<br><a href="https://shang.qq.com/wpa/qunwpa?idkey=a6c344d3e14336506dd53cda62dc41b8e0294cbc646c25f8ce6e57b307b5fb60" target="_blank" rel="external"><img src="https://img.shields.io/badge/QQ%20%E7%BE%A4-579263743-blue.svg?style=flat-square" alt="579263743"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 云 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Docker </tag>
+            
+            <tag> 云 </tag>
+            
+            <tag> CaaS </tag>
+            
+            <tag> Minecraft </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[2017年的第一场雪]]></title>
+      <url>https://liyin.date/2017/01/16/2017-First-Snow/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="实训"><a href="#实训" class="headerlink" title="实训"></a>实训</h1><p>今天是实训课的最后一天，虽然实训课没什么难度，但也用了我几天的时间来制作。 <del>（其实是因为经常下午不小心睡着，导致没在开发）</del><br>因为实训的时间很长，而且没什么难度，所以就尝试了下使用 RxJava2 来开发 Swing 界面的程序。<br>在使用过程中，我渐渐的发现，RxJava 本身会带给 Java 开发良好的代码阅读性和便捷的流式处理能力。<br>由于 RxJava2 还没有对 JDBC 的直接支持，所以没法对数据集直接进行 Map 操作，这导致了一点小小的不便。不过，使用 flatMap 的方法解决起来也是相当的便捷，仅需要几个 flatMap 和 Map 操作即可处理完整个流程。</p>
+<h1 id="雪"><a href="#雪" class="headerlink" title="雪"></a>雪</h1><p>中午午饭过后，发现外边飘起了点点雪花 <del>（然而 AQI 根本没变低啊，摔）</del> 这应该是今年的第一场雪了吧….不知道已经有多少年没见到过大雪了…..<br>（明明这篇博客主题叫雪….然而写雪的部分却是最少的….） <del>我只是想找个话题而已</del></p>
+<h1 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h1><p>快递的时间算的刚刚好，在这在校的最后一天，快递送到了学校的快递点，这次是一个小型的路由器，有多小呢？<br>请看下图….<br><img src="/2017/01/16/2017-First-Snow/2017-First-Snow-1.jpg" alt="路由器" title="路由器"><br>它装载着 OpenWrt 开源路由系统，可以进行很多的配置，当然，这样的代价是复杂的配置界面和极其难以理解的配置方法。<br>内置 3db 天线，基本随身携带刚刚好。<br>当然也可以用这个来劫持周围的无线网设备，使他们进入虚假的登录页面，盗取他人的信息，或者中继一个无线网络进行路由器抓包捕获 <strong>（请不要做这种事，这是违法的！）</strong> 。</p>
+<blockquote>
+<p><strong> 为了您的安全，请一定确保在进行需要安全的操作时保证地址栏处于 https 绿锁状态！（另外，不要使用 360 浏览器等国内浏览器，目前很多国内浏览器对证书的认证并不安全！）在这里，我希望有能力使用安全隧道的大家，在进行需要安全操作（如 支付 等）时，启用您的安全隧道，保证不被公开的路由设备截获或遭遇中间人攻击。</strong> </p>
+</blockquote>
+<p>本站已经开启了全域 https 哟，干掉了所有的混合内容（ Mixed-Content ），让网站更安全。<br>（不过我的博客既没有数据库！又没有管理后台！哪来的需要登录的地方啊！摔！）</p>
+<h1 id="博客升级-1-2-6-1"><a href="#博客升级-1-2-6-1" class="headerlink" title="博客升级 1.2.6.1"></a>博客升级 1.2.6.1</h1><p>在这几天我实训时间里，material 主题在代码层面发生了翻天覆地的变化…..</p>
+<ul>
+<li>统一了缩进符为 4个空格</li>
+<li>修改了很多繁琐的语法，让语义表达更加简洁</li>
+<li>添加了更多页脚链接</li>
+<li>修改了 Codeblock</li>
+<li>补全了 i18n 翻译</li>
+</ul>
+<p>然后…..因为代码变化太大，外加我们没有自动化测试脚本，也导致了有些严重错误代码被推送到了 1.2.6 主分支上，所以发布了 1.2.6.1 来修复这些错误。<br>刚刚为博客更换了 APlayer 来播放音乐，提供更好的兼容性。</p>
+<h1 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h1><p>你知道吗？其实， <strong>博客主页的标题</strong> 和 <strong>右侧的博客 Logo</strong> 都是可以点进相关的页面的哟~</p>
+<h1 id="TODO-寒假"><a href="#TODO-寒假" class="headerlink" title="TODO 寒假"></a>TODO 寒假</h1><p>这个寒假到来了，在这个寒假中，我会首先对这个主题进行一些修改。</p>
+<ul>
+<li>[√] 支持文章置顶 （现在已由 <a href="https://github.com/viosey/hexo-theme-material/tree/sky-food" target="_blank" rel="external">hexo-theme-material/sky-food</a> 分支初步完成，由 <a href="https://github.com/cubesky/hexo-helper-post-top" target="_blank" rel="external">hexo-helper-post-top</a> 插件提供支持）</li>
+<li>[√] 支持分页 Metadata Info 和 Opengraph Info <a href="https://github.com/viosey/hexo-theme-material/issues/70" target="_blank" rel="external">Issue #70</a></li>
+<li>[√] 让主题支持加载队列，提高某些网页组件的响应速度</li>
+<li>[ ] 添加自动化测试脚本，供 CI 进行基础测试，并生成每次的 Demo 页面到 pages 服务</li>
+</ul>
+<p>之后呢，我应该会去开发让多个服务器自动连接，自动发现的一个框架，并在这个框架上添加让多台服务器自动选举最佳服务器执行代码的插件。</p>
+<ul>
+<li>[ ] 服务器自动发现，自动连接</li>
+<li>[ ] 自动集群内全自动优选事物执行服务器</li>
+</ul>
+<p>还有学校的项目也得继续开发，不过这个已经进入第一部分的最后阶段了。</p>
+<ul>
+<li>[ ] 学校的信息管理系统开发 <em>Stage 1</em> </li>
+</ul>
+<p>估计干完这堆东西也该开学了…..</p>
+<hr>
+<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><h2 id="2017-1-18"><a href="#2017-1-18" class="headerlink" title="2017/1/18"></a>2017/1/18</h2><p>刚刚突然发现 Github 仓库中被引入了 GitMagic 检查机器人，然后每次 commit 和每次 pull request 都会出现各种问题……<br>于是，在历尽艰苦之后，我们决定更改 GitMagic 的设定……</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 闲聊 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 闲聊 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[博客主题版本升级 1.2.5]]></title>
+      <url>https://liyin.date/2017/01/05/upgrade-theme-1-2-5/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这几天在考试，也没怎么写博文。今天刚弄了点博客的主题更新，来更新一下。<br>之前的版本中，我在 <a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="external">hexo-material-theme</a> 主题上做了很多的更改，导致在升级主题的时候没法使用 <code>git pull</code> 进行快速升级。<br>所以在官方 1.2.5 版本主题更新之后，我重新进行了 <code>clone</code> 操作，然后使用了主题官方提供的 <code>head.yml</code> 进行了不修改主题 ejs 文件的外挂式修改。<br>今天官方主题代码仓库也开启了 <code>canary</code> 分支用于放置开发中的版本。不过，我在博客上还是喜欢使用稳定版本，有些开发版本的小功能我还是想要加入到我的博客中的，所以我自己制作了将一些开发版本的功能带回稳定版本的方案，也是通过 javascript 来在 DOM 加载完毕之后动态插入内容到 DOM 中。这样就不会在下次更新的时候出现文件冲突，导致升级失败。<br>PS 改了一下午还真是麻烦……<br><del>PS2 Windows 10 的输入法还莫名其妙的卡死整个窗口，不知道什么原因……..</del> （用 DISM 神器修好了…..）</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 博客升级 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo-material-theme </tag>
+            
+            <tag> 主题 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Project My Screen App]]></title>
+      <url>https://liyin.date/2016/12/27/Project-My-Screen-App/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>今天向还在使用微软 Lumia 手机的 <strong>1%</strong> 用户推荐一个小软件<br>名叫 <a href="https://www.microsoft.com/en-us/download/details.aspx?id=42536" target="_blank" rel="external">Project My Screen App</a> <del>（微软改名部不来改下名字么=- = 这名字透着一股山寨的感觉….）</del><br>他能够通过USB线将手机屏幕同步到电脑显示并可以在电脑上操作手机。<br>支持 Windows Phone 8.1 到 Windows 10 Mobile 应该可以算是全系列都支持了吧…<br><img src="/2016/12/27/Project-My-Screen-App/Project-My-Screen-1.png" alt="Project My Screen App" title="Project My Screen App"><br>不过这个软件还是有一定局限性的….<br>比如：</p>
+<ul>
+<li>在手机息屏之后无法在电脑上唤醒手机，只能自己敲一敲手机屏幕，或者按下电源键点亮屏幕后再操作</li>
+<li>无法下拉通知栏</li>
+<li>操作延迟很大</li>
+</ul>
+<p>而且这个软件已经大半年（截止到本文发出 2016/12/27 ）没有更新了，上次更新是在 2016/03/30 …..<br>难道微软已经舍弃我们了么？！（泣  </p>
+]]></content>
+      
+        <categories>
+            
+            <category> 软件推荐 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Lumia </tag>
+            
+            <tag> Windows Phone </tag>
+            
+            <tag> 屏幕同步 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[学堂在线自动刷视频时间]]></title>
+      <url>https://liyin.date/2016/12/26/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF%E8%87%AA%E5%8A%A8%E5%88%B7%E8%A7%86%E9%A2%91%E6%97%B6%E9%97%B4/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这个工具会自动播放学堂在线选修课的视频，你就可以去干别的事情啦~<br>注意哦，这个脚本需要自动注入到网页中运行，所以请先在你的浏览器中安装好Tampermonkey或者GreasyMonkey插件来管理脚本哦~<br>如果你已经安装好管理器插件了的话~点击下方的按钮，就可以添加脚本啦~</p>
+<p><link rel="stylesheet" href="/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="/myfiles/userjs/AutoXuetangx.user.js">安装 学堂在线自动刷时间脚本</a>  </p>
+]]></content>
+      
+        <categories>
+            
+            <category> Javascipt 书签工具 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[正方教务系统自动教学评价]]></title>
+      <url>https://liyin.date/2016/12/26/%E6%AD%A3%E6%96%B9%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%8A%A8%E6%95%99%E5%AD%A6%E8%AF%84%E4%BB%B7/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这个工具会帮助你填写正方教务系统的教学质量评价，免去你一个个点击下拉列表的痛苦。反正正方系统是实名的全都往好了填不就行了~ </p>
+<p>将下面的按钮拖动到书签栏上来保存这个功能 在评价页点击这个书签即可自动评价咯~  </p>
+<p><link rel="stylesheet" href="/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="javascript:void(function(){var s=document.createElement('script');s.setAttribute('src','https://liyin.date/myfiles/javascriptbookmark/pjjsblet.js');document.body.appendChild(s);})();" target="_blank" rel="external">正方教务系统自动教学评价</a>  </p>
+<p><strong>PS</strong><br>这篇文章的上面这个按钮使用了 Bootstrap 的部分 CSS 文件…<br>为什么是部分呢…<br>因为这个主题用的 class 标签里的某些值被原版 Bootstrap 更改了，直接用原版加上去整篇文章都消失不见了……<br>我做梦都没想到我有一天得自己手动提取 CSS 来干这事…..<br>(我承认我不是一个写前端网页的……)</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Javascipt 书签工具 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[你好，朋友]]></title>
+      <url>https://liyin.date/2016/12/25/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%9C%8B%E5%8F%8B/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="旅程"><a href="#旅程" class="headerlink" title="旅程"></a>旅程</h1><p>哎呀，经历了几天的调试和修改，终于基本上干掉了这个模板和某些插件中的 Mixed Content 问题，然后在原模板上增加了一点功能。<br>现在大部分修改的功能已经被我提交到 Github 并对原 repo 请求了 Pull Request ，应该不久后就会更新到主版本上了wwwww<br>现在，天空的博客———— <em>天空之边</em> ，正式开启啦~<br>虽然，博客中还有部分美化之类的工作没有完全完成，不过，我会尽快完成哒~<br>今后，也感谢大家的支持哟~  </p>
+]]></content>
+      
+        <categories>
+            
+            <category> 闲聊 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 闲聊 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>
