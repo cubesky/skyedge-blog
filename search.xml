@@ -580,7 +580,7 @@ docker build -t thisimagetag <span class="token keyword">.</span>
       <title><![CDATA[学堂在线自动刷视频时间]]></title>
       <url>https://liyin.date/2016/12/26/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF%E8%87%AA%E5%8A%A8%E5%88%B7%E8%A7%86%E9%A2%91%E6%97%B6%E9%97%B4/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这个工具会自动播放学堂在线选修课的视频，你就可以去干别的事情啦~<br>注意哦，这个脚本需要自动注入到网页中运行，所以请先在你的浏览器中安装好Tampermonkey或者GreasyMonkey插件来管理脚本哦~<br>如果你已经安装好管理器插件了的话~点击下方的按钮，就可以添加脚本啦~</p>
-<p><link rel="stylesheet" href="/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="/myfiles/userjs/AutoXuetangx.user.js">安装 学堂在线自动刷时间脚本</a>  </p>
+<p><link rel="stylesheet" href="https://skyedge.b0.upaiyun.com/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="/myfiles/userjs/AutoXuetangx.user.js">安装 学堂在线自动刷时间脚本</a>  </p>
 ]]></content>
       
         <categories>
@@ -603,7 +603,7 @@ docker build -t thisimagetag <span class="token keyword">.</span>
       <url>https://liyin.date/2016/12/26/%E6%AD%A3%E6%96%B9%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%8A%A8%E6%95%99%E5%AD%A6%E8%AF%84%E4%BB%B7/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这个工具会帮助你填写正方教务系统的教学质量评价，免去你一个个点击下拉列表的痛苦。反正正方系统是实名的全都往好了填不就行了~ </p>
 <p>将下面的按钮拖动到书签栏上来保存这个功能 在评价页点击这个书签即可自动评价咯~  </p>
-<p><link rel="stylesheet" href="/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="javascript:void(function(){var s=document.createElement('script');s.setAttribute('src','https://liyin.date/myfiles/javascriptbookmark/pjjsblet.js');document.body.appendChild(s);})();" target="_blank" rel="external">正方教务系统自动教学评价</a>  </p>
+<p><link rel="stylesheet" href="https://skyedge.b0.upaiyun.com/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="javascript:void(function(){var s=document.createElement('script');s.setAttribute('src','https://liyin.date/myfiles/javascriptbookmark/pjjsblet.js');document.body.appendChild(s);})();" target="_blank" rel="external">正方教务系统自动教学评价</a>  </p>
 <p><strong>PS</strong><br>这篇文章的上面这个按钮使用了 Bootstrap 的部分 CSS 文件…<br>为什么是部分呢…<br>因为这个主题用的 class 标签里的某些值被原版 Bootstrap 更改了，直接用原版加上去整篇文章都消失不见了……<br>我做梦都没想到我有一天得自己手动提取 CSS 来干这事…..<br>(我承认我不是一个写前端网页的……)</p>
 ]]></content>
       
