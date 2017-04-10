@@ -266,9 +266,9 @@ rc-update add dbus
         
         <tags>
             
-            <tag> 瞎想 </tag>
-            
             <tag> 闲聊 </tag>
+            
+            <tag> 瞎想 </tag>
             
         </tags>
         
