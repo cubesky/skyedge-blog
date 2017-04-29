@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Wed, 26 Apr 2017 04:24:28 GMT</pubDate>
+    <pubDate>Sat, 29 Apr 2017 19:04:30 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>一次 Adobe 软件的崩溃解决</title>
+      <link>https://liyin.date/2017/04/30/one-adobe-carsh-resolve/</link>
+      <guid>https://liyin.date/2017/04/30/one-adobe-carsh-resolve/</guid>
+      <pubDate>Sun, 30 Apr 2017 01:56:50 GMT</pubDate>
+      <description>
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;前几天拿到了 APP 开发的工资，虽然不多但是也够我以学生优惠入手一个 Adobe 家的软件了，上一次我已经购买过了 &lt;code&gt;Photoshop&lt;/code&gt; ，于是这一
+      
+      </description>
+      
+      <comments>https://liyin.date/2017/04/30/one-adobe-carsh-resolve/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>btrfs 崩掉了</title>
@@ -139,20 +153,6 @@
       </description>
       
       <comments>https://liyin.date/2017/02/11/thinking-2017-2-7/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>正方教务系统登录页修复</title>
-      <link>https://liyin.date/2017/01/31/zf-login-page-fix/</link>
-      <guid>https://liyin.date/2017/01/31/zf-login-page-fix/</guid>
-      <pubDate>Tue, 31 Jan 2017 19:05:28 GMT</pubDate>
-      <description>
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;哼，我看着正方教务系统不爽很久了，特别是那个登录页，输入框不齐，验证码飘在输入框中间，看着无比的难受。&lt;br&gt;&lt;img src=&quot;/2017/01/31/zf-login-p
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/01/31/zf-login-page-fix/#disqus_thread</comments>
     </item>
     
   </channel>
