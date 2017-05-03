@@ -10,7 +10,8 @@
 <blockquote>
 <p>不要问为什么不用 CC 了，CC 是订阅型的，只有按月按年订阅，没有终身购买的选项。而 CS6 是可以一次购买终身使用的。  </p>
 </blockquote>
-<p>于是乎，我就购买并安装了 <code>Illustrator</code> ，并使用 <code>Adobe Creative Cloud</code> 将它升级到尽可能达到的最新版。<br>然后嘛，因为我并不会用 <code>Illustrator</code> ，而且这几天也比较忙，于是就没管它，今天忙完其他事后比较空闲，于是就想练习下使用  <code>Illustrator</code>。<br>最近呢，《时钟机关之星》终于动画化了，我比较喜欢那个 OP 最后的齿轮画面，于是就想着画个齿轮来练习练习。<br>画图过程就省略吧…..<br>经过1个小时的努力最终画成了这样…..（崩溃前的截图）<br><img src="https://skyedge.b0.upaiyun.com/2017/04/30/one-adobe-carsh-resolve/Crash-1.jpg" alt=""><br>然后…我想，先导出成个 svg 看看也许不错…..然而噩梦发生了….<br><img src="https://skyedge.b0.upaiyun.com/2017/04/30/one-adobe-carsh-resolve/Crash-2.jpg" alt=""><br>我瞬间就想起了一幅图！<br><img src="https://skyedge.b0.upaiyun.com/2017/04/30/one-adobe-carsh-resolve/Crash-3.gif" alt=""><br>然而，我并没有保存工程文件，于是我又打开 AI 又画了一次….这回我倒是记得保存工程文件了….然而….. <strong>BOOM!</strong><br><img src="https://skyedge.b0.upaiyun.com/2017/04/30/one-adobe-carsh-resolve/Crash-4.jpg" alt=""><br>这我就不高兴了，你说我明明买了正版软件对吧，这全新安装还崩溃，说不过去吧？！<br>于是乎…就到了排查问题的时候….<br>出现问题第一步….<strong>重启</strong>…..（没用<br>第二步….<strong>重装</strong>……（重装了3次都没用<br>而且！从第二次重装之后，只要点击了 <code>新建</code> 选项就会卡死崩溃，这彻底没法用啊！<br>第三步….<strong>兼容模式</strong>…..（卵用没有…..<br>这时候我突然想到了，Windows中自带了一个工具，名字叫做 <code>资源监视器</code> ，就是下面这货，在任务管理器的性能选项卡里可以找到入口。<br><img src="https://skyedge.b0.upaiyun.com/2017/04/30/one-adobe-carsh-resolve/Crash-5.png" alt=""><br>打开之后再次打开 AI ，并在 <code>资源监视器</code> 中勾选 <code>Illustrator.exe</code> ，然后切换到CPU选项卡就会显示它的所有相关信息。然后，回到 AI 界面，点击新建，嗯…..卡死如约而至……<br>这时候，<code>资源监视器</code> 中 <code>Illustrator.exe</code> 变为了红色，并显示未响应，这时，我发现它的 CPU 和内存并没有出现波动，说明没有发生内存泄漏或者死循环这类错误，这种情况一般应该是它在等待什么完成。于是右键它，选择 <code>分析等待链...</code><br>这时候，弹出了一个窗口（当时太激动忘记截图了），上面显示 <code>Illustrator.exe</code> 正在等待 <code>spoolsv.exe</code> ，这个进程其实很容易知道————这是<code>打印机服务</code>，也就是说，打印机服务卡死了 AI 的进程….这是怎么回事呢？<br>原来这跟我之前添加的打印机有关，我在学校实验室的时候添加了2个打印机，一个是用 <code>Internet 打印服务</code> 添加的，使用 <code>http</code> 方式访问的打印服务，另一个是使用局域网共享添加的打印机，而我现在并不在学校，于是这两个打印机并不能被成功连接，所以 AI 一直在等待他们的设置，直到系统认为 AI 已经运行超时…..<br>于是，很简单，删除2个打印机即可，删除后再次打开 AI ，保存文件，问题消失！  </p>
+<p>于是乎，我就购买并安装了 <code>Illustrator</code> ，并使用 <code>Adobe Creative Cloud</code> 将它升级到尽可能达到的最新版。<br>然后嘛，因为我并不会用 <code>Illustrator</code> ，而且这几天也比较忙，于是就没管它，今天忙完其他事后比较空闲，于是就想练习下使用  <code>Illustrator</code>。<br>最近呢，《时钟机关之星》终于动画化了，我比较喜欢那个 OP 最后的齿轮画面，于是就想着画个齿轮来练习练习。<br>画图过程就省略吧…..<br>经过1个小时的努力最终画成了这样…..（崩溃前的截图）<br><img src="https://skyedge.b0.upaiyun.com/2017/04/30/one-adobe-carsh-resolve/Crash-1.jpg" alt=""><br>然后…我想，先导出成个 svg 看看也许不错…..然而噩梦发生了….<br><img src="https://skyedge.b0.upaiyun.com/2017/04/30/one-adobe-carsh-resolve/Crash-2.jpg" alt=""><br>我瞬间就想起了一幅图！</p>
+<p><video src="https://skyedge.b0.upaiyun.com/2017/04/30/one-adobe-carsh-resolve/Crash-3.mp4" autoplay loop preload=""><img src="https://skyedge.b0.upaiyun.com/2017/04/30/one-adobe-carsh-resolve/Crash-3.gif" alt=""></video><br>然而，我并没有保存工程文件，于是我又打开 AI 又画了一次….这回我倒是记得保存工程文件了….然而….. <strong>BOOM!</strong><br><img src="https://skyedge.b0.upaiyun.com/2017/04/30/one-adobe-carsh-resolve/Crash-4.jpg" alt=""><br>这我就不高兴了，你说我明明买了正版软件对吧，这全新安装还崩溃，说不过去吧？！<br>于是乎…就到了排查问题的时候….<br>出现问题第一步….<strong>重启</strong>…..（没用<br>第二步….<strong>重装</strong>……（重装了3次都没用<br>而且！从第二次重装之后，只要点击了 <code>新建</code> 选项就会卡死崩溃，这彻底没法用啊！<br>第三步….<strong>兼容模式</strong>…..（卵用没有…..<br>这时候我突然想到了，Windows中自带了一个工具，名字叫做 <code>资源监视器</code> ，就是下面这货，在任务管理器的性能选项卡里可以找到入口。<br><img src="https://skyedge.b0.upaiyun.com/2017/04/30/one-adobe-carsh-resolve/Crash-5.png" alt=""><br>打开之后再次打开 AI ，并在 <code>资源监视器</code> 中勾选 <code>Illustrator.exe</code> ，然后切换到CPU选项卡就会显示它的所有相关信息。然后，回到 AI 界面，点击新建，嗯…..卡死如约而至……<br>这时候，<code>资源监视器</code> 中 <code>Illustrator.exe</code> 变为了红色，并显示未响应，这时，我发现它的 CPU 和内存并没有出现波动，说明没有发生内存泄漏或者死循环这类错误，这种情况一般应该是它在等待什么完成。于是右键它，选择 <code>分析等待链...</code><br>这时候，弹出了一个窗口（当时太激动忘记截图了），上面显示 <code>Illustrator.exe</code> 正在等待 <code>spoolsv.exe</code> ，这个进程其实很容易知道————这是<code>打印机服务</code>，也就是说，打印机服务卡死了 AI 的进程….这是怎么回事呢？<br>原来这跟我之前添加的打印机有关，我在学校实验室的时候添加了2个打印机，一个是用 <code>Internet 打印服务</code> 添加的，使用 <code>http</code> 方式访问的打印服务，另一个是使用局域网共享添加的打印机，而我现在并不在学校，于是这两个打印机并不能被成功连接，所以 AI 一直在等待他们的设置，直到系统认为 AI 已经运行超时…..<br>于是，很简单，删除2个打印机即可，删除后再次打开 AI ，保存文件，问题消失！  </p>
 <blockquote>
 <p>注意： Wolfram Mathematica 也存在这个问题，如果你添加过共享打印机，并且你当前不能正常连接他们时，就会发生这个问题，删除他们即可！</p>
 </blockquote>
@@ -25,9 +26,9 @@
         
         <tags>
             
-            <tag> 崩溃 </tag>
-            
             <tag> Adobe </tag>
+            
+            <tag> 崩溃 </tag>
             
         </tags>
         
@@ -50,9 +51,9 @@
             
             <tag> 闲聊 </tag>
             
-            <tag> btrfs </tag>
-            
             <tag> 崩溃 </tag>
+            
+            <tag> btrfs </tag>
             
         </tags>
         
@@ -369,9 +370,9 @@ rc-update add dbus
         
         <tags>
             
-            <tag> 正方教务 </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> 正方教务 </tag>
             
         </tags>
         
