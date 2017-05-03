@@ -1,0 +1,32 @@
+{
+  "name"              : "天空之边",
+  "short_name"        : "天空之边",
+  "description"       : "用心探寻天空的边界",
+  "start_url"         : "/",
+  "display"           : "standalone",
+  "orientation"       : "any",
+  "background_color"  : "#66CCFF",
+  "theme_color"       : "#66CCFF",
+  "icons": [
+    {
+      "src"           : "/myfiles/images/PWA/logo072.png",
+      "sizes"         : "72x72",
+      "type"          : "image/png"
+    },
+    {
+      "src"           : "/myfiles/images/PWA/logo192.png",
+      "sizes"         : "192x192",
+      "type"          : "image/png"
+    },
+    {
+      "src"           : "/myfiles/images/PWA/logo256.png",
+      "sizes"         : "256x256",
+      "type"          : "image/png"
+    },
+    {
+      "src"           : "/myfiles/images/PWA/logo512.png",
+      "sizes"         : "512x512",
+      "type"          : "image/png"
+    }
+  ]
+}
