@@ -15,7 +15,7 @@
 <blockquote>
 <p>注意： Wolfram Mathematica 也存在这个问题，如果你添加过共享打印机，并且你当前不能正常连接他们时，就会发生这个问题，删除他们即可！</p>
 </blockquote>
-<script>document.querySelector('.vautoplay').play();</script>]]></content>
+<script>queue.offer(function(){document.querySelector('.vautoplay').play();});</script>]]></content>
       
         <categories>
             
