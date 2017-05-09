@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Thu, 04 May 2017 09:20:23 GMT</pubDate>
+    <pubDate>Tue, 09 May 2017 16:47:22 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>QQ 闪照截图</title>
+      <link>https://liyin.date/2017/05/09/qq-flash-photo-capture/</link>
+      <guid>https://liyin.date/2017/05/09/qq-flash-photo-capture/</guid>
+      <pubDate>Tue, 09 May 2017 20:24:34 GMT</pubDate>
+      <description>
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h1 id=&quot;唠叨&quot;&gt;&lt;a href=&quot;#唠叨&quot; class=&quot;headerlink&quot; title=&quot;唠叨&quot;&gt;&lt;/a&gt;唠叨&lt;/h1&gt;&lt;p&gt;现在，国内社交聊天软件中，QQ 和 微信
+      
+      </description>
+      
+      <comments>https://liyin.date/2017/05/09/qq-flash-photo-capture/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>一次 Adobe 软件的崩溃解决</title>
@@ -139,20 +153,6 @@
       </description>
       
       <comments>https://liyin.date/2017/02/20/new-index-page/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>瞎想 2017_2_7</title>
-      <link>https://liyin.date/2017/02/11/thinking-2017-2-7/</link>
-      <guid>https://liyin.date/2017/02/11/thinking-2017-2-7/</guid>
-      <pubDate>Sat, 11 Feb 2017 19:12:01 GMT</pubDate>
-      <description>
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;很多人都向往大海，很多人都喜爱着大海，一到海边我们就脱下鞋子飞快的踏进海水里嬉戏玩耍。&lt;br&gt;曾几何时，我也如此喜欢着大海，在平静的海洋中游泳，在大浪翻滚的海水中开心的玩耍。
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/02/11/thinking-2017-2-7/#disqus_thread</comments>
     </item>
     
   </channel>
