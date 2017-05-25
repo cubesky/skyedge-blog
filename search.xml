@@ -4,6 +4,21 @@
   
     
     <entry>
+      <title><![CDATA[LetAPKFly | 让安装包飞]]></title>
+      <url>https://liyin.date/2017/05/25/letapkfly/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>最近因为某些原因，国内较大的 Android 交流网站兼软件分发平台 —— <strong>酷安</strong>，对所有未实名开发者上传的软件进行了下架，包括但不限于 <strong>MyAndroidTools</strong> 、<strong>AppOps</strong>，在国内 Google Play Store 无法使用，能够提供良心软件下载的 APP 分发平台几乎没有。<br>在此，我们会尽我们的最大努力恢复一些热门软件的国内下载，现在，<a href="https://nfz.moe" target="_blank" rel="external">neoFelhz</a> 和 <a href="https://mat.letitfly.me" target="_blank" rel="external">MAT BBS</a> 创始人 <a href="https://letitfly.me" target="_blank" rel="external">LetItFly</a> 共同发起 —— <a href="https://apk.letitfly.me" target="_blank" rel="external">LetAPKFly</a> 服务，天空之边将提供自动化节点部署支持和一部分存储节点，使用 P2P 同步工具同步资源，某些高频软件将会提供直接的安装包下载链接。<br>稍后，我将引导您加入我们的 P2P 共享网络，越多人加入共享节点，我们就拥有更快的速度，相关教程将发布到项目主页 <a href="https://apk.letitfly.me" target="_blank" rel="external">https://apk.letitfly.me</a> 中<br>我们将会从 APKMirror、APKPure 等可信站点同步更新相关软件，确保安装包是原版未被修改的安装包。<br>虽然身在国内这种混乱的大环境中，但我们不忘本心，让 Android 更好的发展，同时也邀请各大开发者加入 Android 绿色生态公约，为国内的 Android 环境贡献自己的力量！</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Android </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[QQ 闪照截图]]></title>
       <url>https://liyin.date/2017/05/09/qq-flash-photo-capture/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="唠叨"><a href="#唠叨" class="headerlink" title="唠叨"></a>唠叨</h1><p>现在，国内社交聊天软件中，QQ 和 微信 一手遮天，占据了几乎所有的市场份额，在讲如何闪照截图之前，先说明我对这两个软件的看法….<br>QQ 和 微信 两者同属于 腾讯公司 的软件， 在多年的发展中，这两个软件变得臃肿不堪，运行速度十分缓慢，而且资源占用巨大。<br>动辄几百兆的安装包，后台各种唤醒，已经让我对各种国内的软件持怀疑态度。  </p>
@@ -180,9 +195,9 @@
         
         <tags>
             
-            <tag> hexo-material-theme </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> hexo-material-theme </tag>
             
             <tag> Python </tag>
             
@@ -396,9 +411,9 @@ rc-update add dbus
         
         <tags>
             
-            <tag> Javascript </tag>
-            
             <tag> 正方教务 </tag>
+            
+            <tag> Javascript </tag>
             
         </tags>
         

@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Thu, 11 May 2017 05:31:37 GMT</pubDate>
+    <pubDate>Thu, 25 May 2017 15:08:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>LetAPKFly | 让安装包飞</title>
+      <link>https://liyin.date/2017/05/25/letapkfly/</link>
+      <guid>https://liyin.date/2017/05/25/letapkfly/</guid>
+      <pubDate>Thu, 25 May 2017 22:40:42 GMT</pubDate>
+      <description>
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;最近因为某些原因，国内较大的 Android 交流网站兼软件分发平台 —— &lt;strong&gt;酷安&lt;/strong&gt;，对所有未实名开发者上传的软件进行了下架，包括但不限于 &lt;s
+      
+      </description>
+      
+      <comments>https://liyin.date/2017/05/25/letapkfly/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>QQ 闪照截图</title>
@@ -136,23 +150,6 @@
       </description>
       
       <comments>https://liyin.date/2017/02/24/blog-update-1-3-0/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>启用了新主页</title>
-      <link>https://liyin.date/2017/02/20/new-index-page/</link>
-      <guid>https://liyin.date/2017/02/20/new-index-page/</guid>
-      <pubDate>Mon, 20 Feb 2017 15:28:18 GMT</pubDate>
-      <description>
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;blockquote&gt;
-&lt;p&gt;嗯，我承认是因为我域名买多了….&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;因为需要的网站入口可能会越来越多，所以考虑了一下，写了个个人入口页面，可
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/02/20/new-index-page/#disqus_thread</comments>
     </item>
     
   </channel>
