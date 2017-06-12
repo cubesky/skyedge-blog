@@ -400,6 +400,8 @@ rc-update add dbus
 <p><link rel="stylesheet" href="/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="/myfiles/userjs/FixZFLoginpage.user.js">安装 正方教务系统登录页修复脚本</a>  </p>
 <hr>
 <p>2017/3/4 更新<br>增加了验证码识别</p>
+<hr>
+<p>2017/6/12 更新<br>验证码请求方式变更，暂时取消验证码识别</p>
 ]]></content>
       
         <categories>

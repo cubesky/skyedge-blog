@@ -1,14 +1,12 @@
 // ==UserScript==
 // @name         修复正方页面问题
 // @namespace    cubesky.zf.login
-// @version      0.2
+// @version      0.3
 // @description  正方垃圾
 // @author       CubeSky
 // @match        https://jwxt.webvpn.buu.edu.cn/*
 // @include      http://jwxt.buu.edu.cn/*
 // @require      http://code.jquery.com/jquery-2.1.1.min.js
-// @require      https://raw.githubusercontent.com/antimatter15/ocrad.js/master/ocrad.js
-// @require      https://raw.githubusercontent.com/davidsonfellipe/lena.js/master/dist/lena.min.js
 // @grant        none
 // ==/UserScript==
 
@@ -41,29 +39,4 @@
     skyyzm.id='guessyzm';
     skyyzm.innerHTML='';
     $('.login_main')[0].appendChild(skyyzm);
-    // 验证码补丁 (WIP)
-    var image = new Image();
-    var canvas = document.createElement('canvas'),
-    canvasContext = canvas.getContext('2d');
-    image.onload = function () {
-        canvas.width = image.width;
-        canvas.height = image.height;
-        canvasContext.drawImage(image, 0, 0, image.width, image.height);
-        var dataURL = canvas.toDataURL();
-        $('#icode').prop('src',dataURL);
-        LenaJS.filterImage(canvas,LenaJS.saturation ,canvas);
-        LenaJS.filterImage(canvas,LenaJS.sepia,canvas);
-        LenaJS.filterImage(canvas,LenaJS.thresholding,canvas);
-        var string = OCRAD(canvas);
-        console.log('OCRAD think image should be '+string);
-        var skyyzm=document.getElementById('guessyzm');
-        skyyzm.innerHTML='<a href=\'#\' id=\'guessyzm\'>我猜测这次的验证码是 '+string+'</a>';
-        $('#guessyzm').unbind('click');
-        $('#guessyzm').click(function(){ $('#txtSecretCode').val(string); });
-    };
-    reloadcode=function(){
-        image.src='CheckCode.aspx?'+Math.random();
-        console.log('Check Code Reload By Script');
-    };
-    reloadcode();
 })();
