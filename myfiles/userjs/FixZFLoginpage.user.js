@@ -32,7 +32,7 @@
     $('.login_main')[0].appendChild(skynode);
     var skyfix=document.createElement('div');
     skyfix.className='login_copyright';
-    skyfix.innerHTML='<div>-----------------------------------------</div><div>本次修复的内容如下：</div><div>0/ 密码输入框自动填充不正常的问题</div><div>1/ 验证码位置错误的问题</div><div>2/ 输入框不一样长的问题</div><div>3/ 需要输入验证码的问题（笑</div>';
+    skyfix.innerHTML='<div>-----------------------------------------</div><div>本次修复的内容如下：</div><div>0/ 密码输入框自动填充不正常的问题</div><div>1/ 验证码位置错误的问题</div><div>2/ 输入框不一样长的问题</div>';
     $('.login_main')[0].appendChild(skyfix);
     var skyyzm=document.createElement('div');
     skyyzm.className='login_copyright';
