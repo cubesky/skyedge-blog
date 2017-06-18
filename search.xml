@@ -4,6 +4,48 @@
   
     
     <entry>
+      <title><![CDATA[Android 开发为什么不应该继续使用 Eclipse]]></title>
+      <url>https://liyin.date/2017/06/18/why-not-continue-use-eclipse-on-android-program/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>借着我现在学校正在教 Android 开发的契机，聊一聊为什么你应当使用 <code>Android Studio</code> 而不再使用 <code>Eclipse + ADT</code> 的方式。</p>
+<h1 id="我与-Android-开发"><a href="#我与-Android-开发" class="headerlink" title="我与 Android 开发"></a>我与 Android 开发</h1><p>我和 Android 接触的时间大概在 2010 年前后，那时候是我的高中时期，当时我获得了我人生中的第一部 Android 手机————或者说是 Android 平板？ <code>三星 Galaxy Tab P1000</code> ，七寸屏幕的可以插卡打电话的“手机”，运行着 Android 2.2 系统，由于我当时对编程狂热的爱好（现在也是），从书店买了几本 Android 入门的书在暑假的最后2个星期靠自学入门的 Android/Java ，没错，我当时完全不会 Java ，我是先学习的 Android ，后来因为想做些小工具就直接换到 Java 开发了，一直到现在 Java 依然是我的主要开发语言之一。  </p>
+<p>当时的开发工具就是 <code>Eclipse + Android SDK / ADT</code> ，当时我也在比赛中拿到了比较好的名次，也影响了我的高考成绩（当然是正面影响），不过回头再看我那时候写的程序简直惨不忍睹，黑历史黑历史…….  </p>
+<h1 id="Android-学习进程"><a href="#Android-学习进程" class="headerlink" title="Android 学习进程"></a>Android 学习进程</h1><p>下面这个说法也许很多人不信，那个我拿来参加比赛的程序最开始并不是我想用它来比赛，而是我自己需要用到就写了那个，然后被老师发现就被拽去比赛了….直到现在，我对各种比赛的看法依旧是不为了比赛而写程序，而是去写对生活对大家有用处的程序，那些写了交了就没用了的东西就是一堆的垃圾。  </p>
+<p>所以，也是这样我的开发进程并没有停止，而是一直继续了下去，经历了 <code>Android 2.2</code> 之后，随着 Android 系统版本的更新和家里某些设备的购入，我先后以 <code>Android 2.2</code> / <code>4.0.3</code> / <code>4.1</code> / <code>4.3</code> 作为目标版本进行软件开发，这时有2件事情发生了：  </p>
+<ul>
+<li>我的设备更换为了运行 Android 4.3 系统的 Coolpad 8720L</li>
+<li>Android Studio 发布  </li>
+</ul>
+<p>这时因为我的 <code>Eclipse</code> 上有大量的 Android 工程，而且 <code>Android Studio</code> 并没有发布稳定版本，所以我始终没有将开发工具切换至 <code>Android Studio</code>。这期间我也没有什么特别的事情发生，因为这一段时间我在使用 Java 给服务器写一些小工具什么的，没怎么碰 Android 的代码。<br>时间到了 2015 年，我又一次更新了设备，更换为了现在正在使用 <code>三星 Note 3</code> ，也是差不多同一时刻，我开始使用 <code>Android Studio</code>写我的首个使用 <code>Android Studio</code> 开发的 <code>Android App</code>。这时，<code>Android Studio</code> 已经到达了 <code>1.2.0</code>  版本，稳定性已经比早前的版本有了极大的提升。</p>
+<p>虽然刚开始更换到 <code>Android Studio</code> 时影响了开发速度，但一个星期之后开发效率比使用 <code>Eclipse</code> 更高，这得益于 <code>Android Studio</code> 优秀的 <code>Lint</code> 系统和自动补全机制，以及 <code>XML</code> 值快速一览，让代码可读性大幅度提高。</p>
+<p>在我看来，随着我之后一直使用 <code>Android Studio</code> 进行开发，<code>Android Studio</code> 从 <code>1.3.1</code> 开始迎来稳定的版本，也是从这个版本开始，Android Studio 几乎没再发生过崩溃或者遭遇奇怪的 bug。而现在 Android Studio 稳定版本已经来到了 <code>Android Studio 2.3.3</code>。</p>
+<h1 id="Android-Studio-与-Eclipse-有何不同？为什么不应该继续使用-Eclipse-？"><a href="#Android-Studio-与-Eclipse-有何不同？为什么不应该继续使用-Eclipse-？" class="headerlink" title="Android Studio 与 Eclipse 有何不同？为什么不应该继续使用 Eclipse ？"></a>Android Studio 与 Eclipse 有何不同？为什么不应该继续使用 Eclipse ？</h1><p><code>Android Studio</code> 基于 <code>JetBrain IntelliJ IDEA</code> 深度定制，<code>Eclipse</code> 则是使用 <code>ADT</code> 插件安装至一个已经存在的 <code>Eclipse</code> 中。<br><code>Eclipse ADT</code> 开发插件已经于 2015 年 6 月停止支持，它不再支持新的 Android 开发工具以及组件包。也不会修复已知的 bug 和安全漏洞。</p>
+<p>具体参见 <a href="https://developer.android.com/studio/tools/sdk/eclipse-adt.html" target="_blank" rel="external">这里</a> 和 <a href="https://android-developers.googleblog.com/2015/06/an-update-on-eclipse-android-developer.html" target="_blank" rel="external">这里</a></p>
+<p><code>Android Studio</code> 使用 <code>Gradle</code> 构建工具，支持代码混编，可以轻易的控制编译流，增加依赖，多渠道打包，代码自动化测试等。<br>同时从 <code>Android Studio 2.x</code> 开始，支持完整的拖拽布局编辑以及为了拖拽编辑而设计的约束视图。<br>同时，还支持 9png 的直接编辑，布局实时预览等。<br><code>Android Studio</code> 还支持直接接入 <code>Firebase</code> 平台，实施低电力损耗的消息推送，错误报告，应用内支付等等。<br>在我看来，如果你不是因为旧代码必须使用 <code>Eclipse</code> 的话（即 Eclipse 到 Android Studio 的转换会发生问题），那么你完全应当使用 <code>Android Studio</code>。</p>
+<h1 id="Android-Studio-的代码文件夹发送起来不方便"><a href="#Android-Studio-的代码文件夹发送起来不方便" class="headerlink" title="Android Studio 的代码文件夹发送起来不方便"></a>Android Studio 的代码文件夹发送起来不方便</h1><p>Eclipse 代码文件夹只有 600K 左右 ，而 <code>Android Studio</code> 的文件夹则高达 30MB<br>我觉得只有以下几种人会有这个问题： </p>
+<ol>
+<li>在上 Android 课的时候想从别人那偷懒复制代码</li>
+<li>不会用代码管理系统（Git、SVN 等）</li>
+</ol>
+<p>那么对于这个问题，也是很好解决的，当然使用代码管理系统是最好的选择，因为支持代码历史，变更历史，分支追踪，错误追踪等等一系列功能，我相信需要的人一定会去学习的，这并不难，Git 的中文操作手册非常丰富，几乎每一个都讲的很清楚。<br>如果你只是想复制别人的代码来抄一抄的话，那么在复制之前，删除工程目录下 app 目录中的 build 文件夹，即可将 Android Studio 工程文件夹缩小到 2M 左右，而这个文件夹中只是 Android 开发时生成的东西，并不影响代码，拿到自己的机器上打开工程时就会自动生成了。</p>
+<h1 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h1><p>最近的 Google I/O 2017 开发者大会宣布，<code>Kotlin</code> 成为 Android 官方支持的开发语言，而 <code>Kotlin</code> 的原发布者并不是 Google 而是 <code>Android Studio</code> 的 IDE 开发公司 JetBrain ，所以从现在，拥抱 <code>Android Studio</code> 吧！<br>说来神奇，Android 又一次大升级，我恰巧又要换手机了…..不出意外的话….下一篇博客应该是 <code>一加5</code> 的开箱吧……</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 闲聊 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 闲聊 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[LetAPKFly | 让安装包飞]]></title>
       <url>https://liyin.date/2017/05/25/letapkfly/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>最近因为某些原因，国内较大的 Android 交流网站兼软件分发平台 —— <strong>酷安</strong>，对所有未实名开发者上传的软件进行了下架，包括但不限于 <strong>MyAndroidTools</strong> 、<strong>AppOps</strong>，在国内 Google Play Store 无法使用，能够提供良心软件下载的 APP 分发平台几乎没有。<br>在此，我们会尽我们的最大努力恢复一些热门软件的国内下载，现在，<a href="https://nfz.moe" target="_blank" rel="external">neoFelhz</a> 和 <a href="https://mat.letitfly.me" target="_blank" rel="external">MAT BBS</a> 创始人 <a href="https://letitfly.me" target="_blank" rel="external">LetItFly</a> 共同发起 —— <a href="https://apk.letitfly.me" target="_blank" rel="external">LetAPKFly</a> 服务，天空之边将提供自动化节点部署支持和一部分存储节点，使用 P2P 同步工具同步资源，某些高频软件将会提供直接的安装包下载链接。<br>稍后，我将引导您加入我们的 P2P 共享网络，越多人加入共享节点，我们就拥有更快的速度，相关教程将发布到项目主页 <a href="https://apk.letitfly.me" target="_blank" rel="external">https://apk.letitfly.me</a> 中<br>我们将会从 APKMirror、APKPure 等可信站点同步更新相关软件，确保安装包是原版未被修改的安装包。<br>虽然身在国内这种混乱的大环境中，但我们不忘本心，让 Android 更好的发展，同时也邀请各大开发者加入 Android 绿色生态公约，为国内的 Android 环境贡献自己的力量！</p>

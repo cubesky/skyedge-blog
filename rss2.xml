@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Tue, 13 Jun 2017 02:16:55 GMT</pubDate>
+    <pubDate>Sun, 18 Jun 2017 13:55:35 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Android 开发为什么不应该继续使用 Eclipse</title>
+      <link>https://liyin.date/2017/06/18/why-not-continue-use-eclipse-on-android-program/</link>
+      <guid>https://liyin.date/2017/06/18/why-not-continue-use-eclipse-on-android-program/</guid>
+      <pubDate>Sun, 18 Jun 2017 20:53:45 GMT</pubDate>
+      <description>
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;借着我现在学校正在教 Android 开发的契机，聊一聊为什么你应当使用 &lt;code&gt;Android Studio&lt;/code&gt; 而不再使用 &lt;code&gt;Eclipse + 
+      
+      </description>
+      
+      <comments>https://liyin.date/2017/06/18/why-not-continue-use-eclipse-on-android-program/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>LetAPKFly | 让安装包飞</title>
@@ -136,20 +150,6 @@
       </description>
       
       <comments>https://liyin.date/2017/02/24/join-into-nyaacat/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>博客升级 1.3.0 &amp; HMTHelper</title>
-      <link>https://liyin.date/2017/02/24/blog-update-1-3-0/</link>
-      <guid>https://liyin.date/2017/02/24/blog-update-1-3-0/</guid>
-      <pubDate>Fri, 24 Feb 2017 00:16:54 GMT</pubDate>
-      <description>
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;经过了1个月的难产… &lt;code&gt;hexo-material-theme&lt;/code&gt; 迎来了一个大版本升级 &lt;code&gt;1.3.0&lt;/code&gt; 。在这次的升级中修复了古老
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/02/24/blog-update-1-3-0/#disqus_thread</comments>
     </item>
     
   </channel>
