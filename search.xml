@@ -4,6 +4,151 @@
   
     
     <entry>
+      <title><![CDATA[一加5使用感受与折腾]]></title>
+      <url>https://liyin.date/2017/07/02/oneplus5/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="使用感受"><a href="#使用感受" class="headerlink" title="使用感受"></a>使用感受</h1><h2 id="硬件方面"><a href="#硬件方面" class="headerlink" title="硬件方面"></a>硬件方面</h2><h3 id="手感"><a href="#手感" class="headerlink" title="手感"></a>手感</h3><p>一加5的握持手感很滑，而且很轻，我的前一款手机是三星的 Note3 所以感觉到一加5拿在手里很快就会滑下去的感觉，后来加了那个芳纶纤维的外壳之后感觉手感好很多。</p>
+<h3 id="外壳"><a href="#外壳" class="headerlink" title="外壳"></a>外壳</h3><p>芳纶纤维的外壳总体来说手感不错，而且它是全包的，正面也会比手机屏幕突出来一些，能有效的保护屏幕，不过装上外壳之后，侧面的三段式开关就有点不好操作了。</p>
+<h3 id="Dash-闪充"><a href="#Dash-闪充" class="headerlink" title="Dash 闪充"></a>Dash 闪充</h3><p>这个闪充非常快，只需要大概 40 分钟即可充满，非常爽，不过充电器有点烫…..（手机不烫）</p>
+<h3 id="相机"><a href="#相机" class="headerlink" title="相机"></a>相机</h3><p>这次搭载了双摄，背景虚化看起来还不错，就是没有光学防抖，让我拍了好几张虚的照片….</p>
+<h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><p>因为一加的系统已经开始自带 Google 框架（默认未开启），所以我就继续使用一加的 H2OS 了</p>
+<p>一加的系统默认还是带了些预装的软件，比如手机京东、支付宝之类的，不过都是可以直接卸载的，把这些第三方软件全部卸载之后，手机只会剩下 15 个基础软件，非常的清爽。</p>
+<h1 id="折腾"><a href="#折腾" class="headerlink" title="折腾"></a>折腾</h1><p>我相信很多人都看过一加5的评测了，所以我也不多说评测内容了，我还是比较喜欢搞一搞系统。  </p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="解锁"><a href="#解锁" class="headerlink" title="解锁"></a>解锁</h3><img src="/2017/07/02/oneplus5/developer.jpg" alt="Developer" title="Developer">
+<blockquote>
+<p>注意：解锁手机会导致手机初始化丢失所有数据，请做好备份！</p>
+</blockquote>
+<ol>
+<li>进入 设置 - 关于手机 连点 版本号7次开启开发者模式</li>
+<li>进入 开发者选项 选择 OEM 解锁 和 USB 调试</li>
+<li>将手机连接至电脑（注意安装好 adb 和 fastboot）输入以下命令</li>
+</ol>
+<pre class="line-numbers language-bash"><code class="language-bash">adb reboot-bootloader
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这时候手机应该会弹出是否允许计算机调试，选择 是，重启到 Bootloader 后执行以下命令</p>
+<pre class="line-numbers language-bash"><code class="language-bash">fastboot oem unlock
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>同时在手机上按照说明操作进行解锁。完成后重启手机。</p>
+<h3 id="刷入-TWRP-并获得-Root-权限"><a href="#刷入-TWRP-并获得-Root-权限" class="headerlink" title="刷入 TWRP 并获得 Root 权限"></a>刷入 TWRP 并获得 Root 权限</h3><p>首先到 XDA 论坛下载 OnePlus5 使用的 TWRP 刷机包 和 Magisk 刷机包，在等待它下载完成的时候，先更改下手机的设置：</p>
+<ol>
+<li>开启开发者模式</li>
+<li>选中 高级重启 和 USB调试</li>
+</ol>
+<p>这时候应该 TWRP 已经下载完了，现在继续执行下面的步骤 </p>
+<p>把 Magisk 刷机包复制到手机中，然后执行</p>
+<pre class="line-numbers language-bash"><code class="language-bash">adb reboot-bootloader
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>等待重启进入 Bootloader 之后，执行</p>
+<pre class="line-numbers language-bash"><code class="language-bash">fastboot flash recovery <span class="token operator">&lt;</span>TWRP的文件名<span class="token operator">></span>
+fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<blockquote>
+<p>注意： 把上面的 <twrp的文件名> 换成你下载的 TWRP 文件名！</twrp的文件名></p>
+</blockquote>
+<p>现在，你进入了 TWRP ，选择 安装 然后选择你复制进去的 Magisk 刷机包，完成后重启手机。</p>
+<blockquote>
+<p>注意：如果你要升级系统，请刷入原版 Recovery ，升级后再刷入 TWRP ，然后再刷入一次 Magisk 即可。</p>
+</blockquote>
+<h3 id="调整-Magisk"><a href="#调整-Magisk" class="headerlink" title="调整 Magisk"></a>调整 Magisk</h3><p>现在你通过 MagiskSU 获取了 Root 权限。不过你还需要一点配置，让 Magisk 更好的工作。</p>
+<img src="/2017/07/02/oneplus5/Magisk.jpg" alt="Magisk" title="Magisk">
+<ol>
+<li>打开主菜单中的 Magisk Manager 展开左侧抽屉菜单选择设置</li>
+<li>选中 Magisk Hide 和 Systemless hosts</li>
+</ol>
+<img src="/2017/07/02/oneplus5/MagiskHide.jpg" alt="MagiskHide" title="MagiskHide">
+<blockquote>
+<p>为什么使用 Magisk ？<br>因为 Magisk 不会破坏 SafetyNet ，它能让你继续使用 Android 软件的所有功能。（部分软件在 SafetyNet 失败时禁止工作）</p>
+</blockquote>
+<h3 id="激活-Google-框架"><a href="#激活-Google-框架" class="headerlink" title="激活 Google 框架"></a>激活 Google 框架</h3><p>在 一加商城 中搜索安装 Google Play 即可解锁 Google 框架。  </p>
+<p>然后，发挥你们的想象力————科学上网，登录 Google 账号并下载软件吧！</p>
+<h3 id="对国产毒瘤软件的优化"><a href="#对国产毒瘤软件的优化" class="headerlink" title="对国产毒瘤软件的优化"></a>对国产毒瘤软件的优化</h3><p>这一步骤需要几个软件来帮助我们 <code>绿色守护</code> 、 <code>MyAndroidTools</code> 和 <code>Island</code></p>
+<h3 id="绿色守护"><a href="#绿色守护" class="headerlink" title="绿色守护"></a>绿色守护</h3><img src="/2017/07/02/oneplus5/greenify.jpg" alt="Greenify" title="Greenify">
+<p>它能够切断软件唤醒途径，把你不需要一直使用的软件（比如 <code>Facebook</code> 、<code>微博</code> 之类的）添加进去就好。</p>
+<p>然后，访问 <a href="https://greenify.github.io/greenify/rx-mipush" target="_blank" rel="external">https://greenify.github.io/greenify/rx-mipush</a> 安装 <code>小米推送 切断处方</code>。避免小米推送在后台大量耗电。</p>
+<img src="/2017/07/02/oneplus5/MiPush.png" alt="MiPush" title="MiPush">
+<p>进入设置，设置工作模式为 Root 模式，开启<code>嗜睡模式</code>、<code>唤醒追踪及切断</code>、<code>全自动化关屏</code>，如果你启用了指纹的话要开启<code>特殊方式关屏</code>。</p>
+<p>备注，以下软件需要特殊设置：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">软件名</th>
+<th style="text-align:left">模式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">手机淘宝</td>
+<td style="text-align:left">休眠时无视状态</td>
+</tr>
+<tr>
+<td style="text-align:left">Cortana</td>
+<td style="text-align:left">切断唤醒途径</td>
+</tr>
+<tr>
+<td style="text-align:left">知乎</td>
+<td style="text-align:left">后台纯净模式</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Island"><a href="#Island" class="headerlink" title="Island"></a>Island</h4><p>这是一个利用 Android 工作模式特性进行应用隔离的软件，同时也能控制 Island 管控内的软件后台运行。  </p>
+<img src="/2017/07/02/oneplus5/island.jpg" alt="Island" title="Island">
+<p>安装好之后，跟着向导进行设置即可，我添加到 Island 的软件是 <code>TIM（QQ）</code>、<code>微信</code>、<code>微博国际版</code>、<code>手机淘宝</code>、<code>支付宝</code>  </p>
+<p>注意，以上几个软件都只需要在 Island 内安装。</p>
+<p>同时将 微博、淘宝、支付宝 选中点击下面的叶子图标，让绿色守护应用冻结。</p>
+<blockquote>
+<p>注意：使用 Island 会丢失一加5 H2OS 的锁屏长按 HOME 键快速唤出支付码的能力！</p>
+</blockquote>
+<h4 id="MyAndroidTools"><a href="#MyAndroidTools" class="headerlink" title="MyAndroidTools"></a>MyAndroidTools</h4><p>这一部分请查看 <a href="https://mat.letitfly.me" target="_blank" rel="external">MAT BBS</a> 进行设置！</p>
+<h3 id="进行一点配置"><a href="#进行一点配置" class="headerlink" title="进行一点配置"></a>进行一点配置</h3><p>如果你使用了 Island ，你会发现 QQ 和 微信 无法接收分享的图片了，因为他们的设计并不好，不能适配 Android 的工作模式，所以我们需要一个第三方软件来帮助他们。</p>
+<h4 id="Rikka-Bridge"><a href="#Rikka-Bridge" class="headerlink" title="Rikka Bridge"></a>Rikka Bridge</h4><img src="/2017/07/02/oneplus5/bridge.jpg" alt="Bridge" title="Bridge">
+<p>好吧，这个软件就叫 Bridge ….. 不过这是 Rikka 做的，所以就叫 Rikka Bridge 啦，在 <a href="https://play.google.com/store/apps/details?id=moe.shizuku.bridge" target="_blank" rel="external">这里</a> 能够找到。</p>
+<p>当然你还能在 <a href="https://apk.letitfly.me" target="_blank" rel="external">LetAPKFly</a> 找到免费版本，不过 Rikka 那么可爱，不来买一个吗？ </p>
+<p><del>好耶！是 Rikka ！</del></p>
+<h4 id="启用-Google-Assistant"><a href="#启用-Google-Assistant" class="headerlink" title="启用 Google Assistant"></a>启用 Google Assistant</h4><img src="/2017/07/02/oneplus5/Assistant.png" alt="Assistant" title="Assistant">
+<p>安装 <a href="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox" target="_blank" rel="external">Google App</a><br>首先，把手机语言设置为 <code>英文</code> ，然后打开 设置 - 按键 ，Home 键 长按操作选择 <code>搜索助手</code> 即可</p>
+<h4 id="Now-on-Tap"><a href="#Now-on-Tap" class="headerlink" title="Now on Tap"></a>Now on Tap</h4><p>如果，你不想使用英文系统，那么你只能使用 Google 的 <code>Now on tap</code></p>
+<img src="/2017/07/02/oneplus5/NowOnTap.jpg" alt="NowOnTap" title="NowOnTap">
+<p>当然首先也需要 <a href="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox" target="_blank" rel="external">Google App</a> ，同样也需要设置<code>搜索助手</code></p>
+<p>只不过，这次你需要一个能帮你打开任意 Activity 的软件，比如 <a href="https://play.google.com/store/apps/details?id=de.szalkowski.activitylauncher" target="_blank" rel="external"><code>Activity Launcher</code></a> </p>
+<img src="/2017/07/02/oneplus5/activitylauncher.jpg" alt="ActivityLauncher" title="ActivityLauncher">
+<p>安装后，打开软件，找到 设置 ，找到 <code>语言</code> 然后添加语言，设置第二语言为 <code>English (United States)</code> </p>
+<p>现在你可以使用 <code>Now on tap</code> 了</p>
+<h4 id="Android-7-x-彩蛋"><a href="#Android-7-x-彩蛋" class="headerlink" title="Android 7.x 彩蛋"></a>Android 7.x 彩蛋</h4><p>点击 <code>设置</code> - <code>关于</code> 中的 <code>Android 版本</code> 数次，显示 N 点击几次之后长按，会在下方显示一个小猫头</p>
+<p>现在，展开你的通知栏，进行编辑快捷按钮，会发现一个显示 ??? 的盘子，把他拖到快捷按钮上保存。</p>
+<p>这时候点击盘子可以往上面放食物，放上之后，过一会儿就会有猫跑过来啦~ </p>
+<p>长按盘子，可以看到以往抓到的猫哦~  </p>
+<img src="/2017/07/02/oneplus5/egg.jpg" alt="Egg" title="Egg">
+<blockquote>
+<p>天空我也是一只喵！</p>
+</blockquote>
+<h3 id="之后呢？"><a href="#之后呢？" class="headerlink" title="之后呢？"></a>之后呢？</h3><p>经过以上的优化之后，在我一天的中度使用下，续航时间达到了 11 小时，其中包含玩 <code>炉石传说</code> 和 <code>同步音律喵赛克</code> 的时间。</p>
+<img src="/2017/07/02/oneplus5/Battery1.jpg" alt="BatteryBeforeCharge" title="BatteryBeforeCharge">
+<img src="/2017/07/02/oneplus5/Battery2.jpg" alt="BatteryAfterCharge" title="BatteryAfterCharge">
+<blockquote>
+<p>本文刷入系统部分参考 XDA 论坛的 <a href="https://forum.xda-developers.com/oneplus-5/how-to/oneplus-5-unlock-bootloader-flash-twrp-t3624877" target="_blank" rel="external">这篇</a> 帖子完成，你可以在原帖中下载到 TWRP 和 Magisk 以及原版 Recovery </p>
+<p>本文部分软件可以在 <a href="https://apk.letitfly.me" target="_blank" rel="external">LetAPKFly</a> 下载到</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> OnePlus5 </tag>
+            
+            <tag> 一加5 </tag>
+            
+            <tag> 折腾 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Android 开发为什么不应该继续使用 Eclipse]]></title>
       <url>https://liyin.date/2017/06/18/why-not-continue-use-eclipse-on-android-program/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>借着我现在学校正在教 Android 开发的契机，聊一聊为什么你应当使用 <code>Android Studio</code> 而不再使用 <code>Eclipse + ADT</code> 的方式。</p>
@@ -456,9 +601,9 @@ rc-update add dbus
         
         <tags>
             
-            <tag> Javascript </tag>
-            
             <tag> 正方教务 </tag>
+            
+            <tag> Javascript </tag>
             
         </tags>
         

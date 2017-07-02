@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Mon, 26 Jun 2017 01:22:50 GMT</pubDate>
+    <pubDate>Sun, 02 Jul 2017 16:52:48 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>一加5使用感受与折腾</title>
+      <link>https://liyin.date/2017/07/02/oneplus5/</link>
+      <guid>https://liyin.date/2017/07/02/oneplus5/</guid>
+      <pubDate>Sun, 02 Jul 2017 20:49:38 GMT</pubDate>
+      <description>
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h1 id=&quot;使用感受&quot;&gt;&lt;a href=&quot;#使用感受&quot; class=&quot;headerlink&quot; title=&quot;使用感受&quot;&gt;&lt;/a&gt;使用感受&lt;/h1&gt;&lt;h2 id=&quot;硬件方面&quot;&gt;&lt;
+      
+      </description>
+      
+      <comments>https://liyin.date/2017/07/02/oneplus5/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Android 开发为什么不应该继续使用 Eclipse</title>
@@ -136,20 +150,6 @@
       </description>
       
       <comments>https://liyin.date/2017/03/18/alpine-linux-setup/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>加入了喵窝~</title>
-      <link>https://liyin.date/2017/02/24/join-into-nyaacat/</link>
-      <guid>https://liyin.date/2017/02/24/join-into-nyaacat/</guid>
-      <pubDate>Fri, 24 Feb 2017 00:42:22 GMT</pubDate>
-      <description>
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h1 id=&quot;喵窝是什么&quot;&gt;&lt;a href=&quot;#喵窝是什么&quot; class=&quot;headerlink&quot; title=&quot;喵窝是什么&quot;&gt;&lt;/a&gt;喵窝是什么&lt;/h1&gt;&lt;p&gt;喵窝是 Nyaa
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/02/24/join-into-nyaacat/#disqus_thread</comments>
     </item>
     
   </channel>
