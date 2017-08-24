@@ -1,9 +1,9 @@
 'use strict';
-const version = 'v201708241555';
+const version = 'v201708241601';
 const __DEVELOPMENT__ = false;
 const __DEBUG__ = false;
 const offlineResources = ['/', '/offline.html', '/offline.svg', '/Lucca-Regular.otf'];
-const ignoreFetch = [/https?:\/\/skyedge.disqus.com\//,/chrome-extension:\/\//,/https?:\/\/api.lwl12.com\//,/https?:\/\/c.disquscdn.com\//,/https?:\/\/referrer.disqus.com\//,/https?:\/\/disqus.com\//,/https?:\/\/viosey.com\//,/https?:\/\/0w0.bid\//,/https?:\/\/ooo.0o0.ooo\//,/https?:\/\/s.gravatar.com\//,/https?:\/\/www.gravatar.com\//,/https?:\/\/licensebuttons.net\//,/https?:\/\/www.google-analytics.com\//,/https?:\/\/fonts.proxy.ustclug.org\//];
+const ignoreFetch = [/https?:\/\/skyedge.disqus.com\//,/chrome-extension:\/\//,/https?:\/\/api.lwl12.com\//,/https?:\/\/c.disquscdn.com\//,/https?:\/\/referrer.disqus.com\//,/https?:\/\/disqus.com\//,/https?:\/\/viosey.com\//,/https?:\/\/0w0.bid\//,/https?:\/\/ooo.0o0.ooo\//,/https?:\/\/s.gravatar.com\//,/https?:\/\/www.gravatar.com\//,/https?:\/\/licensebuttons.net\//,/https?:\/\/www.google-analytics.com\//,/https?:\/\/fonts.cat.net\//];
 function onInstall(event) {log('install event in progress.');
     event.waitUntil(updateStaticCache());
 }
