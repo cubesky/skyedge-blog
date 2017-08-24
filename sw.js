@@ -1,5 +1,5 @@
 'use strict';
-const version = 'v201708241606';
+const version = 'v201708241617';
 const __DEVELOPMENT__ = false;
 const __DEBUG__ = false;
 const offlineResources = ['/', '/offline.html', '/offline.svg', '/Lucca-Regular.otf'];
