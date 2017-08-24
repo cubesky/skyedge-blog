@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.4.0 -->
-    <script>
+<!DOCTYPE html><html style="display: none;" lang="zh"><head><meta charset="utf-8"><script>
         window.materialVersion = "1.4.0b1"
         // Delete localstorage with these tags
         window.oldVersion = [
@@ -15,104 +7,7 @@
             '1.4.0',
             'unknownVersion'
         ]
-    </script>
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-    <link rel="dns-prefetch" href="https://skyedge.b0.upaiyun.com"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Title -->
-    
-    <title>
-        
-            QQ 闪照截图 | 
-        
-        天空之边
-    </title>
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="theme-color" content="#66CCFF">
-    <meta name="author" content="天空之间">
-    <meta name="description" itemprop="description" content="天空的边界到底在哪里？">
-    <meta name="keywords" content="SkyEdge, CubeSky">
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="https://skyedge.b0.upaiyun.com/myfiles/images/favicon.png">
-    <link rel="icon" sizes="192x192" href="https://skyedge.b0.upaiyun.com/myfiles/images/favicon.png">
-    <link rel="apple-touch-icon" href="https://skyedge.b0.upaiyun.com/myfiles/images/favicon.png">
-
-    <!--iOS -->
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="天空之边">
-
-    <!-- Site Verification -->
-    
-    
-
-    <!-- RSS -->
-    
-        
-            <link rel=alternate type="application/rss+xml" href="/rss2.xml">
-        
-    
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://skyedge.b0.upaiyun.com/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://skyedge.b0.upaiyun.com/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
+    </script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://skyedge.b0.upaiyun.com"/><title> QQ 闪照截图 | 天空之边</title><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><meta name="format-detection" content="telephone=no"/><meta name="theme-color" content="#66CCFF"><meta name="author" content="天空之间"><meta name="description" itemprop="description" content="天空的边界到底在哪里？"><meta name="keywords" content="SkyEdge, CubeSky"><script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script><script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script><link rel="icon shortcut" type="image/ico" href="https://skyedge.b0.upaiyun.com/myfiles/images/favicon.png"><link rel="icon" sizes="192x192" href="https://skyedge.b0.upaiyun.com/myfiles/images/favicon.png"><link rel="apple-touch-icon" href="https://skyedge.b0.upaiyun.com/myfiles/images/favicon.png"><meta name="apple-mobile-web-app-title" content="Title"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="480"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="天空之边"><link rel=alternate type="application/rss+xml" href="/rss2.xml"><!--[if lte IE 9]><link rel="stylesheet" href="/css/ie-blocker.css"><script src="/js/ie-blocker.zhCN.js"></script><![endif]--><style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://skyedge.b0.upaiyun.com/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script><style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://skyedge.b0.upaiyun.com/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script><style>
   body, html {
     font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     overflow-x: hidden !important;
@@ -178,12 +73,7 @@
     text-decoration: underline;
   }
 
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
+</style><style>
       body{
         background-color: #F5F5F5;
       }
@@ -192,14 +82,7 @@
       #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
         background-color: #fff;
       }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
+    </style><style>
       .fade {
         transition: all 800ms linear;
         -webkit-transform: translate3d(0,0,0);
@@ -213,13 +96,7 @@
       .fade.out{
         opacity: 0;
       }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <style>
+    </style><style>
         @font-face {
             font-family: 'Roboto';
             font-style: normal;
@@ -266,58 +143,14 @@
             url(https://cdnjs.cat.net/ajax/libs/material-design-icons/3.0.1/iconfont/MaterialIcons-Regular.woff) format('woff'),
             url(https://cdnjs.cat.net/ajax/libs/material-design-icons/3.0.1/iconfont/MaterialIcons-Regular.ttf) format('truetype');
         }
-    </style>
-
-
-<!-- Import Material Icon -->
-
-
-
-
-
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","https://skyedge.b0.upaiyun.com/js/jquery.min.js", true)</script>
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://liyin.date">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="QQ 闪照截图 | 天空之边">
-    <meta property="og:image" content="https://liyin.datehttps://skyedge.b0.upaiyun.com/myfiles/images/favicon.png" />
-    <meta property="og:description" content="天空的边界到底在哪里？">
-    
-
-    
-        <meta property="article:published_time" content="Tue May 09 2017 20:24:34 GMT+0000" />
-        <meta property="article:modified_time" content="Thu Aug 24 2017 15:45:17 GMT+0000" />
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="QQ 闪照截图 | 天空之边">
-    <meta name="twitter:description" content="天空的边界到底在哪里？">
-    <meta name="twitter:image" content="https://liyin.datehttps://skyedge.b0.upaiyun.com/myfiles/images/favicon.png">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://liyin.date" />
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html" />
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
-
-
-<script type="application/ld+json">
+    </style><script>lsloader.load("jq_js","https://skyedge.b0.upaiyun.com/js/jquery.min.js", true)</script><meta property="og:url" content="https://liyin.date"><meta property="og:type" content="blog"><meta property="og:title" content="QQ 闪照截图 | 天空之边"><meta property="og:image" content="https://liyin.datehttps://skyedge.b0.upaiyun.com/myfiles/images/favicon.png"/><meta property="og:description" content="天空的边界到底在哪里？"><meta property="article:published_time" content="Tue May 09 2017 20:24:34 GMT+0000"/><meta property="article:modified_time" content="Thu Aug 24 2017 15:54:50 GMT+0000"/><meta name="twitter:title" content="QQ 闪照截图 | 天空之边"><meta name="twitter:description" content="天空的边界到底在哪里？"><meta name="twitter:image" content="https://liyin.datehttps://skyedge.b0.upaiyun.com/myfiles/images/favicon.png"><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:url" content="https://liyin.date"/><link rel="canonical" href="https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html"/><script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html",
     "headline": "QQ 闪照截图",
     "datePublished": "Tue May 09 2017 20:24:34 GMT+0000",
-    "dateModified": "Thu Aug 24 2017 15:45:17 GMT+0000",
+    "dateModified": "Thu Aug 24 2017 15:54:50 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "天空之间",
@@ -338,267 +171,15 @@
     "keywords": "SkyEdge, CubeSky",
     "description": "天空的边界到底在哪里？",
 }
-</script>
-
-
-    
-
-    <!-- Analytics -->
-    
-        <script>
+</script><script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-100006766-1', 'auto');ga('send', 'pageview');
-</script>
-    
-    
-    
-
-    <!-- Custom Head -->
-    
-
-<link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-
-
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Post TOC -->
-
-    
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
-
-
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#唠叨"><span class="post-toc-number">1.</span> <span class="post-toc-text">唠叨</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Xposed"><span class="post-toc-number">2.</span> <span class="post-toc-text">Xposed</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Tasker"><span class="post-toc-number">3.</span> <span class="post-toc-text">Tasker</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#AutoInput"><span class="post-toc-number">4.</span> <span class="post-toc-text">AutoInput</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#尾声"><span class="post-toc-number">5.</span> <span class="post-toc-text">尾声</span></a></li></ol>
-    </ul>
-    
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://skyedge.b0.upaiyun.com/myfiles/thumbnail/QQ-Flash-Capture.png)">
-    
-            <p class="article-headline-p">
-                QQ 闪照截图
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="https://skyedge.b0.upaiyun.com/myfiles/images/avatar.min.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>天空之间</strong>
-        <span>5月 09, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACyklEQVR42u3aW1brMAwF0M5/0twBFMKRlF6yrJ2vLkpsb38g9Hh9rXxe2NjY2NjY2NjY2I9kv+Ln/a3rz8lvvq//vsI3gN6ZsbGxsY9mJ9tUf57Aers338LGxsZewK4e9N7ruD7P5MzY2NjY2PMUYpJsJKthY2NjY/fYvQLTTyv0EhhsbGxs7GqBJkkPPndBf1ZLw8bGxn48O2+aPufzf+1vY2NjYz+YXX2ul/5E+/Z6r8LJsbGxsQ9lV4s71TSjFyyTIJqcExsbG3sDOw88SWkpH83JQ10e8H7ZCxsbG/tQdh4k8rShl9LkgaqHx8bGxj6bfR2oqmEpWa1aouqNb2JjY2NvYEd/+sepRX7QPKSVC2HY2NjYh7J7yUa1bZAPAFVTjlGjFxsbG/sgdq8dmzcPqqX8u1rR2NjY2HvYk4JRNWGoFpXmYGxsbOw97GqxKW8q5EX8ZMf8urGxsbF3spND50Wi6tXcuxo2Njb2BnbvX/9eoX/SikiCX7O/jY2NjX0QuznUWCz9T66vWoTCxsbG3saeNGXztGReosoHfbCxsbH3sPPwMBmvvOHocVqCjY2NvY2dJxvVQZxRQf/e0hU2Njb20ewk8OThKh/frIaowoAONjY29hp2lZcErTyAVS9ucunY2NjYG9j5QauHmBeJ8sQmKiphY2NjH8ruge9KJHqjOcle2NjY2HvYk8HK6kVMwme1nISNjY29k10tEpXDSTG1SMLbL9eBjY2NfSi714itNlzvekYtamxsbOxD2b0tkwQjb9nmAbUadLGxsbH3sJOglW/ZC135XrcFMGxsbOzj2JOjJO/Oi0cfrKVhY2NjL2PnIzj5t9Uk5w8CGDY2NvZB7PwKqkeshqXCsBE2Njb2Ana+aJ5IVMdu8qGf8tmwsbGxj2b3CjfVkn0O6DUDPtjfxsbGxn4we8+DjY2NjY2NjY2N/ZjnH4cKucysY53DAAAAAElFTkSuQmCC">
-    
-</ul>
-
-    
-
-    <!-- Tags (bookmark) -->
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=QQ 闪照截图&url=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html&pic=https://liyin.datehttps://skyedge.b0.upaiyun.com/myfiles/images/favicon.png&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=QQ 闪照截图&url=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html&via=天空之间" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=天空之边&title=QQ 闪照截图&summary=天空的边界到底在哪里？&pics=https://liyin.datehttps://skyedge.b0.upaiyun.com/myfiles/images/favicon.png&url=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html&text=QQ 闪照截图" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Telegram
-            </li>
-        </a>
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="唠叨"><a href="#唠叨" class="headerlink" title="唠叨"></a>唠叨</h1><p>现在，国内社交聊天软件中，QQ 和 微信 一手遮天，占据了几乎所有的市场份额，在讲如何闪照截图之前，先说明我对这两个软件的看法….<br>QQ 和 微信 两者同属于 腾讯公司 的软件， 在多年的发展中，这两个软件变得臃肿不堪，运行速度十分缓慢，而且资源占用巨大。<br>动辄几百兆的安装包，后台各种唤醒，已经让我对各种国内的软件持怀疑态度。  </p>
-<p>好了，吐槽完毕，正片开始！<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-1.jpg" alt=""><br>现在有很多群友喜欢发闪照…一种你看5秒就会删除的照片形式，其实这个是并不安全的…比如..我们使用纯手机软件来干掉它！<br>首先，实现这个需要你的手机安装有 Xposed 框架并购买了 Tasker 和 AutoInput 软件。<br>闪照截图的原理是，使用 Xposed 的插件屏蔽掉禁止截图的 Flag ，然后让 Tasker 配合 AutoInput 进行侦测并执行截图。  </p>
-<h1 id="Xposed"><a href="#Xposed" class="headerlink" title="Xposed"></a>Xposed</h1><p>首先打开你的 Xposed Installer ，选择 Download ，搜索并安装 BlockSecureFlag 插件，安装之后打开选择 QQ （如果你使用 TIM 就选择 TIM），然后重启手机。<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-2.png" alt=""><br>这样，QQ闪照 就可以被截图了，但是闪照要求手一直按住才会显示，所以怎么办呢？———— Tasker 出场！  </p>
-<h1 id="Tasker"><a href="#Tasker" class="headerlink" title="Tasker"></a>Tasker</h1><p>Tasker 是一个自动化触发执行工具，可以自己定义在什么时候运行什么任务。<br>安装好 Tasker 和 AutoInput ，然后打开 Tasker 选择任务。<br>点击右下角 <code>+</code> 号，输入一个名字，确定即可创建一个空任务。比如我填写 <code>QQ 闪照截图</code> 然后进行下一步。<br>点击正下方的 <code>+</code> 号添加动作，首先选择 代码 - 运行外壳 （其实是 <code>Run Shell</code> 吧…..），填写</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> -p /sdcard/AutoInput
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这句话是先创建我们需要的文件夹，用来保存截图的图片。记得选中<code>遇到错误后继续运行任务</code>，要不然如果文件夹已经存在的话就会打断后面的脚本。<br>然后，我们需要弹出一个对话框说明准备截图，选择 <code>警报</code> - <code>弹出框</code>，写好标题和文字，确定即可。<br>然后后面就是真正的截图了，添加 “运行外壳” 输入 </p>
-<pre class="line-numbers language-bash"><code class="language-bash">screencap -p /sdcard/AutoInput/sc-qq-1.png
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>并勾选<code>使用 Root</code><br>然后再添加一个等待1秒。<br>这样，就可以截图啦~<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-3.png" alt=""></p>
-<h1 id="AutoInput"><a href="#AutoInput" class="headerlink" title="AutoInput"></a>AutoInput</h1><p>那么，AutoInput 干什么用呢？<br>我们这个任务是写完了，但是我们没定义它何时运行。这时候就需要 AutoInput 出场了，切换到<code>配置文件</code>，然后点击右下角 <code>+</code> ，选择 <code>事件</code> - <code>插件</code> - <code>AutoInput</code> - <code>UI Update</code>，然后点击配置右侧的笔标识，Apps选择 QQ ，Text 输入 <code>按住屏幕可查看5秒</code>，没错！就是 QQ闪照 的提示语，然后会让你选择要执行的任务，就选择你刚刚创建的那个就好啦~<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-4.png" alt=""></p>
-<h1 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h1><p>好了！拿上你刚刚做好的小玩意收闪照去吧！<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-5.png" alt=""><br>点开闪照之后，会弹出一个你刚刚设定的弹出框，在弹出框关闭的瞬间按住屏幕，直到闪照5秒自动消失，这时候，闪照的截图就静静的躺在 /sdcard/AutoInput 文件夹里啦~快去看看吧~<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-6.png" alt=""></p>
-
-        
-                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
-                    <p><strong>
-                         
-                            本文使用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0 中国大陆</a> 协议许可<br>具体请参见 <a href="https://liyin.date/creativecommons/">知识共享协议</a>
-                        </strong>
-                        <br>
-                        <strong>本文链接：</strong><a href="https://liyin.date/2017/05/09/qq-flash-photo-capture/">https://liyin.date/2017/05/09/qq-flash-photo-capture/</a>
-                    </p>
-                </blockquote>
-        
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-    <!-- 使用 DISQUS_CLICK -->
-<div id="disqus-comment">
-    <div id="disqus_thread"></div>
-
-<!-- add animation -->
-<style>
+</script><link rel="stylesheet" href="/css/prism.css" type="text/css"><link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body id="scheme-Paradox" class="lazy"><div class="material-layout  mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div> <button class="MD-burger-icon sidebar-toggle"><span class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"> <i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#唠叨"><span class="post-toc-number">1.</span> <span class="post-toc-text">唠叨</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Xposed"><span class="post-toc-number">2.</span> <span class="post-toc-text">Xposed</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Tasker"><span class="post-toc-number">3.</span> <span class="post-toc-text">Tasker</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#AutoInput"><span class="post-toc-number">4.</span> <span class="post-toc-text">AutoInput</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#尾声"><span class="post-toc-number">5.</span> <span class="post-toc-text">尾声</span></a></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://skyedge.b0.upaiyun.com/myfiles/thumbnail/QQ-Flash-Capture.png)"><p class="article-headline-p"> QQ 闪照截图</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"> <img src="https://skyedge.b0.upaiyun.com/myfiles/images/avatar.min.png" width="44px" height="44px" alt="Author Avatar"/></div><div> <strong>天空之间</strong> <span>5月 09, 2017</span></div><div class="section-spacer"></div> <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACyklEQVR42u3aW1brMAwF0M5/0twBFMKRlF6yrJ2vLkpsb38g9Hh9rXxe2NjY2NjY2NjY2I9kv+Ln/a3rz8lvvq//vsI3gN6ZsbGxsY9mJ9tUf57Aers338LGxsZewK4e9N7ruD7P5MzY2NjY2PMUYpJsJKthY2NjY/fYvQLTTyv0EhhsbGxs7GqBJkkPPndBf1ZLw8bGxn48O2+aPufzf+1vY2NjYz+YXX2ul/5E+/Z6r8LJsbGxsQ9lV4s71TSjFyyTIJqcExsbG3sDOw88SWkpH83JQ10e8H7ZCxsbG/tQdh4k8rShl9LkgaqHx8bGxj6bfR2oqmEpWa1aouqNb2JjY2NvYEd/+sepRX7QPKSVC2HY2NjYh7J7yUa1bZAPAFVTjlGjFxsbG/sgdq8dmzcPqqX8u1rR2NjY2HvYk4JRNWGoFpXmYGxsbOw97GqxKW8q5EX8ZMf8urGxsbF3spND50Wi6tXcuxo2Njb2BnbvX/9eoX/SikiCX7O/jY2NjX0QuznUWCz9T66vWoTCxsbG3saeNGXztGReosoHfbCxsbH3sPPwMBmvvOHocVqCjY2NvY2dJxvVQZxRQf/e0hU2Njb20ewk8OThKh/frIaowoAONjY29hp2lZcErTyAVS9ucunY2NjYG9j5QauHmBeJ8sQmKiphY2NjH8ruge9KJHqjOcle2NjY2HvYk8HK6kVMwme1nISNjY29k10tEpXDSTG1SMLbL9eBjY2NfSi714itNlzvekYtamxsbOxD2b0tkwQjb9nmAbUadLGxsbH3sJOglW/ZC135XrcFMGxsbOzj2JOjJO/Oi0cfrKVhY2NjL2PnIzj5t9Uk5w8CGDY2NvZB7PwKqkeshqXCsBE2Njb2Ana+aJ5IVMdu8qGf8tmwsbGxj2b3CjfVkn0O6DUDPtjfxsbGxn4we8+DjY2NjY2NjY2N/ZjnH4cKucysY53DAAAAAElFTkSuQmCC"></ul> <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=QQ 闪照截图&url=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html&pic=https://liyin.datehttps://skyedge.b0.upaiyun.com/myfiles/images/favicon.png&searchPic=false&style=simple" target="_blank"><li class="mdl-menu__item"> 分享到微博</li></a><a class="post_share-link" href="https://twitter.com/intent/tweet?text=QQ 闪照截图&url=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html&via=天空之间" target="_blank"><li class="mdl-menu__item"> 分享到 Twitter</li></a><a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Facebook</li></a><a class="post_share-link" href="https://plus.google.com/share?url=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Google+</li></a><a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=天空之边&title=QQ 闪照截图&summary=天空的边界到底在哪里？&pics=https://liyin.datehttps://skyedge.b0.upaiyun.com/myfiles/images/favicon.png&url=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 QQ</li></a><a class="post_share-link" href="https://telegram.me/share/url?url=https://liyin.date/2017/05/09/qq-flash-photo-capture/index.html&text=QQ 闪照截图" target="_blank"><li class="mdl-menu__item"> 分享到 Telegram</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><script src="/assets/js/APlayer.min.js"> </script><h1 id="唠叨"><a href="#唠叨" class="headerlink" title="唠叨"></a>唠叨</h1><p>现在，国内社交聊天软件中，QQ 和 微信 一手遮天，占据了几乎所有的市场份额，在讲如何闪照截图之前，先说明我对这两个软件的看法….<br>QQ 和 微信 两者同属于 腾讯公司 的软件， 在多年的发展中，这两个软件变得臃肿不堪，运行速度十分缓慢，而且资源占用巨大。<br>动辄几百兆的安装包，后台各种唤醒，已经让我对各种国内的软件持怀疑态度。</p><p>好了，吐槽完毕，正片开始！<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-1.jpg" alt=""><br>现在有很多群友喜欢发闪照…一种你看5秒就会删除的照片形式，其实这个是并不安全的…比如..我们使用纯手机软件来干掉它！<br>首先，实现这个需要你的手机安装有 Xposed 框架并购买了 Tasker 和 AutoInput 软件。<br>闪照截图的原理是，使用 Xposed 的插件屏蔽掉禁止截图的 Flag ，然后让 Tasker 配合 AutoInput 进行侦测并执行截图。</p><h1 id="Xposed"><a href="#Xposed" class="headerlink" title="Xposed"></a>Xposed</h1><p>首先打开你的 Xposed Installer ，选择 Download ，搜索并安装 BlockSecureFlag 插件，安装之后打开选择 QQ （如果你使用 TIM 就选择 TIM），然后重启手机。<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-2.png" alt=""><br>这样，QQ闪照 就可以被截图了，但是闪照要求手一直按住才会显示，所以怎么办呢？———— Tasker 出场！</p><h1 id="Tasker"><a href="#Tasker" class="headerlink" title="Tasker"></a>Tasker</h1><p>Tasker 是一个自动化触发执行工具，可以自己定义在什么时候运行什么任务。<br>安装好 Tasker 和 AutoInput ，然后打开 Tasker 选择任务。<br>点击右下角 <code>+</code> 号，输入一个名字，确定即可创建一个空任务。比如我填写 <code>QQ 闪照截图</code> 然后进行下一步。<br>点击正下方的 <code>+</code> 号添加动作，首先选择 代码 - 运行外壳 （其实是 <code>Run Shell</code> 吧…..），填写</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> -p /sdcard/AutoInput
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这句话是先创建我们需要的文件夹，用来保存截图的图片。记得选中<code>遇到错误后继续运行任务</code>，要不然如果文件夹已经存在的话就会打断后面的脚本。<br>然后，我们需要弹出一个对话框说明准备截图，选择 <code>警报</code> - <code>弹出框</code>，写好标题和文字，确定即可。<br>然后后面就是真正的截图了，添加 “运行外壳” 输入</p><pre class="line-numbers language-bash"><code class="language-bash">screencap -p /sdcard/AutoInput/sc-qq-1.png
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>并勾选<code>使用 Root</code><br>然后再添加一个等待1秒。<br>这样，就可以截图啦~<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-3.png" alt=""></p><h1 id="AutoInput"><a href="#AutoInput" class="headerlink" title="AutoInput"></a>AutoInput</h1><p>那么，AutoInput 干什么用呢？<br>我们这个任务是写完了，但是我们没定义它何时运行。这时候就需要 AutoInput 出场了，切换到<code>配置文件</code>，然后点击右下角 <code>+</code> ，选择 <code>事件</code> - <code>插件</code> - <code>AutoInput</code> - <code>UI Update</code>，然后点击配置右侧的笔标识，Apps选择 QQ ，Text 输入 <code>按住屏幕可查看5秒</code>，没错！就是 QQ闪照 的提示语，然后会让你选择要执行的任务，就选择你刚刚创建的那个就好啦~<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-4.png" alt=""></p><h1 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h1><p>好了！拿上你刚刚做好的小玩意收闪照去吧！<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-5.png" alt=""><br>点开闪照之后，会弹出一个你刚刚设定的弹出框，在弹出框关闭的瞬间按住屏幕，直到闪照5秒自动消失，这时候，闪照的截图就静静的躺在 /sdcard/AutoInput 文件夹里啦~快去看看吧~<br><img src="https://skyedge.b0.upaiyun.com/2017/05/09/qq-flash-photo-capture/qq-flash-capture-6.png" alt=""></p><blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;"><p> <strong>本文使用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0 中国大陆</a> 协议许可<br>具体请参见 <a href="https://liyin.date/creativecommons/">知识共享协议</a></strong><br> <strong>本文链接：</strong><a href="https://liyin.date/2017/05/09/qq-flash-photo-capture/">https://liyin.date/2017/05/09/qq-flash-photo-capture/</a></p></blockquote></div><div id="disqus-comment"><div id="disqus_thread"></div><style>
 	.disqus_click_btn {
             line-height: 30px;
             margin: 0;
@@ -625,20 +206,12 @@
             background-color: #757575;
             text-shadow: 0
         }
-</style>
-	
-<div class="btn_click_load"> 
-    <button class="disqus_click_btn" style="display: none">阅读评论（请确保 disqus 可以正常加载）</button>
-</div>
-
-<script type="text/javascript">
+</style><div class="btn_click_load"> <button class="disqus_click_btn" style="display: none">阅读评论（请确保 disqus 可以正常加载）</button></div><script type="text/javascript">
     var disqus_config = function () {
         this.page.url = 'https://liyin.date/2017/05/09/qq-flash-photo-capture/';  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = 'https://liyin.date/2017/05/09/qq-flash-photo-capture/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
-</script>
-
-<script type="text/ls-javascript" id="disqus-lazy-load-script">
+</script><script type="text/ls-javascript" id="disqus-lazy-load-script">
     $.ajax({
         url: 'https://disqus.com/next/config.json',
         timeout: 4000,
@@ -665,383 +238,12 @@
         })();
         $('.btn_click_load').css('display','none');
     });
-</script>
-  	
-
-</div>
-<style>
+</script></div><style>
     #disqus-comment{
         background-color: #eee;
         padding: 2pc;
     }
-</style>
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2017/05/25/letapkfly/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/04/30/one-adobe-carsh-resolve/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(https://skyedge.b0.upaiyun.com/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="https://skyedge.b0.upaiyun.com/myfiles/images/avatar.min.png" alt="天空之间's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        skyedge@liyin.party
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="mailto:skyedge@liyin.party" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">4</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Javascipt-书签工具/">Javascipt 书签工具<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/云/">云<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客升级/">博客升级<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/安全/">安全<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/崩溃/">崩溃<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/购物/">购物<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/软件推荐/">软件推荐<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/闲聊/">闲聊<span class="sidebar_archives-count">7</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/tags" title="标签">
-                
-                标签
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/links" title="永远的好伙伴">
-                
-                永远的好伙伴
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/2017/04/02/pgp/" title="PGP 密钥">
-                
-                PGP 密钥
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/timeline" title="时间轴">
-                
-                时间轴
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/creativecommons" title="知识共享协议">
-                
-                知识共享协议
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="关于我">
-                
-                关于我
-            </a>
-        </li>
-        
-    
-
-    <!-- Article Number  -->
-    
-</ul>
-
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-    <div class="sidebar-divider"></div>
-
-
-<!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
-    </div>
-
-    <!-- Sidebar Image -->
-    
-    <span id="footer-image">
-        <a href="#" target="_blank" title="upyun">
-            <img src="https://skyedge.b0.upaiyun.com/img/upyun_logo.svg" alt="upyun"><!--
-     --></a>
-    </span>
-
-    <span id="footer-image">
-        <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="creativecommons">
-            <img src="https://skyedge.b0.upaiyun.com/myfiles/images/cc.png" alt="creativecommons"><!--
-     --></a>
-    </span>
-
-
-</aside>
-
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-
-    <!-- Facebook -->
-    
-
-    <!-- Google + -->
-    
-
-    <!-- Weibo -->
-    
-        <a href="http://weibo.com/1343816555" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
-                <span class="visuallyhidden">Weibo</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/cubesky" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-        <a href="https://space.bilibili.com/1520967" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
-                <span class="visuallyhidden">Bilibili</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Telegram -->
-    
-    
-    <!-- V2EX -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;天空之边&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>天空之边
-            
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import JS File -->
-
-    <script>lsloader.load("lazyload_js","https://skyedge.b0.upaiyun.com/js/lazyload.min.js", true)</script>
-
-
-
-    <script>lsloader.load("js_js","https://skyedge.b0.upaiyun.com/js/js.min.js", true)</script>
-
-
-
-    <script>lsloader.load("np_js","https://skyedge.b0.upaiyun.com/js/nprogress.js", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
+</style></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"> <a href="/2017/05/25/letapkfly/" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div> <a href="/2017/04/30/one-adobe-carsh-resolve/" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image: url(https://skyedge.b0.upaiyun.com/img/sidebar_header.png);"><div class="top-bar"></div> <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple"> <i class="material-icons">clear_all</i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"> <img src="https://skyedge.b0.upaiyun.com/myfiles/images/avatar.min.png" alt="天空之间's avatar"></div> <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">skyedge@liyin.party<b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li> <a href="mailto:skyedge@liyin.party" target="_blank" title="Email Me"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"> <a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">4</span></a></ul></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Javascipt-书签工具/">Javascipt 书签工具<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/云/">云<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客升级/">博客升级<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/安全/">安全<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/崩溃/">崩溃<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/购物/">购物<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/软件推荐/">软件推荐<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/闲聊/">闲聊<span class="sidebar_archives-count">7</span></a></ul></li><li> <a href="/tags" title="标签">标签</a></li><li> <a href="/links" title="永远的好伙伴">永远的好伙伴</a></li><li> <a href="/2017/04/02/pgp/" title="PGP 密钥">PGP 密钥</a></li><li> <a href="/timeline" title="时间轴">时间轴</a></li><li> <a href="/creativecommons" title="知识共享协议">知识共享协议</a></li><li> <a href="/about" title="关于我">关于我</a></li></ul><div class="sidebar-divider"></div><a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank"><div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple"> 主题 - Material <span class="sidebar-badge badge-circle">i</span></div></a></div> <span id="footer-image"><a href="#" target="_blank" title="upyun"><img src="https://skyedge.b0.upaiyun.com/img/upyun_logo.svg" alt="upyun"></a></span> <span id="footer-image"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="creativecommons"><img src="https://skyedge.b0.upaiyun.com/myfiles/images/cc.png" alt="creativecommons"></a></span></aside><div id="back-to-top" class="toTop-wrap"> <a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"> <a href="http://weibo.com/1343816555" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo"> <span class="visuallyhidden">Weibo</span></button></a> <a href="https://github.com/cubesky" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"> <span class="visuallyhidden">Github</span></button></a> <a href="https://space.bilibili.com/1520967" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili"> <span class="visuallyhidden">Bilibili</span></button></a></div><div id="copyright"> Copyright&nbsp;©&nbsp;天空之边&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>天空之边</div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","https://skyedge.b0.upaiyun.com/js/lazyload.min.js", true)</script><script>lsloader.load("js_js","https://skyedge.b0.upaiyun.com/js/js.min.js", true)</script><script>lsloader.load("np_js","https://skyedge.b0.upaiyun.com/js/nprogress.js", true)</script><script type="text/ls-javascript" id="NProgress-script">
     NProgress.configure({
         showSpinner: true
     });
@@ -1060,39 +262,13 @@ It will not impact the appearance and can give developers a lot of support :)
         NProgress.done();
         $('.fade').removeClass('out');
     }, 800);
-</script>
-
-
-
-
-
-
-
-
-
-   <!-- 使用 DISQUS js 代码 -->
-
-
-
-
-
-
-<!-- UC Browser Compatible -->
-<script>
+</script><script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
 		document.write('<link rel="stylesheet" href="/css/uc.css">');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
-</script>
-
-<!-- Import prettify js  -->
-
-
-
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
+</script><script type="text/ls-javascript" id="window-load">
     $(window).on('load', function() {
         // Post_Toc parent position fixed
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
@@ -1100,15 +276,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
     
     
-</script>
-
-<!-- MathJax Load-->
-
-
-<!-- Bing Background -->
-
-
-<script type="text/ls-javascript" id="lazy-load">
+</script><script type="text/ls-javascript" id="lazy-load">
     // Offer LazyLoad
     queue.offer(function(){
         $('.lazy').lazyload({
@@ -1122,13 +290,7 @@ It will not impact the appearance and can give developers a lot of support :)
             queue.execNext();
         },200);
     });
-</script>
-
-<!-- Custom Footer -->
-
-
-
-<script>
+</script><script>
     (function(){
         var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
@@ -1138,10 +300,4 @@ It will not impact the appearance and can give developers a lot of support :)
         }
     })()
 console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
-
-                </main>
-            </div>
-        </body>
-    
-</html>
+</script></main></div></body></html>
