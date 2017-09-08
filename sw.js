@@ -1,6 +1,6 @@
 "use strict";
 (function() {
-    var cacheVersion = "201709081247";
+    var cacheVersion = "201709081255";
     var staticImageCacheName = "image" + cacheVersion;
     var staticAssetsCacheName = "assets" + cacheVersion;
     var contentCacheName = "content" + cacheVersion;
@@ -127,15 +127,6 @@
         .catch(function(error) {
           if (req.method === 'GET' && req.headers.get('accept').includes('text/html')) {
             return toolbox.cacheOnly(new Request('/offline.html'), vals, opts);
-          }
-          throw error;
-        });
-    });
-    self.toolbox.router.get('/\.(jpg|png|gif|svg|jpeg)$', function(req, vals, opts) {
-      return toolbox.networkFirst(req, vals, opts)
-        .catch(function(error) {
-          if (req.method === 'GET') {
-            return toolbox.cacheOnly(new Request('/offline.svg'), vals, opts);
           }
           throw error;
         });
