@@ -1,6 +1,6 @@
 "use strict";
 (function() {
-    var cacheVersion = "201709081243";
+    var cacheVersion = "201709081247";
     var staticImageCacheName = "image" + cacheVersion;
     var staticAssetsCacheName = "assets" + cacheVersion;
     var contentCacheName = "content" + cacheVersion;
@@ -131,7 +131,7 @@
           throw error;
         });
     });
-    self.toolbox.router.get('/\.(jpg|png|gif|svg|jpeg)(\?.*)?$', function(req, vals, opts) {
+    self.toolbox.router.get('/\.(jpg|png|gif|svg|jpeg)$', function(req, vals, opts) {
       return toolbox.networkFirst(req, vals, opts)
         .catch(function(error) {
           if (req.method === 'GET') {
