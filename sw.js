@@ -1,6 +1,6 @@
 "use strict";
 (function() {
-    var cacheVersion = "201709081255";
+    var cacheVersion = "201709081300";
     var staticImageCacheName = "image" + cacheVersion;
     var staticAssetsCacheName = "assets" + cacheVersion;
     var contentCacheName = "content" + cacheVersion;
@@ -17,7 +17,44 @@
     self.toolbox.router.get("/myfiles/music/(.*)", self.toolbox.networkOnly, {
         origin: /skyedge\.b0\.upaiyun\.com/,
     });
-    self.toolbox.router.get("/myfiles/(.*)", self.toolbox.networkFirst, {
+    self.toolbox.router.get("/myfiles/userjs/(.*)", self.toolbox.networkOnly, {
+        origin: /skyedge\.b0\.upaiyun\.com/,
+    });
+    self.toolbox.router.get("/myfiles/javascriptbookmark/(.*)", self.toolbox.networkOnly, {
+        origin: /skyedge\.b0\.upaiyun\.com/,
+    });
+    self.toolbox.router.get("/myfiles/js/(.*)", self.toolbox.networkOnly, {
+        origin: /skyedge\.b0\.upaiyun\.com/,
+    });
+    self.toolbox.router.get("/myfiles/attachment/(.*)", self.toolbox.networkFirst, {
+        origin: /skyedge\.b0\.upaiyun\.com/,
+        cache: {
+            name: staticAssetsCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/myfiles/css/(.*)", self.toolbox.networkFirst, {
+        origin: /skyedge\.b0\.upaiyun\.com/,
+        cache: {
+            name: staticAssetsCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/myfiles/images/(.*)", self.toolbox.networkFirst, {
+        origin: /skyedge\.b0\.upaiyun\.com/,
+        cache: {
+            name: staticAssetsCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/myfiles/links/(.*)", self.toolbox.networkFirst, {
+        origin: /skyedge\.b0\.upaiyun\.com/,
+        cache: {
+            name: staticAssetsCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/myfiles/thumbnail/(.*)", self.toolbox.networkFirst, {
         origin: /skyedge\.b0\.upaiyun\.com/,
         cache: {
             name: staticAssetsCacheName,
