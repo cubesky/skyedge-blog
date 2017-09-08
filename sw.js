@@ -1,6 +1,6 @@
 "use strict";
 (function() {
-    var cacheVersion = "201709081319";
+    var cacheVersion = "201709081327";
     var staticImageCacheName = "image" + cacheVersion;
     var staticAssetsCacheName = "assets" + cacheVersion;
     var contentCacheName = "content" + cacheVersion;
@@ -30,72 +30,83 @@
         origin: /skyedge\.b0\.upaiyun\.com/,
         cache: {
             name: staticAssetsCacheName,
-            maxEntries: maxEntries
+            maxEntries: maxEntries,
+            offlineFallbackimage: '/offline.svg'
         }
     });
     self.toolbox.router.get("/myfiles/css/(.*)", self.toolbox.networkFirst, {
         origin: /skyedge\.b0\.upaiyun\.com/,
         cache: {
             name: staticAssetsCacheName,
-            maxEntries: maxEntries
+            maxEntries: maxEntries,
+            offlineFallbackimage: '/offline.svg'
         }
     });
     self.toolbox.router.get("/myfiles/images/(.*)", self.toolbox.networkFirst, {
         origin: /skyedge\.b0\.upaiyun\.com/,
         cache: {
             name: staticAssetsCacheName,
-            maxEntries: maxEntries
+            maxEntries: maxEntries,
+            offlineFallbackimage: '/offline.svg'
         }
     });
     self.toolbox.router.get("/myfiles/links/(.*)", self.toolbox.networkFirst, {
         origin: /skyedge\.b0\.upaiyun\.com/,
         cache: {
             name: staticAssetsCacheName,
-            maxEntries: maxEntries
+            maxEntries: maxEntries,
+            offlineFallbackimage: '/offline.svg'
         }
     });
     self.toolbox.router.get("/myfiles/thumbnail/(.*)", self.toolbox.networkFirst, {
         origin: /skyedge\.b0\.upaiyun\.com/,
         cache: {
             name: staticAssetsCacheName,
-            maxEntries: maxEntries
+            maxEntries: maxEntries,
+            offlineFallbackimage: '/offline.svg'
         }
     });
     self.toolbox.router.get("/(.*)", self.toolbox.cacheFirst, {
         origin: /cdnjs\.cat\.net/,
         cache: {
             name: staticAssetsCacheName,
-            maxEntries: maxEntries
+            maxEntries: maxEntries,
+            offlineFallbackimage: '/offline.svg'
         }
     });
     self.toolbox.router.get("/archives/(.*).html(.*)", self.toolbox.networkFirst, {
         cache: {
             name: contentCacheName,
-            maxEntries: maxEntries
+            maxEntries: maxEntries,
+            offlineFallbackimage: '/offline.svg'
         }
     });
     self.toolbox.router.get("/(tags|about|gallery|archives|links|timeline)(.*)", self.toolbox.networkFirst, {
         cache: {
             name: contentCacheName,
-            maxEntries: maxEntries
+            maxEntries: maxEntries,
+            offlineFallbackimage: '/offline.svg'
         }
     });
     self.toolbox.router.get("/$", self.toolbox.networkFirst, {
         cache: {
             name: contentCacheName,
-            maxEntries: maxEntries
+            maxEntries: maxEntries,
+            offlineFallbackimage: '/offline.svg'
         }
     });
     self.toolbox.router.get("/\?(.*)$", self.toolbox.networkFirst, {
         cache: {
             name: contentCacheName,
-            maxEntries: maxEntries
+            maxEntries: maxEntries,
+            offlineFallbackimage: '/offline.svg'
         }
     });
     self.toolbox.router.get("/", self.toolbox.networkFirst, {
         cache: {
             name: contentCacheName,
-            maxEntries: maxEntries
+            maxEntries: maxEntries,
+            offlineFallbackimage: '/offline.svg'
         }
     });
     self.toolbox.router.get("/css/(.*)", self.toolbox.networkFirst, {
