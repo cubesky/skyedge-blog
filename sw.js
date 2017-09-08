@@ -1,71 +1,137 @@
-'use strict';
-const version = 'v201709081156';
-const __DEVELOPMENT__ = false;
-const __DEBUG__ = false;
-const offlineResources = ['/', '/offline.html', '/offline.svg', '/Lucca-Regular.otf'];
-const ignoreFetch = [/https?:\/\/skyedge.disqus.com\//,/chrome-extension:\/\//,/https?:\/\/api.lwl12.com\//,/https?:\/\/c.disquscdn.com\//,/https?:\/\/referrer.disqus.com\//,/https?:\/\/disqus.com\//,/https?:\/\/viosey.com\//,/https?:\/\/0w0.bid\//,/https?:\/\/ooo.0o0.ooo\//,/https?:\/\/s.gravatar.com\//,/https?:\/\/www.gravatar.com\//,/https?:\/\/licensebuttons.net\//,/https?:\/\/www.google-analytics.com\//,/https?:\/\/fonts.cat.net\//,/https?:\/\/cdnjs.cat.net\//,/https?:\/\/skyedge.disqus.com\//,/https?:\/\/api.travis-ci.org\//];
-function onInstall(event) {log('install event in progress.');
-    event.waitUntil(updateStaticCache());
-}
-function updateStaticCache() {return caches.open(cacheKey('offline')).then((cache) => {return cache.addAll(offlineResources)
-    }).then(() => {log('installation complete!')
-    })
-}
-function onFetch(event) {
-    const request = event.request;
-    if (shouldAlwaysFetch(request)) {event.respondWith(networkedOrOffline(request));
-        return
-    }
-    if (shouldFetchAndCache(request)) {event.respondWith(networkedOrCached(request));
-        return
-    }
-    event.respondWith(cachedOrNetworked(request))
-}
-function networkedOrCached(request) {return networkedAndCache(request).catch(() => {return cachedOrOffline(request)
-    })
-}
-function networkedAndCache(request) {return fetch(request).then((response) => {var copy = response.clone();
-        caches.open(cacheKey('resources')).then((cache) => {cache.put(request, copy)
+"use strict";
+(function() {
+    var cacheVersion = "201709081230";
+    var staticImageCacheName = "image" + cacheVersion;
+    var staticAssetsCacheName = "assets" + cacheVersion;
+    var contentCacheName = "content" + cacheVersion;
+    var vendorCacheName = "vendor" + cacheVersion;
+    var maxEntries = 100;
+    self.importScripts("https://cdnjs.cat.net/ajax/libs/sw-toolbox/3.6.1/sw-toolbox.js");
+    self.toolbox.options.debug = false;
+    self.toolbox.options.networkTimeoutSeconds = 5;
+    self.toolbox.precache([
+        '/offline.html',
+        '/offline.svg',
+        '/Lucca-Regular.otf'
+    ]);
+    self.toolbox.router.get("/myfiles/(.*)", self.toolbox.networkFirst, {
+        origin: /skyedge\.b0\.upaiyun\.com/,
+        cache: {
+            name: staticAssetsCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/(.*)", self.toolbox.cacheFirst, {
+        origin: /cdnjs\.cat\.net/,
+        cache: {
+            name: staticAssetsCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/archives/(.*).html(.*)", self.toolbox.networkFirst, {
+        cache: {
+            name: contentCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/(tags|about|gallery|archives|links|timeline)(.*)", self.toolbox.networkFirst, {
+        cache: {
+            name: contentCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/$", self.toolbox.networkFirst, {
+        cache: {
+            name: contentCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/\?(.*)$", self.toolbox.networkFirst, {
+        cache: {
+            name: contentCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/", self.toolbox.networkFirst, {
+        cache: {
+            name: contentCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/css/(.*)", self.toolbox.networkFirst, {
+        origin: /skyedge\.b0\.upaiyun\.com/
+    });
+    self.toolbox.router.get("/js/(.*)", self.toolbox.networkFirst, {
+        origin: /skyedge\.b0\.upaiyun\.com/
+    });
+    self.toolbox.router.get("/next/config.json", self.toolbox.networkOnly, {
+        origin: /disqus\.com/
+    });
+    self.toolbox.router.get("/api/(.*)", self.toolbox.networkOnly, {
+        origin: /disqus\.com/
+    });
+    self.toolbox.router.get("/(.*)", self.toolbox.networkOnly, {
+        origin: /skyedge\.disquscdn\.com/,
+        cache: {
+            name: vendorCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/(.*)", self.toolbox.cacheFirst, {
+        origin: /a\.disquscdn\.com/,
+        cache: {
+            name: vendorCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/(.*)", self.toolbox.cacheFirst, {
+        origin: /c\.disquscdn\.com/,
+        cache: {
+            name: vendorCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/(.*)", self.toolbox.cacheFirst, {
+        origin: /uploads\.disquscdn\.com/,
+        cache: {
+            name: vendorCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/(.*)", self.toolbox.cacheFirst, {
+        origin: /media\.disquscdn\.com/,
+        cache: {
+            name: vendorCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/(.*)", self.toolbox.cacheFirst, {
+        origin: /referrer\.disqus\.com/,
+        cache: {
+            name: vendorCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get("/(.*)", self.toolbox.networkOnly, {
+        origin: /(www\.google-analytics\.com|ssl\.google-analytics\.com)/,
+        cache: {
+            name: vendorCacheName,
+            maxEntries: maxEntries
+        }
+    });
+    self.toolbox.router.get('/(.*)', function(req, vals, opts) {
+      return toolbox.networkFirst(req, vals, opts)
+        .catch(function(error) {
+          if (req.method === 'GET' && req.headers.get('accept').includes('text/html')) {
+            return toolbox.cacheOnly(new Request('/offline.html'), vals, opts);
+          }
+          throw error;
         });
-        log("(network: cache write)", request.method, request.url);
-        return response
+    });
+    self.toolbox.router.get("/sw.js", self.toolbox.networkFirst), self.toolbox.router.get("/(.*).php(.*)", self.toolbox.networkOnly), self.addEventListener("install", function(event) {
+        return event.waitUntil(self.skipWaiting())
+    });
+    self.addEventListener("activate", function(event) {
+        return event.waitUntil(self.clients.claim())
     })
-}
-function cachedOrNetworked(request) {return caches.match(request).then((response) => {log(response ? '(cached)' : '(network: cache miss)', request.method, request.url);
-        return response || networkedAndCache(request).catch(() => {return offlineResponse(request)
-        })
-    })
-}
-function networkedOrOffline(request) {return fetch(request).then((response) => {log('(network)', request.method, request.url);
-        return response
-    }).catch(() => {return offlineResponse(request)
-    })
-}
-function cachedOrOffline(request) {return caches.match(request).then((response) => {return response || offlineResponse(request)
-    })
-}
-function offlineResponse(request) {log('(offline)', request.method, request.url);
-    if (request.url.match(/\.(jpg|png|gif|svg|jpeg)(\?.*)?$/)) {return caches.match('/offline.svg')
-    } else {return caches.match('/offline.html')
-    }
-}
-function onActivate(event) {log('activate event in progress.');
-    event.waitUntil(removeOldCache())
-}
-function removeOldCache() {return caches.keys().then((keys) => {return Promise.all(keys.filter((key) => {return !key.startsWith(version)
-        }).map((key) => {return caches.delete(key)
-        }))
-    }).then(() => {log('removeOldCache completed.')
-    })
-}
-function cacheKey() {return [version, ...arguments].join(':')}
-function log() {if (developmentMode()) {console.log("SW:", ...arguments)
-    }
-}
-function shouldAlwaysFetch(request) {return __DEVELOPMENT__ || request.method !== 'GET' || ignoreFetch.some(regex => request.url.match(regex))}
-function shouldFetchAndCache(request) {return ~request.headers.get('Accept').indexOf('text/html')}
-function developmentMode() {return __DEVELOPMENT__ || __DEBUG__}
-log("Hello from ServiceWorker land!", version);
-self.addEventListener("install", onInstall, event => {self.skipWaiting();});
-self.addEventListener('fetch', onFetch);
-self.addEventListener("activate", onActivate);
+})();
