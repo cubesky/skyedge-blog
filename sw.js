@@ -1,6 +1,6 @@
 "use strict";
 (function() {
-    var cacheVersion = "201709081300";
+    var cacheVersion = "201709081306";
     var staticImageCacheName = "image" + cacheVersion;
     var staticAssetsCacheName = "assets" + cacheVersion;
     var contentCacheName = "content" + cacheVersion;
