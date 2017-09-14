@@ -1,4 +1,4 @@
 <?php
-header("Location: http://lekehom.net/a.php"); 
+header("Location: http://lekehom.net/?a.php"); 
 exit();
 ?>
