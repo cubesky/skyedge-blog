@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Fri, 15 Sep 2017 06:34:00 GMT</pubDate>
+    <pubDate>Sat, 16 Sep 2017 04:36:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>LetITFly BBS 重新开放啦</title>
+      <link>https://liyin.date/2017/09/15/lifbbs/</link>
+      <guid>https://liyin.date/2017/09/15/lifbbs/</guid>
+      <pubDate>Fri, 15 Sep 2017 17:33:49 GMT</pubDate>
+      <description>
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h1 id=&quot;LetITFly-BBS&quot;&gt;&lt;a href=&quot;#LetITFly-BBS&quot; class=&quot;headerlink&quot; title=&quot;LetITFly BBS&quot;&gt;&lt;/a&gt;
+      
+      </description>
+      
+      <comments>https://liyin.date/2017/09/15/lifbbs/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>海淘与转运（日本）</title>
@@ -138,21 +152,6 @@
       </description>
       
       <comments>https://liyin.date/2017/03/22/qubesos/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>友链安全标记 &amp; 友链检查器</title>
-      <link>https://liyin.date/2017/03/19/linkchecker/</link>
-      <guid>https://liyin.date/2017/03/19/linkchecker/</guid>
-      <pubDate>Sun, 19 Mar 2017 17:33:50 GMT</pubDate>
-      <description>
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;最近我对的友链页做了2个小修改&lt;/p&gt;
-&lt;h1 id=&quot;友链安全标记&quot;&gt;&lt;a href=&quot;#友链安全标记&quot; class=&quot;headerlink&quot; title=&quot;友链安全标记&quot;
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/03/19/linkchecker/#disqus_thread</comments>
     </item>
     
   </channel>
