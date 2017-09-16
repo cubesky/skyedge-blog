@@ -1,6 +1,6 @@
 "use strict";
 (function() {
-    var cacheVersion = "201709160445";
+    var cacheVersion = "201709160452";
     var staticImageCacheName = "image" + cacheVersion;
     var staticAssetsCacheName = "assets" + cacheVersion;
     var contentCacheName = "content" + cacheVersion;
@@ -87,8 +87,6 @@
             maxEntries: maxEntries,
             offlineFallbackimage: '/offline.svg'
         }
-    });
-    self.toolbox.router.get("/wp-admin.php", self.toolbox.networkOnly, {
     });
     self.toolbox.router.get("/$", self.toolbox.networkFirst, {
         cache: {
@@ -181,6 +179,7 @@
           throw error;
         });
     });
+    self.toolbox.router.get("/(.*).php(.*)", self.toolbox.networkOnly);
     self.toolbox.router.get("/sw.js", self.toolbox.networkFirst), self.toolbox.router.get("/(.*).php(.*)", self.toolbox.networkOnly), self.addEventListener("install", function(event) {
         return event.waitUntil(self.skipWaiting())
     });
