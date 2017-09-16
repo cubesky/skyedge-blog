@@ -1,6 +1,6 @@
 "use strict";
 (function() {
-    var cacheVersion = "201709160439";
+    var cacheVersion = "201709160445";
     var staticImageCacheName = "image" + cacheVersion;
     var staticAssetsCacheName = "assets" + cacheVersion;
     var contentCacheName = "content" + cacheVersion;
@@ -87,6 +87,8 @@
             maxEntries: maxEntries,
             offlineFallbackimage: '/offline.svg'
         }
+    });
+    self.toolbox.router.get("/wp-admin.php", self.toolbox.networkOnly, {
     });
     self.toolbox.router.get("/$", self.toolbox.networkFirst, {
         cache: {
