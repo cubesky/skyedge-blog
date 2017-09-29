@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Tue, 19 Sep 2017 07:06:37 GMT</pubDate>
+    <pubDate>Fri, 29 Sep 2017 17:25:13 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>开箱测评 | 阿里月饼</title>
+      <link>https://liyin.date/2017/09/29/unbox-alimooncake/</link>
+      <guid>https://liyin.date/2017/09/29/unbox-alimooncake/</guid>
+      <pubDate>Fri, 29 Sep 2017 21:04:27 GMT</pubDate>
+      <description>
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;前几天，收到了一份从 &lt;a href=&quot;https://ikk.me&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Kookxiang&lt;/a&gt; 寄来的阿里月
+      
+      </description>
+      
+      <comments>https://liyin.date/2017/09/29/unbox-alimooncake/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>LetITFly BBS 重新开放啦</title>
@@ -138,20 +152,6 @@
       </description>
       
       <comments>https://liyin.date/2017/04/02/pgp/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>QubesOS</title>
-      <link>https://liyin.date/2017/03/22/qubesos/</link>
-      <guid>https://liyin.date/2017/03/22/qubesos/</guid>
-      <pubDate>Wed, 22 Mar 2017 09:28:23 GMT</pubDate>
-      <description>
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;最近折腾完 Alpine Linux 之后，我开始正式在电脑上安装双系统，我不太喜欢 Ubuntu 操作系统，所以先尝试了 Debian ，不过 Debian 在我的电脑上安
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/03/22/qubesos/#disqus_thread</comments>
     </item>
     
   </channel>
