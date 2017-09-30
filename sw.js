@@ -1,6 +1,6 @@
 "use strict";
 (function() {
-    var cacheVersion = "201709301737";
+    var cacheVersion = "201709301742";
     var staticImageCacheName = "image" + cacheVersion;
     var staticAssetsCacheName = "assets" + cacheVersion;
     var contentCacheName = "content" + cacheVersion;
@@ -26,6 +26,7 @@
     self.toolbox.router.get("/myfiles/js/(.*)", self.toolbox.networkOnly, {
         origin: /skyedge\.b0\.upaiyun\.com/,
     });
+    self.toolbox.router.get("/", self.toolbox.networkFirst, {});
     self.toolbox.router.get("/451.php", self.toolbox.networkOnly, {});
     self.toolbox.router.get("/events.js", self.toolbox.networkOnly, {});
     self.toolbox.router.get("/myfiles/attachment/(.*)", self.toolbox.networkFirst, {
