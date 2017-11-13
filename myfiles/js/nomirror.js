@@ -1,4 +1,4 @@
-var allowedHost = ['liyin.date','archive.org','localhost:4000'];
+var allowedHost = ['liyin.date','archive.org','localhost:4000','127.0.0.1:4000'];
 function loadSwal() {
     var loaddyncss = document.createElement('link');
     loaddyncss.setAttribute('rel','stylesheet');
