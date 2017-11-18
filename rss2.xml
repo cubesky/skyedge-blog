@@ -8,8 +8,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Mon, 13 Nov 2017 14:10:14 GMT</pubDate>
+    <pubDate>Sat, 18 Nov 2017 06:30:03 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>bPlayer</title>
+      <link>https://liyin.date/2017/11/18/bplayer/</link>
+      <guid>https://liyin.date/2017/11/18/bplayer/</guid>
+      <pubDate>Sat, 18 Nov 2017 14:12:12 GMT</pubDate>
+      <description>
+      
+        &lt;blockquote&gt;
+&lt;p&gt;说起来很久都没写博客了呢，估计这两天会写一篇博文记录下最近的事情~&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;引&quot;&gt;&lt;a href=&quot;#引&quot; class=&quot;headerlink&quot; title=&quot;引&quot;&gt;&lt;/a&gt;引&lt;/h1&gt;&lt;p&gt;2017 年
+      
+      </description>
+      
+      <comments>https://liyin.date/2017/11/18/bplayer/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>开箱测评 | 阿里月饼</title>
@@ -139,20 +156,6 @@
       </description>
       
       <comments>https://liyin.date/2017/04/14/btrfs-crash/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>PGP</title>
-      <link>https://liyin.date/2017/04/02/pgp/</link>
-      <guid>https://liyin.date/2017/04/02/pgp/</guid>
-      <pubDate>Sun, 02 Apr 2017 15:56:07 GMT</pubDate>
-      <description>
-      
-        &lt;h1 id=&quot;什么是-PGP-？它能做什么？&quot;&gt;&lt;a href=&quot;#什么是-PGP-？它能做什么？&quot; class=&quot;headerlink&quot; title=&quot;什么是 PGP ？它能做什么？&quot;&gt;&lt;/a&gt;什么是 PGP ？它能做什么？&lt;/h1&gt;&lt;p&gt;PGP 是 Pretty Good 
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/04/02/pgp/#disqus_thread</comments>
     </item>
     
   </channel>

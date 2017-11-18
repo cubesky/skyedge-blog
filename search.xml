@@ -4,6 +4,43 @@
   
     
     <entry>
+      <title><![CDATA[bPlayer]]></title>
+      <url>https://liyin.date/2017/11/18/bplayer/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>说起来很久都没写博客了呢，估计这两天会写一篇博文记录下最近的事情~</p>
+</blockquote>
+<h1 id="引"><a href="#引" class="headerlink" title="引"></a>引</h1><p>2017 年 11 月 12 日的时候和老宋 <a href="https://ccoooss.com/" target="_blank" rel="external">主页在这里</a> 见了面~ 他真的真的真的真的很触， <strong>ef.js</strong> 框架就出自他之手。</p>
+<p>不过呢，今天，推荐一个他写的另一个工具库 —— <strong>bPlayer</strong> ，一个基于 HTML5 Audio 的播放器。</p>
+<p>现在，在你们查看我的<a href="https://liyin.date/slogan/">博客标题 Slogan</a> 的时候，你会发现，原来光秃秃的音乐播放控件变成了美观的 bPlayer </p>
+<p>以前，我也使用过其他的音乐库，比如 APlayer ，不过，它经常出现 <code>Error Happened</code> 错误导致无法播放。</p>
+<p>而 bPlayer 就没有这个问题，一切都很顺利，而且使用非常的方便。</p>
+<h1 id="如何使用呢"><a href="#如何使用呢" class="headerlink" title="如何使用呢"></a>如何使用呢</h1><p>首先就是引入 bPlayer 啦，去 upkg 引用最新的 bPlayer 或者 <code>npm install bPlayer --save</code> 都可以~</p>
+<p>然后修改你的 <code>audio</code> 标签</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>音乐地址<span class="token punctuation">"</span></span> <span class="token attr-name">cover</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>封面<span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>标题<span class="token punctuation">"</span></span> <span class="token attr-name">artist</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>歌手<span class="token punctuation">"</span></span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>主题颜色<span class="token punctuation">"</span></span> <span class="token attr-name">autoplay</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>是否自动播放<span class="token punctuation">"</span></span> <span class="token attr-name">loop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>是否循环<span class="token punctuation">"</span></span> <span class="token attr-name">slim</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>是否使用窄版<span class="token punctuation">"</span></span> <span class="token attr-name">controls</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bplayer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后，简单的调用 </p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">bPlayer<span class="token punctuation">.</span><span class="token function">scan</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>就可以了</p>
+<h1 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h1><p>现在 bPlayer 还不支持 <code>source</code> 多来源，也没有歌词和播放列表的功能，不过据说下一代的 <code>bPlayer-ef</code> 会包含这些功能，期待~</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 网页开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> bPlayer </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[开箱测评 | 阿里月饼]]></title>
       <url>https://liyin.date/2017/09/29/unbox-alimooncake/</url>
       <content type="html"><![CDATA[<p>前几天，收到了一份从 <a href="https://ikk.me" target="_blank" rel="external">Kookxiang</a> 寄来的阿里月饼！ <strong>ありがとう</strong><br>那么，来开箱吧！<br><img src="/2017/09/29/unbox-alimooncake/box-out.jpg" alt="out" title="out"> </p>
@@ -687,9 +724,9 @@ rc-update add dbus
         
         <tags>
             
-            <tag> Javascript </tag>
-            
             <tag> 正方教务 </tag>
+            
+            <tag> Javascript </tag>
             
         </tags>
         
