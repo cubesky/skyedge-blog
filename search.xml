@@ -4,6 +4,40 @@
   
     
     <entry>
+      <title><![CDATA[闲聊·记录 | 2017年11月]]></title>
+      <url>https://liyin.date/2017/11/18/talk-2017-11/</url>
+      <content type="html"><![CDATA[<p>时间往往过得很快，这个月似乎发生了不少事情，梳理下思路来想想这个到现在都干了什么…..</p>
+<p><br></p>
+<p>上月底我受同学邀请去了一家手游公司工作，主要从事手游 SDK 的相关开发（所以我也不知道手游的策划们是怎么干活的），对于我来说，难度属于并不是很难，但是还是有一些难度，主要是有的地方需要直接操作 Dex 的字节码来解决一些问题，不过最终我也研究出来了方法，总的来说，并没有想象中的难。</p>
+<p><br></p>
+<p>然后呢，这月初，学校把我们都扔给千锋培训机构去上课，不过那个课实在是 Boring …. 无奈我只好喊出一句 <strong>垃圾千锋</strong> ，而且那个老师天天吹逼但错误百出，怼了他 2 天之后，管理老师放我回去上班了（要不然2个星期的工资啊喂！），当然算我全勤~</p>
+<p>这两个星期我在公司开发了一堆东西，感觉自己效率爆表。</p>
+<p><br></p>
+<p>上周日（12 日）终于和老宋面姬啦，老宋超可爱 hhhhh</p>
+<p>不过也很触，完全比不上啊！</p>
+<p><br></p>
+<p>然后 18 日（本博文编写日期） 千锋最终答辩，想了想，用以前做的东西外加一个飞机大战的程序用 OpenGL ES 随便写了写，PPT 疯狂打脸，然后老师根本已经问不出问题了 23333</p>
+<p>嘛，差不多就是这样了~</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 闲聊 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 闲聊 </tag>
+            
+            <tag> 千锋 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[bPlayer]]></title>
       <url>https://liyin.date/2017/11/18/bplayer/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -724,9 +758,9 @@ rc-update add dbus
         
         <tags>
             
-            <tag> 正方教务 </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> 正方教务 </tag>
             
         </tags>
         

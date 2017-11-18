@@ -8,8 +8,24 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Sat, 18 Nov 2017 06:30:03 GMT</pubDate>
+    <pubDate>Sat, 18 Nov 2017 07:14:29 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>闲聊·记录 | 2017年11月</title>
+      <link>https://liyin.date/2017/11/18/talk-2017-11/</link>
+      <guid>https://liyin.date/2017/11/18/talk-2017-11/</guid>
+      <pubDate>Sat, 18 Nov 2017 14:33:17 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;时间往往过得很快，这个月似乎发生了不少事情，梳理下思路来想想这个到现在都干了什么…..&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;上月底我受同学邀请去了一家手游公司工作，主要从事手游 SDK 的相关开发（所以我也不知道手游的策划们是怎么干活的），对于我来说，难度属于并不是很难，
+      
+      </description>
+      
+      <comments>https://liyin.date/2017/11/18/talk-2017-11/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>bPlayer</title>
@@ -142,20 +158,6 @@
       </description>
       
       <comments>https://liyin.date/2017/04/30/one-adobe-carsh-resolve/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>btrfs 崩掉了</title>
-      <link>https://liyin.date/2017/04/14/btrfs-crash/</link>
-      <guid>https://liyin.date/2017/04/14/btrfs-crash/</guid>
-      <pubDate>Fri, 14 Apr 2017 22:18:43 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;今天在 &lt;code&gt;openSUSE&lt;/code&gt; 上安装软件，同时无聊的用 &lt;code&gt;Kodi&lt;/code&gt; 看电视剧（没错就是那个《人民的名义》）。突然感觉系统特别卡，于是乎就重启了系统，然后悲剧发生了…..Btrfs 分区无法挂载…. &lt;code&gt;snapper&lt;/
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/04/14/btrfs-crash/#disqus_thread</comments>
     </item>
     
   </channel>
