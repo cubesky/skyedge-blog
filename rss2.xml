@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Sat, 18 Nov 2017 13:33:32 GMT</pubDate>
+    <pubDate>Wed, 29 Nov 2017 08:43:41 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Android 的优化软件们</title>
+      <link>https://liyin.date/2017/11/29/android-optimize-app/</link>
+      <guid>https://liyin.date/2017/11/29/android-optimize-app/</guid>
+      <pubDate>Wed, 29 Nov 2017 16:13:02 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;昨天晚上跟同学聊天的时候脑洞大开，于是各种编段子，后来整理了下发到了我的 &lt;a href=&quot;https://t.me/lynote&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Telegram 频道&lt;/a&gt; 上，经过其他人转发之后……… 开启了编段子的夜
+      
+      </description>
+      
+      <comments>https://liyin.date/2017/11/29/android-optimize-app/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>闲聊·记录 | 2017年11月</title>
@@ -144,20 +158,6 @@
       </description>
       
       <comments>https://liyin.date/2017/05/09/qq-flash-photo-capture/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>一次 Adobe 软件的崩溃解决</title>
-      <link>https://liyin.date/2017/04/30/one-adobe-carsh-resolve/</link>
-      <guid>https://liyin.date/2017/04/30/one-adobe-carsh-resolve/</guid>
-      <pubDate>Sun, 30 Apr 2017 01:56:50 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;前几天拿到了 APP 开发的工资，虽然不多但是也够我以学生优惠入手一个 Adobe 家的软件了，上一次我已经购买过了 &lt;code&gt;Photoshop&lt;/code&gt; ，于是这一次为了画些矢量图，于是就想到购买 &lt;code&gt;Adobe Illustrator CS6&lt;/code
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/04/30/one-adobe-carsh-resolve/#disqus_thread</comments>
     </item>
     
   </channel>
