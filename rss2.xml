@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Thu, 07 Dec 2017 09:04:50 GMT</pubDate>
+    <pubDate>Tue, 02 Jan 2018 09:59:47 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>再见 2017， 你好 2018</title>
+      <link>https://liyin.date/2018/01/02/bye_2017_hello_2018/</link>
+      <guid>https://liyin.date/2018/01/02/bye_2017_hello_2018/</guid>
+      <pubDate>Tue, 02 Jan 2018 16:34:30 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;新年和圣诞都过去了，随着圣诞节过去，这个博客也已经建立了1年，最近手边的事情太多没赶上年底写完总结，于是推迟到了现在，真是怠惰啊….&lt;/p&gt;
+      
+      </description>
+      
+      <comments>https://liyin.date/2018/01/02/bye_2017_hello_2018/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Android 的优化软件们</title>
@@ -144,20 +158,6 @@
       </description>
       
       <comments>https://liyin.date/2017/05/25/letapkfly/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>QQ 闪照截图</title>
-      <link>https://liyin.date/2017/05/09/qq-flash-photo-capture/</link>
-      <guid>https://liyin.date/2017/05/09/qq-flash-photo-capture/</guid>
-      <pubDate>Tue, 09 May 2017 20:24:34 GMT</pubDate>
-      <description>
-      
-        &lt;h1 id=&quot;唠叨&quot;&gt;&lt;a href=&quot;#唠叨&quot; class=&quot;headerlink&quot; title=&quot;唠叨&quot;&gt;&lt;/a&gt;唠叨&lt;/h1&gt;&lt;p&gt;现在，国内社交聊天软件中，QQ 和 微信 一手遮天，占据了几乎所有的市场份额，在讲如何闪照截图之前，先说明我对这两个软件的看法….&lt;br&gt;Q
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/05/09/qq-flash-photo-capture/#disqus_thread</comments>
     </item>
     
   </channel>

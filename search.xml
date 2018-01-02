@@ -4,6 +4,51 @@
   
     
     <entry>
+      <title><![CDATA[再见 2017， 你好 2018]]></title>
+      <url>https://liyin.date/2018/01/02/bye_2017_hello_2018/</url>
+      <content type="html"><![CDATA[<p>新年和圣诞都过去了，随着圣诞节过去，这个博客也已经建立了1年，最近手边的事情太多没赶上年底写完总结，于是推迟到了现在，真是怠惰啊….</p>
+<a id="more"></a>
+<p>说来这也是我第二次搭建博客，第一次是在很久很久以前使用 Wordpress 搭建的，当时很喜欢 Wordpress 的两步认证插件 Clef ，不过后来因为服务商的一个意外丢失了所有数据，当时我也没有备份的习惯，那些东西就跟随记忆一起远去了…</p>
+<h1 id="朋友"><a href="#朋友" class="headerlink" title="朋友"></a>朋友</h1><p>这一年里，又认识了很多很多新朋友，KK、Viosey、neoFelhz、LetITFly、glzjin、Yukino Song、EdenChen、iVanilla、雪梨、零件、Zohar……</p>
+<h1 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h1><p>大概去年的现在我正在忙着考试，然后组建新的寒假 Minecraft 服务器（说来好像又到了这个时候），不过现在稍微有些不同啦，去年大概2月底加入了<a href="https://nyaa.cat" target="_blank" rel="external">喵窝</a>，所以估计我以后会在喵窝中度过更多的时间吧~</p>
+<p>至于博客主题，我是从 <code>1.2.5</code> 开始使用的现在这个 <a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="external"><code>hexo-material-theme</code></a> ，当时觉得主题有 bug ，又缺一些东西，于是就加入了现在的 <code>NekoDev</code> ，和 Viosey、 neoFelhz、滑稽喵、洛洛 一起修改整个主题，现在的主题和当时比已经面目全非了…. 虽然已经计划完全重写整个主题，不过现在事情实在太多，于是一点都还没写… <del>争取？今年？</del> </p>
+<p>去年一年间，我居然写了 58 篇博文？！ 没想到这么多，以后有什么有趣的事情我会继续更新的！</p>
+<p>去年嘛，博客也被 DDoS 牵连过… 有人放 AOE 打到我了….</p>
+<p>因为快要毕业了嘛，所以我也开始找工作啦~<br>2017 年底，我受同学推荐来到了现在的公司做后端开发，这是一个做手游的公司，我估计我不会在这里呆太久。<br>这个公司基本上就是每天8小时，然后要求周六加班。<strong>没！有！加！班！工！资！</strong></p>
+<h1 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h1><p>2018 年嘛，好好做毕设是优先事项~</p>
+<p>然后大概几个月之后我会从这个公司辞职吧，后面再做些什么，还没有太多的计划。</p>
+<p>也许会去某些城市旅游一趟，顺便面姬什么的…</p>
+<p>辞职之后也许我会填填坑什么的，目前计划中的，大概是下面这些吧</p>
+<ul>
+<li><code>hexo-material-v2</code> Hexo 原质主题第二版</li>
+<li><code>ExACN</code> ExView 那玩意太难用了，想自己写一个，写好会开源</li>
+<li><code>█████████</code> 一个奇怪的小程序（不会开放的）</li>
+</ul>
+<p>然后就是，突然想做 Minecraft 的实况视频，也许有空之后就会做吧，不过别期待~（没人会期待吧！）</p>
+<h1 id="头像？人设？"><a href="#头像？人设？" class="headerlink" title="头像？人设？"></a>头像？人设？</h1><p>这件想了好长时间的事情终于办了，我有自己的人设图啦~<br><img src="/2018/01/02/bye_2017_hello_2018/liyin.jpg" alt="liyin" title="liyin"><br>我在各个平台上注册的头像会慢慢更换的~</p>
+<blockquote>
+<p>其实还有另一个设定图哦~ 不过那个先保密吧~ （其实是我还没想好放在哪…）</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 闲聊 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 闲聊 </tag>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Android 的优化软件们]]></title>
       <url>https://liyin.date/2017/11/29/android-optimize-app/</url>
       <content type="html"><![CDATA[<p>昨天晚上跟同学聊天的时候脑洞大开，于是各种编段子，后来整理了下发到了我的 <a href="https://t.me/lynote" target="_blank" rel="external">Telegram 频道</a> 上，经过其他人转发之后……… 开启了编段子的夜晚，现在就总结下昨晚的段子吧~</p>
