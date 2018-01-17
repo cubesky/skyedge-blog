@@ -671,9 +671,9 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
         
         <tags>
             
-            <tag> hexo-material-theme </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> hexo-material-theme </tag>
             
             <tag> Python </tag>
             
@@ -889,9 +889,9 @@ rc-update add dbus
         
         <tags>
             
-            <tag> Javascript </tag>
-            
             <tag> 正方教务 </tag>
+            
+            <tag> Javascript </tag>
             
         </tags>
         
