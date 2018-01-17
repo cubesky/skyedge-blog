@@ -285,6 +285,7 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
+toolbox.router.get("/service-worker.js", toolbox.cacheFirst, {});
 toolbox.router.get("/*", toolbox.networkFirst, {"origin":"skyedge.b0.upaiyun.com"});
 
 
