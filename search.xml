@@ -4,14 +4,120 @@
   
     
     <entry>
+      <title><![CDATA[对博客分类进行了一些整理]]></title>
+      <url>https://liyin.date/2018/04/19/blog-categories-sort/</url>
+      <content type="html"><![CDATA[<p>之前本博客的分类非常混乱，基本上就当作标签一样来用…. 导致根本无法正常的分类博文，于是最近对博文进行了重新分类。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类别</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">闲聊</td>
+<td style="text-align:left">就是想到什么就写一写罢了…</td>
+</tr>
+<tr>
+<td style="text-align:left">技术栈</td>
+<td style="text-align:left">与技术开发等相关的内容，或者折腾什么东西…</td>
+</tr>
+<tr>
+<td style="text-align:left">隐私</td>
+<td style="text-align:left">关于隐私的博文</td>
+</tr>
+<tr>
+<td style="text-align:left">推广推荐</td>
+<td style="text-align:left">商业互吹或者软件推荐</td>
+</tr>
+<tr>
+<td style="text-align:left">Javascipt 书签工具</td>
+<td style="text-align:left">一些小书签工具或者 <code>.user.js</code> 脚本</td>
+</tr>
+<tr>
+<td style="text-align:left">开箱</td>
+<td style="text-align:left">开箱！</td>
+</tr>
+<tr>
+<td style="text-align:left">购物</td>
+<td style="text-align:left">买买买！多半是海淘吧…</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      
+        <categories>
+            
+            <category> 闲聊 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Google 分析 与 Do Not Track]]></title>
+      <url>https://liyin.date/2018/04/19/googleanalytic-dnt/</url>
+      <content type="html"><![CDATA[<h1 id="Google-Analytics"><a href="#Google-Analytics" class="headerlink" title="Google Analytics"></a>Google Analytics</h1><p><a href="https://analytics.google.com/" target="_blank" rel="noopener">Google Analytics</a> 是目前网站广泛使用的用户分析系统，它会记录网站浏览者的某些数据并显示到统计面板上,由于其强大的面板和分析曲线深受站长们的喜爱。本博客也是使用 Google Analytics 进行用户统计的。<br><img src="/2018/04/19/googleanalytic-dnt/GoogleAnalytics.png" title="GoogleAnalytics"></p>
+<h1 id="Google-Tag-Manager"><a href="#Google-Tag-Manager" class="headerlink" title="Google Tag Manager"></a>Google Tag Manager</h1><p>Google Tag Manager 是 Google 推出的一种管理机制，可以把多个 Tag 放在一个 Tag Manager 里管理，比如 Analytics 、 AdWords 等，都可以使用一个 gtag 进行管理，无需独立的引入多个库再分别进行配置。新添加的 Google Analytics 都会显示以这种方式添加 Analytics 追踪代码。<br><img src="/2018/04/19/googleanalytic-dnt/GTag.png" title="GTag"></p>
+<h1 id="Do-Not-Track"><a href="#Do-Not-Track" class="headerlink" title="Do Not Track"></a>Do Not Track</h1><p>应该有些读者在浏览器的设置页面看到过这个</p>
+<img src="/2018/04/19/googleanalytic-dnt/DNT_FF.png" title="DNT_Firefox">
+<img src="/2018/04/19/googleanalytic-dnt/DNT_Chrome.png" title="DNT_Chrome">
+<p>开启这个选项后，浏览器会为所有请求添加一个请求头，名为 <code>DNT</code> 并将值设置为 <code>1</code> ，并将 <code>navigator.doNotTrack</code> 也设置为 <code>1</code> ，在追踪服务接收到这个请求头或者 JS 代码获取到这个值后，<strong>应</strong>不发出追踪请求，但这是一个<strong>君子协定</strong>，服务可以无视这个请求头继续追踪用户。 Google Analytics 在默认情况下会无视这个请求头继续追踪用户，而且在 GA 面板上有一个筛选项可以筛选出开启了 <code>DNT</code> 选项的用户。</p>
+<h1 id="使-Google-Analytics-和-GTag-遵循-DNT-设置"><a href="#使-Google-Analytics-和-GTag-遵循-DNT-设置" class="headerlink" title="使 Google Analytics 和 GTag 遵循 DNT 设置"></a>使 Google Analytics 和 GTag 遵循 DNT 设置</h1><p>如果你开启了 <code>DNT</code> 选项，然后在我的博客页面打开网络请求查看面板，你会发现 Google Analytics 脚本被加载了，但没有发出任何统计追踪请求，因为我对其启用了遵循 <code>DNT</code> 设定。<br>那么，这是怎么做的呢？</p>
+<h2 id="Google-Analytics-1"><a href="#Google-Analytics-1" class="headerlink" title="Google Analytics"></a>Google Analytics</h2><p>如果你正在使用 Google Analytics 旧版本，那么在你的 Google Analytics 脚本 script 下方再加入一个</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">async</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>//storage.googleapis.com/outfox/dnt_min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后在 <code>ga</code> 设置的地方， <code>ga(&#39;send&#39;, &#39;pageview&#39;)</code> 前加入 </p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">ga</span><span class="token punctuation">(</span><span class="token string">'require'</span><span class="token punctuation">,</span> <span class="token string">'dnt'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>就可以让 Google Analytics 对启用了 DNT 选项的用户停止发出追踪请求了。</p>
+<h2 id="Google-Tag-Manager-GTag"><a href="#Google-Tag-Manager-GTag" class="headerlink" title="Google Tag Manager (GTag)"></a>Google Tag Manager (GTag)</h2><p>如果你使用了新版的 GTag ，那么上面的方法是不起作用的，你需要在调用 <code>gtag()</code> <strong>之前</strong>在 javascript 中加入如下的代码</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>doNotTrack <span class="token operator">===</span> <span class="token string">'1'</span><span class="token punctuation">)</span> window<span class="token punctuation">[</span><span class="token string">'ga-disable-GA_TRACKING_ID'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>注意： 将 GA_TRACKING_ID 修改为你的 Google 网站追踪 ID</p>
+</blockquote>
+<p>这样就可以关闭 GTag 中的追踪请求了。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 隐私 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Google Analytics </tag>
+            
+            <tag> Do Not Track </tag>
+            
+            <tag> DNT </tag>
+            
+            <tag> GTag </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[再见 2017， 你好 2018]]></title>
       <url>https://liyin.date/2018/01/02/bye_2017_hello_2018/</url>
       <content type="html"><![CDATA[<p>新年和圣诞都过去了，随着圣诞节过去，这个博客也已经建立了1年，最近手边的事情太多没赶上年底写完总结，于是推迟到了现在，真是怠惰啊….</p>
 <a id="more"></a>
 <p>说来这也是我第二次搭建博客，第一次是在很久很久以前使用 Wordpress 搭建的，当时很喜欢 Wordpress 的两步认证插件 Clef ，不过后来因为服务商的一个意外丢失了所有数据，当时我也没有备份的习惯，那些东西就跟随记忆一起远去了…</p>
 <h1 id="朋友"><a href="#朋友" class="headerlink" title="朋友"></a>朋友</h1><p>这一年里，又认识了很多很多新朋友，KK、Viosey、neoFelhz、liwanglin12、Troy、Indexyz、Meto-i、LetITFly、glzjin、Yukino Song、EdenChen、iVanilla、雪梨、零件、Zohar……</p>
-<h1 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h1><p>大概去年的现在我正在忙着考试，然后组建新的寒假 Minecraft 服务器（说来好像又到了这个时候），不过现在稍微有些不同啦，去年大概2月底加入了<a href="https://nyaa.cat" target="_blank" rel="external">喵窝</a>，所以估计我以后会在喵窝中度过更多的时间吧~</p>
-<p>至于博客主题，我是从 <code>1.2.5</code> 开始使用的现在这个 <a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="external"><code>hexo-material-theme</code></a> ，当时觉得主题有 bug ，又缺一些东西，于是就加入了现在的 <code>NekoDev</code> ，和 Viosey、 neoFelhz、滑稽喵、洛洛 一起修改整个主题，现在的主题和当时比已经面目全非了…. 虽然已经计划完全重写整个主题，不过现在事情实在太多，于是一点都还没写… <del>争取？今年？</del> </p>
+<h1 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h1><p>大概去年的现在我正在忙着考试，然后组建新的寒假 Minecraft 服务器（说来好像又到了这个时候），不过现在稍微有些不同啦，去年大概2月底加入了<a href="https://nyaa.cat" target="_blank" rel="noopener">喵窝</a>，所以估计我以后会在喵窝中度过更多的时间吧~</p>
+<p>至于博客主题，我是从 <code>1.2.5</code> 开始使用的现在这个 <a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="noopener"><code>hexo-material-theme</code></a> ，当时觉得主题有 bug ，又缺一些东西，于是就加入了现在的 <code>NekoDev</code> ，和 Viosey、 neoFelhz、滑稽喵、洛洛 一起修改整个主题，现在的主题和当时比已经面目全非了…. 虽然已经计划完全重写整个主题，不过现在事情实在太多，于是一点都还没写… <del>争取？今年？</del> </p>
 <p>去年一年间，我居然写了 28 篇博文？！我这么水的吗？！没想到会有这么多，以后有什么有趣的事情我会继续更新的！</p>
 <p>去年嘛，博客也被 DDoS 牵连过… 有人放 AOE 打到我了….</p>
 <p>因为快要毕业了嘛，所以我也开始找工作啦~<br>2017 年底，我受同学推荐来到了现在的公司做后端开发，这是一个做手游的公司，我估计我不会在这里呆太久。<br>这个公司基本上就是每天8小时，然后要求周六加班。<strong>没！有！加！班！工！资！</strong></p>
@@ -25,7 +131,7 @@
 <li><code>█████████</code> 一个奇怪的小程序（不会开放的）</li>
 </ul>
 <p>然后就是，突然想做 Minecraft 的实况视频，也许有空之后就会做吧，不过别期待~（没人会期待吧！）</p>
-<h1 id="头像？人设？"><a href="#头像？人设？" class="headerlink" title="头像？人设？"></a>头像？人设？</h1><p>这件想了好长时间的事情终于办了，我有自己的人设图啦~<br><img src="/2018/01/02/bye_2017_hello_2018/liyin.jpg" alt="liyin" title="liyin"><br>我在各个平台上注册的头像会慢慢更换的~</p>
+<h1 id="头像？人设？"><a href="#头像？人设？" class="headerlink" title="头像？人设？"></a>头像？人设？</h1><p>这件想了好长时间的事情终于办了，我有自己的人设图啦~<br><img src="/2018/01/02/bye_2017_hello_2018/liyin.jpg" title="liyin"><br>我在各个平台上注册的头像会慢慢更换的~</p>
 <blockquote>
 <p>其实还有另一个设定图哦~ 不过那个先保密吧~ （其实是我还没想好放在哪…）</p>
 </blockquote>
@@ -51,39 +157,71 @@
     <entry>
       <title><![CDATA[Android 的优化软件们]]></title>
       <url>https://liyin.date/2017/11/29/android-optimize-app/</url>
-      <content type="html"><![CDATA[<p>昨天晚上跟同学聊天的时候脑洞大开，于是各种编段子，后来整理了下发到了我的 <a href="https://t.me/lynote" target="_blank" rel="external">Telegram 频道</a> 上，经过其他人转发之后……… 开启了编段子的夜晚，现在就总结下昨晚的段子吧~</p>
-<h1 id="神奇的笔记-天空之间-神楽坂立音"><a href="#神奇的笔记-天空之间-神楽坂立音" class="headerlink" title="神奇的笔记 (天空之间 / 神楽坂立音)"></a>神奇的笔记 (天空之间 / 神楽坂立音)</h1><p>频道： <a href="https://t.me/lynote" target="_blank" rel="external">神奇的笔记</a></p>
+      <content type="html"><![CDATA[<p>昨天晚上跟同学聊天的时候脑洞大开，于是各种编段子，后来整理了下发到了我的 <a href="https://t.me/lynote" target="_blank" rel="noopener">Telegram 频道</a> 上，经过其他人转发之后……… 开启了编段子的夜晚，现在就总结下昨晚的段子吧~</p>
+<h1 id="神奇的笔记-天空之间-神楽坂立音"><a href="#神奇的笔记-天空之间-神楽坂立音" class="headerlink" title="神奇的笔记 (天空之间 / 神楽坂立音)"></a>神奇的笔记 (天空之间 / 神楽坂立音)</h1><p>频道： <a href="https://t.me/lynote" target="_blank" rel="noopener">神奇的笔记</a></p>
 <blockquote>
 <p><strong>Android 系统：</strong> 诶诶诶 我的 Doze 怎么自己启动了 ，这软件怎么被我杀了，我什么都没干啊…<br><strong>绿色守护：</strong> 我干的！不服吗！</p>
+</blockquote>
+<blockquote>
 <p><strong>Android 系统：</strong> 老子的存储服务呢！<br><strong>Storage Redirect：</strong> 你别说话</p>
+</blockquote>
+<blockquote>
 <p><strong>众软件：</strong> 我的服务呢？我的广播接收器呢？我在哪？我是谁？<br><strong>MyAndroidTools：</strong> 听说你在找服务？</p>
+</blockquote>
+<blockquote>
 <p><strong>众软件：</strong> 诶这个怎么是空的，这个怎么也是空的，说好的权限呢？<br><strong>AppOps：</strong> 你猜？</p>
+</blockquote>
+<blockquote>
 <p><strong>众软件：</strong> 这是哪？这地方怎么这么小，好像不对啊！<br><strong>Island：</strong> 老实呆着吧！</p>
+</blockquote>
+<blockquote>
 <p><strong>众软件：</strong> 我的目录呢？这怎么出来个文件？！<br><strong>Dir：</strong> 我帮你占了个位置，现在这个地方是我的了！</p>
+</blockquote>
+<blockquote>
 <p><strong>Magisk：</strong> 听说这是你的系统分区？我对这个有点看法。我觉得我这里这堆东西可以塞进去…恩…你们改的东西等重启我就帮你们扔了，不用谢我</p>
+</blockquote>
+<blockquote>
 <p><strong>Xposed：</strong> 哦，这是你的运行时，来来来，换成这个。哦哦这个地方，来来来把我这个加进去。这里啊，我对这个值有点自己的想法，不管你怎么想，反正我帮你改了下</p>
+</blockquote>
+<blockquote>
 <p><strong>A 应用：</strong> 我想唤醒 B 应用<br><strong>系统：</strong> 没装！<br><strong>B 应用：</strong> ？？？？？<br><strong>冰箱：</strong> 咳咳………</p>
+</blockquote>
+<blockquote>
 <p><strong>A 应用：</strong> 请帮我启动 B 应用，我知道它在，谢谢<br><strong>系统：</strong> 哦好 (转手扔掉)<br><strong>B 应用：</strong> ？？？？？<br><strong>IFW：</strong> 我只是写了点东西……是系统动的手</p>
+</blockquote>
+<blockquote>
 <p><strong>第三方 SDK：</strong> 我想获取……怎么空的？怎么又空的…这个不太对吧？好像有没什么不对，算了就这样用吧…<br><strong>保险套(Project Condom)：</strong> 盯～～～</p>
 </blockquote>
-<h1 id="iVanilla-的后花园-iVanilla"><a href="#iVanilla-的后花园-iVanilla" class="headerlink" title="iVanilla 的后花园 (iVanilla)"></a>iVanilla 的后花园 (iVanilla)</h1><p>频道： <a href="https://t.me/iVanillaPro" target="_blank" rel="external">iVanilla 的后花园</a></p>
+<h1 id="iVanilla-的后花园-iVanilla"><a href="#iVanilla-的后花园-iVanilla" class="headerlink" title="iVanilla 的后花园 (iVanilla)"></a>iVanilla 的后花园 (iVanilla)</h1><p>频道： <a href="https://t.me/iVanillaPro" target="_blank" rel="noopener">iVanilla 的后花园</a></p>
 <blockquote>
 <p><strong>A 应用：</strong> 我怎么唤醒不了 B 应用了?<br><strong>冰箱：</strong> 你说啥?</p>
 </blockquote>
 <h1 id="芸枫"><a href="#芸枫" class="headerlink" title="芸枫"></a>芸枫</h1><blockquote>
 <p><strong>众软件：</strong> 我的 Service 呢？！<br><strong>MyAndroidTools：</strong> 听说你在找服务？<br><strong>Android8 系统：</strong> 哦？你好像，忘了什么吧<br><strong>阻止运行：</strong> 我只是做了一点小小的工作。<br>众软件再也没有抱怨过（</p>
+</blockquote>
+<blockquote>
 <p><strong>Android 系统：</strong> 屏幕被关闭，准备进入 Doze 模式。Doze？！<br><strong>绿色守护：</strong> 我如清风徐来，只带走一片树叶。顺便把这个强行停止掉。</p>
+</blockquote>
+<blockquote>
 <p><strong>Magisk：</strong> 我突然有个大胆的想法。把这东西塞进去绝对好玩。<br><strong>Android系统：</strong> ！<br><strong>Google：</strong> 我觉得我们必须更新 SafeNet<br><strong>某小白用户：</strong> 怎么又 BootLoop</p>
+</blockquote>
+<blockquote>
 <p><strong>Magisk：</strong> 我突然有个大胆的想法。把这东西塞进去绝对好玩。<br><strong>Android系统：</strong> ！<br><strong>Xposed：</strong> 别搞个大新闻<br><strong>Magisk：</strong> 好好好，重启一下吧<br><strong>Android系统：</strong> 我总觉得不备份一下会挂掉</p>
+</blockquote>
+<blockquote>
 <p><strong>iOS 支付宝：</strong> 我想…<br><strong>iOS：</strong> 滚。<br><strong>Android 支付宝：</strong> 我想…<br><strong>Android：</strong> 300M 内存是吧？马上发货<br><strong>MyAndroidTools：</strong> 砍你手脚<br><strong>绿色守护：</strong> 乖乖去睡<br><strong>IFW：</strong> 抱歉，这是允许外<br><strong>Island：</strong> 你忘了这里是哪里吗<br><strong>Android8 &amp; AppOps：</strong> 我们已经为你整理好了后事<br><strong>阻止运行：</strong> 我不介意再填点土<br><strong>绿色守护：</strong> +1</p>
 </blockquote>
 <h1 id="Y-K-Ye"><a href="#Y-K-Ye" class="headerlink" title="Y. K. Ye"></a>Y. K. Ye</h1><blockquote>
 <p><strong>众应用：</strong> 我怎么接到 GCM 了？？？<br><strong>microG：</strong> 不知道</p>
 </blockquote>
-<h1 id="neoFelhz-News-春秋笔法-neoFelhz"><a href="#neoFelhz-News-春秋笔法-neoFelhz" class="headerlink" title="neoFelhz News | 春秋笔法  (neoFelhz)"></a>neoFelhz News | 春秋笔法  (neoFelhz)</h1><p>频道：<a href="https://t.me/neoFelhzW" target="_blank" rel="external">neoFelhz News | 春秋笔法</a></p>
+<h1 id="neoFelhz-News-春秋笔法-neoFelhz"><a href="#neoFelhz-News-春秋笔法-neoFelhz" class="headerlink" title="neoFelhz News | 春秋笔法  (neoFelhz)"></a>neoFelhz News | 春秋笔法  (neoFelhz)</h1><p>频道：<a href="https://t.me/neoFelhzW" target="_blank" rel="noopener">neoFelhz News | 春秋笔法</a></p>
 <blockquote>
 <p><strong>众应用：</strong> 哇塞，我好像看到了 MiPush Framework 了诶，好了好了没必要带自己的 MiPush 组件了（自己关掉）<br><strong>MiPushFake：</strong>（不说话）</p>
+</blockquote>
+<blockquote>
 <p><strong>众应用：</strong> 我知道你们会用写轮眼干掉我们的组件，看我们用 setCompnentEnableSetting 把这些被禁用的组件重新激活！<br>（ . . . . . . . ）<br><strong>众应用：</strong> 诶？？！！<br><strong>MyAndroidToolsXposed：</strong> 咳</p>
+</blockquote>
+<blockquote>
 <p><strong>众应用：</strong> 诶我们的第三方 SDK 怎么没法获取隐私没法使用权限没法链式唤醒了？<br><strong>保险套（Project Condom）：</strong> 哦</p>
 </blockquote>
 <h1 id="老人-放大镜"><a href="#老人-放大镜" class="headerlink" title="老人 放大镜"></a>老人 放大镜</h1><blockquote>
@@ -174,7 +312,7 @@
       <content type="html"><![CDATA[<blockquote>
 <p>说起来很久都没写博客了呢，估计这两天会写一篇博文记录下最近的事情~</p>
 </blockquote>
-<h1 id="引"><a href="#引" class="headerlink" title="引"></a>引</h1><p>2017 年 11 月 12 日的时候和老宋 <a href="https://ccoooss.com/" target="_blank" rel="external">主页在这里</a> 见了面~ 他真的真的真的真的很触， <strong>ef.js</strong> 框架就出自他之手。</p>
+<h1 id="引"><a href="#引" class="headerlink" title="引"></a>引</h1><p>2017 年 11 月 12 日的时候和老宋 <a href="https://ccoooss.com/" target="_blank" rel="noopener">主页在这里</a> 见了面~ 他真的真的真的真的很触， <strong>ef.js</strong> 框架就出自他之手。</p>
 <p>不过呢，今天，推荐一个他写的另一个工具库 —— <strong>bPlayer</strong> ，一个基于 HTML5 Audio 的播放器。</p>
 <p>现在，在你们查看我的<a href="https://liyin.date/slogan/">博客标题 Slogan</a> 的时候，你会发现，原来光秃秃的音乐播放控件变成了美观的 bPlayer </p>
 <p>以前，我也使用过其他的音乐库，比如 APlayer ，不过，它经常出现 <code>Error Happened</code> 错误导致无法播放。</p>
@@ -192,7 +330,7 @@
       
         <categories>
             
-            <category> 网页开发 </category>
+            <category> 技术栈 </category>
             
         </categories>
         
@@ -208,14 +346,14 @@
     <entry>
       <title><![CDATA[开箱测评 | 阿里月饼]]></title>
       <url>https://liyin.date/2017/09/29/unbox-alimooncake/</url>
-      <content type="html"><![CDATA[<p>前几天，收到了一份从 <a href="https://ikk.me" target="_blank" rel="external">Kookxiang</a> 寄来的阿里月饼！ <strong>ありがとう</strong><br>那么，来开箱吧！<br><img src="/2017/09/29/unbox-alimooncake/box-out.jpg" alt="out" title="out"> </p>
-<p>因为快递正好是周日到的，所以让同学帮我把快递拿到了宿舍~<br>外面的纸盒上就写着 Alibaba Group 阿里巴巴集团 的图标。（KK 的手机号 Get！好像…其实…早就 Get 过了…）<br><img src="/2017/09/29/unbox-alimooncake/box-zoomin.jpg" alt="zoomin" title="zoomin"> </p>
-<p>纸盒的正面写着 <code>在一起</code>  <del>（咳咳咳）</del><br><img src="/2017/09/29/unbox-alimooncake/box-together.jpg" alt="together" title="together"> </p>
-<p>打开外面的盒子之后，就是月饼盒和纸袋啦~  可以把月饼盒装进去~<br><img src="/2017/09/29/unbox-alimooncake/unbox.jpg" alt="unbox" title="unbox"><br><img src="/2017/09/29/unbox-alimooncake/unbox-self.jpg" alt="unboxself" title="unboxself"> </p>
-<p>打开盒子，左面~<br><img src="/2017/09/29/unbox-alimooncake/open-left.jpg" alt="left" title="left"> </p>
-<p>右边~<br><img src="/2017/09/29/unbox-alimooncake/open-right.jpg" alt="right" title="right"><br>这个似乎是一个相框（没打开）</p>
-<p>然后，最下面就是 6 种口味的月饼啦~<br><img src="/2017/09/29/unbox-alimooncake/open-mooncake.jpg" alt="mooncake" title="mooncake"> </p>
-<p>总体来说是这样的~<br><img src="/2017/09/29/unbox-alimooncake/open-all.jpg" alt="openall" title="openall"><br><img src="/2017/09/29/unbox-alimooncake/all.jpg" alt="all" title="all"> </p>
+      <content type="html"><![CDATA[<p>前几天，收到了一份从 <a href="https://ikk.me" target="_blank" rel="noopener">Kookxiang</a> 寄来的阿里月饼！ <strong>ありがとう</strong><br>那么，来开箱吧！<br><img src="/2017/09/29/unbox-alimooncake/box-out.jpg" title="out"> </p>
+<p>因为快递正好是周日到的，所以让同学帮我把快递拿到了宿舍~<br>外面的纸盒上就写着 Alibaba Group 阿里巴巴集团 的图标。（KK 的手机号 Get！好像…其实…早就 Get 过了…）<br><img src="/2017/09/29/unbox-alimooncake/box-zoomin.jpg" title="zoomin"> </p>
+<p>纸盒的正面写着 <code>在一起</code>  <del>（咳咳咳）</del><br><img src="/2017/09/29/unbox-alimooncake/box-together.jpg" title="together"> </p>
+<p>打开外面的盒子之后，就是月饼盒和纸袋啦~  可以把月饼盒装进去~<br><img src="/2017/09/29/unbox-alimooncake/unbox.jpg" title="unbox"><br><img src="/2017/09/29/unbox-alimooncake/unbox-self.jpg" title="unboxself"> </p>
+<p>打开盒子，左面~<br><img src="/2017/09/29/unbox-alimooncake/open-left.jpg" title="left"> </p>
+<p>右边~<br><img src="/2017/09/29/unbox-alimooncake/open-right.jpg" title="right"><br>这个似乎是一个相框（没打开）</p>
+<p>然后，最下面就是 6 种口味的月饼啦~<br><img src="/2017/09/29/unbox-alimooncake/open-mooncake.jpg" title="mooncake"> </p>
+<p>总体来说是这样的~<br><img src="/2017/09/29/unbox-alimooncake/open-all.jpg" title="openall"><br><img src="/2017/09/29/unbox-alimooncake/all.jpg" title="all"> </p>
 <p>里面的月饼都是定制的呢~~</p>
 <p>具体味道怎么样？我还没吃….. 过两天再更新口味吧！</p>
 ]]></content>
@@ -245,13 +383,19 @@
 <p>架设新论坛的过程中也遭遇了很多问题（比如网络攻击和数据丢失），但现在已经基本解决啦~</p>
 <p><code>LetITFly BBS</code> 正式开放！论坛也从原来仅讨论 <code>MyAndroidTools</code> 扩展到多个讨论区。</p>
 <p>欢迎大家前去交流 Android / Windows / Linux 的相关使用和优化心得哦~</p>
-<p>论坛地址 <a href="https://bbs.letitfly.me" target="_blank" rel="external">https://bbs.letitfly.me</a> </p>
+<p>论坛地址 <a href="https://bbs.letitfly.me" target="_blank" rel="noopener">https://bbs.letitfly.me</a> </p>
 <hr>
 
 <h2 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h2><p>随着 <code>LetITFly BBS</code> 正式开放，群里的催更机器人终于下岗啦~ </p>
 <p>可喜可贺~ 可喜可贺~</p>
 ]]></content>
       
+        <categories>
+            
+            <category> 推广推荐 </category>
+            
+        </categories>
+        
         
     </entry>
     
@@ -263,9 +407,9 @@
 </blockquote>
 <p>嘛，为什么今天突然说起转运的事情了呢…..<br>因为之前一直在 StartedJP 有个想买的东西，但是…我不会日语啊啊啊啊啊！<br>于是乎….就求助纸喵帮忙，今天正好纸喵上线的时候帮我看了下各种信息什么的，于是乎，又一次海淘开始了~（为什么是又？因为上一次转运买了 Lumia 640 …  </p>
 <h1 id="转运"><a href="#转运" class="headerlink" title="转运"></a>转运</h1><p>因为我上次买 Lumia 640 的时候已经注册过转运四方了，于是我就直接用原来的账号了。<br>登录后选择，个人 - 海外转运仓库 就可以看到仓库地址和要填写的相关信息了。因为我要从日本转运进来，所以选了大阪的仓库。然后路线因人而异，我选择了电商清关的快速方法。<br>下面就会生成你的各种信息啦~  </p>
-<img src="/2017/07/11/buy-and-trans-jp/1.PNG" alt="1.PNG" title="">
+<img src="/2017/07/11/buy-and-trans-jp/1.PNG">
 <h1 id="电商注册"><a href="#电商注册" class="headerlink" title="电商注册"></a>电商注册</h1><p>这一步简直是坑啊（其实也没什么坑的）<br>注册的地方要求填写姓名和姓名拼音，如果按照仓库生成的信息直接填写就会显示 <code>请输入平假名</code> 导致保存失败，这个的解决办法就是，拼音那块随便打一点平假名就好了…只要姓名跟仓库的对应就没问题。  </p>
-<img src="/2017/07/11/buy-and-trans-jp/2.PNG" alt="2.PNG" title="">
+<img src="/2017/07/11/buy-and-trans-jp/2.PNG">
 <blockquote>
 <p>顺便吐槽：StartedJS 的密码居然不支持特殊符号…..</p>
 </blockquote>
@@ -301,7 +445,7 @@
 <h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><p>因为一加的系统已经开始自带 Google 框架（默认未开启），所以我就继续使用一加的 H2OS 了</p>
 <p>一加的系统默认还是带了些预装的软件，比如手机京东、支付宝之类的，不过都是可以直接卸载的，把这些第三方软件全部卸载之后，手机只会剩下 15 个基础软件，非常的清爽。</p>
 <h1 id="折腾"><a href="#折腾" class="headerlink" title="折腾"></a>折腾</h1><p>我相信很多人都看过一加5的评测了，所以我也不多说评测内容了，我还是比较喜欢搞一搞系统。  </p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="解锁"><a href="#解锁" class="headerlink" title="解锁"></a>解锁</h3><img src="/2017/07/02/oneplus5/developer.jpg" alt="Developer" title="Developer">
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="解锁"><a href="#解锁" class="headerlink" title="解锁"></a>解锁</h3><img src="/2017/07/02/oneplus5/developer.jpg" title="Developer">
 <blockquote>
 <p>注意：解锁手机会导致手机初始化丢失所有数据，请做好备份！</p>
 </blockquote>
@@ -330,29 +474,29 @@
 fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span class="token operator">></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
-<p>注意： 把上面的 <twrp的文件名> 换成你下载的 TWRP 文件名！</twrp的文件名></p>
+<p>注意： 把上面的 &lt;TWRP的文件名&gt; 换成你下载的 TWRP 文件名！</p>
 </blockquote>
 <p>现在，你进入了 TWRP ，选择 安装 然后选择你复制进去的 Magisk 刷机包，完成后重启手机。</p>
 <blockquote>
 <p>注意：如果你要升级系统，请刷入原版 Recovery ，升级后再刷入 TWRP ，然后再刷入一次 Magisk 即可。</p>
 </blockquote>
 <h3 id="调整-Magisk"><a href="#调整-Magisk" class="headerlink" title="调整 Magisk"></a>调整 Magisk</h3><p>现在你通过 MagiskSU 获取了 Root 权限。不过你还需要一点配置，让 Magisk 更好的工作。</p>
-<img src="/2017/07/02/oneplus5/Magisk.jpg" alt="Magisk" title="Magisk">
+<img src="/2017/07/02/oneplus5/Magisk.jpg" title="Magisk">
 <ol>
 <li>打开主菜单中的 Magisk Manager 展开左侧抽屉菜单选择设置</li>
 <li>选中 Magisk Hide 和 Systemless hosts</li>
 </ol>
-<img src="/2017/07/02/oneplus5/MagiskHide.jpg" alt="MagiskHide" title="MagiskHide">
+<img src="/2017/07/02/oneplus5/MagiskHide.jpg" title="MagiskHide">
 <blockquote>
 <p>为什么使用 Magisk ？<br>因为 Magisk 不会破坏 SafetyNet ，它能让你继续使用 Android 软件的所有功能。（部分软件在 SafetyNet 失败时禁止工作）</p>
 </blockquote>
 <h3 id="激活-Google-框架"><a href="#激活-Google-框架" class="headerlink" title="激活 Google 框架"></a>激活 Google 框架</h3><p>在 一加商城 中搜索安装 Google Play 即可解锁 Google 框架。  </p>
 <p>然后，发挥你们的想象力————科学上网，登录 Google 账号并下载软件吧！</p>
 <h3 id="对国产毒瘤软件的优化"><a href="#对国产毒瘤软件的优化" class="headerlink" title="对国产毒瘤软件的优化"></a>对国产毒瘤软件的优化</h3><p>这一步骤需要几个软件来帮助我们 <code>绿色守护</code> 、 <code>MyAndroidTools</code> 和 <code>Island</code></p>
-<h3 id="绿色守护"><a href="#绿色守护" class="headerlink" title="绿色守护"></a>绿色守护</h3><img src="/2017/07/02/oneplus5/greenify.jpg" alt="Greenify" title="Greenify">
+<h3 id="绿色守护"><a href="#绿色守护" class="headerlink" title="绿色守护"></a>绿色守护</h3><img src="/2017/07/02/oneplus5/greenify.jpg" title="Greenify">
 <p>它能够切断软件唤醒途径，把你不需要一直使用的软件（比如 <code>Facebook</code> 、<code>微博</code> 之类的）添加进去就好。</p>
-<p>然后，访问 <a href="https://greenify.github.io/greenify/rx-mipush" target="_blank" rel="external">https://greenify.github.io/greenify/rx-mipush</a> 安装 <code>小米推送 切断处方</code>。避免小米推送在后台大量耗电。</p>
-<img src="/2017/07/02/oneplus5/MiPush.png" alt="MiPush" title="MiPush">
+<p>然后，访问 <a href="https://greenify.github.io/greenify/rx-mipush" target="_blank" rel="noopener">https://greenify.github.io/greenify/rx-mipush</a> 安装 <code>小米推送 切断处方</code>。避免小米推送在后台大量耗电。</p>
+<img src="/2017/07/02/oneplus5/MiPush.png" title="MiPush">
 <p>进入设置，设置工作模式为 Root 模式，开启<code>嗜睡模式</code>、<code>唤醒追踪及切断</code>、<code>全自动化关屏</code>，如果你启用了指纹的话要开启<code>特殊方式关屏</code>。</p>
 <p>备注，以下软件需要特殊设置：</p>
 <table>
@@ -378,48 +522,50 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
 </tbody>
 </table>
 <h4 id="Island"><a href="#Island" class="headerlink" title="Island"></a>Island</h4><p>这是一个利用 Android 工作模式特性进行应用隔离的软件，同时也能控制 Island 管控内的软件后台运行。  </p>
-<img src="/2017/07/02/oneplus5/island.jpg" alt="Island" title="Island">
+<img src="/2017/07/02/oneplus5/island.jpg" title="Island">
 <p>安装好之后，跟着向导进行设置即可，我添加到 Island 的软件是 <code>TIM（QQ）</code>、<code>微信</code>、<code>微博国际版</code>、<code>手机淘宝</code>、<code>支付宝</code>  </p>
 <p>注意，以上几个软件都只需要在 Island 内安装。</p>
 <p>同时将 微博、淘宝、支付宝 选中点击下面的叶子图标，让绿色守护应用冻结。</p>
 <blockquote>
 <p>注意：使用 Island 会丢失一加5 H2OS 的锁屏长按 HOME 键快速唤出支付码的能力！</p>
 </blockquote>
-<h4 id="MyAndroidTools"><a href="#MyAndroidTools" class="headerlink" title="MyAndroidTools"></a>MyAndroidTools</h4><p>这一部分请查看 <a href="https://mat.letitfly.me" target="_blank" rel="external">MAT BBS</a> 进行设置！</p>
+<h4 id="MyAndroidTools"><a href="#MyAndroidTools" class="headerlink" title="MyAndroidTools"></a>MyAndroidTools</h4><p>这一部分请查看 <a href="https://mat.letitfly.me" target="_blank" rel="noopener">MAT BBS</a> 进行设置！</p>
 <h3 id="进行一点配置"><a href="#进行一点配置" class="headerlink" title="进行一点配置"></a>进行一点配置</h3><p>如果你使用了 Island ，你会发现 QQ 和 微信 无法接收分享的图片了，因为他们的设计并不好，不能适配 Android 的工作模式，所以我们需要一个第三方软件来帮助他们。</p>
-<h4 id="Rikka-Bridge"><a href="#Rikka-Bridge" class="headerlink" title="Rikka Bridge"></a>Rikka Bridge</h4><img src="/2017/07/02/oneplus5/bridge.jpg" alt="Bridge" title="Bridge">
-<p>好吧，这个软件就叫 Bridge ….. 不过这是 Rikka 做的，所以就叫 Rikka Bridge 啦，在 <a href="https://play.google.com/store/apps/details?id=moe.shizuku.bridge" target="_blank" rel="external">这里</a> 能够找到。</p>
-<p>当然你还能在 <a href="https://apk.letitfly.me" target="_blank" rel="external">LetAPKFly</a> 找到免费版本，不过 Rikka 那么可爱，不来买一个吗？ </p>
+<h4 id="Rikka-Bridge"><a href="#Rikka-Bridge" class="headerlink" title="Rikka Bridge"></a>Rikka Bridge</h4><img src="/2017/07/02/oneplus5/bridge.jpg" title="Bridge">
+<p>好吧，这个软件就叫 Bridge ….. 不过这是 Rikka 做的，所以就叫 Rikka Bridge 啦，在 <a href="https://play.google.com/store/apps/details?id=moe.shizuku.bridge" target="_blank" rel="noopener">这里</a> 能够找到。</p>
+<p>当然你还能在 <a href="https://apk.letitfly.me" target="_blank" rel="noopener">LetAPKFly</a> 找到免费版本，不过 Rikka 那么可爱，不来买一个吗？ </p>
 <p><del>好耶！是 Rikka ！</del></p>
-<h4 id="启用-Google-Assistant"><a href="#启用-Google-Assistant" class="headerlink" title="启用 Google Assistant"></a>启用 Google Assistant</h4><img src="/2017/07/02/oneplus5/Assistant.png" alt="Assistant" title="Assistant">
-<p>安装 <a href="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox" target="_blank" rel="external">Google App</a><br>首先，把手机语言设置为 <code>英文</code> ，然后打开 设置 - 按键 ，Home 键 长按操作选择 <code>搜索助手</code> 即可</p>
+<h4 id="启用-Google-Assistant"><a href="#启用-Google-Assistant" class="headerlink" title="启用 Google Assistant"></a>启用 Google Assistant</h4><img src="/2017/07/02/oneplus5/Assistant.png" title="Assistant">
+<p>安装 <a href="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox" target="_blank" rel="noopener">Google App</a><br>首先，把手机语言设置为 <code>英文</code> ，然后打开 设置 - 按键 ，Home 键 长按操作选择 <code>搜索助手</code> 即可</p>
 <h4 id="Now-on-Tap"><a href="#Now-on-Tap" class="headerlink" title="Now on Tap"></a>Now on Tap</h4><p>如果，你不想使用英文系统，那么你只能使用 Google 的 <code>Now on tap</code></p>
-<img src="/2017/07/02/oneplus5/NowOnTap.jpg" alt="NowOnTap" title="NowOnTap">
-<p>当然首先也需要 <a href="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox" target="_blank" rel="external">Google App</a> ，同样也需要设置<code>搜索助手</code></p>
-<p>只不过，这次你需要一个能帮你打开任意 Activity 的软件，比如 <a href="https://play.google.com/store/apps/details?id=de.szalkowski.activitylauncher" target="_blank" rel="external"><code>Activity Launcher</code></a> </p>
-<img src="/2017/07/02/oneplus5/activitylauncher.jpg" alt="ActivityLauncher" title="ActivityLauncher">
+<img src="/2017/07/02/oneplus5/NowOnTap.jpg" title="NowOnTap">
+<p>当然首先也需要 <a href="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox" target="_blank" rel="noopener">Google App</a> ，同样也需要设置<code>搜索助手</code></p>
+<p>只不过，这次你需要一个能帮你打开任意 Activity 的软件，比如 <a href="https://play.google.com/store/apps/details?id=de.szalkowski.activitylauncher" target="_blank" rel="noopener"><code>Activity Launcher</code></a> </p>
+<img src="/2017/07/02/oneplus5/activitylauncher.jpg" title="ActivityLauncher">
 <p>安装后，打开软件，找到 设置 ，找到 <code>语言</code> 然后添加语言，设置第二语言为 <code>English (United States)</code> </p>
 <p>现在你可以使用 <code>Now on tap</code> 了</p>
 <h4 id="Android-7-x-彩蛋"><a href="#Android-7-x-彩蛋" class="headerlink" title="Android 7.x 彩蛋"></a>Android 7.x 彩蛋</h4><p>点击 <code>设置</code> - <code>关于</code> 中的 <code>Android 版本</code> 数次，显示 N 点击几次之后长按，会在下方显示一个小猫头</p>
 <p>现在，展开你的通知栏，进行编辑快捷按钮，会发现一个显示 ??? 的盘子，把他拖到快捷按钮上保存。</p>
 <p>这时候点击盘子可以往上面放食物，放上之后，过一会儿就会有猫跑过来啦~ </p>
 <p>长按盘子，可以看到以往抓到的猫哦~  </p>
-<img src="/2017/07/02/oneplus5/egg.jpg" alt="Egg" title="Egg">
+<img src="/2017/07/02/oneplus5/egg.jpg" title="Egg">
 <blockquote>
 <p>天空我也是一只喵！</p>
 </blockquote>
 <h3 id="之后呢？"><a href="#之后呢？" class="headerlink" title="之后呢？"></a>之后呢？</h3><p>经过以上的优化之后，在我一天的中度使用下，续航时间达到了 11 小时，其中包含玩 <code>炉石传说</code> 和 <code>同步音律喵赛克</code> 的时间。</p>
-<img src="/2017/07/02/oneplus5/Battery1.jpg" alt="BatteryBeforeCharge" title="BatteryBeforeCharge">
-<img src="/2017/07/02/oneplus5/Battery2.jpg" alt="BatteryAfterCharge" title="BatteryAfterCharge">
+<img src="/2017/07/02/oneplus5/Battery1.jpg" title="BatteryBeforeCharge">
+<img src="/2017/07/02/oneplus5/Battery2.jpg" title="BatteryAfterCharge">
 <blockquote>
-<p>本文刷入系统部分参考 XDA 论坛的 <a href="https://forum.xda-developers.com/oneplus-5/how-to/oneplus-5-unlock-bootloader-flash-twrp-t3624877" target="_blank" rel="external">这篇</a> 帖子完成，你可以在原帖中下载到 TWRP 和 Magisk 以及原版 Recovery </p>
-<p>本文部分软件可以在 <a href="https://apk.letitfly.me" target="_blank" rel="external">LetAPKFly</a> 下载到</p>
+<p>本文刷入系统部分参考 XDA 论坛的 <a href="https://forum.xda-developers.com/oneplus-5/how-to/oneplus-5-unlock-bootloader-flash-twrp-t3624877" target="_blank" rel="noopener">这篇</a> 帖子完成，你可以在原帖中下载到 TWRP 和 Magisk 以及原版 Recovery </p>
+</blockquote>
+<blockquote>
+<p>本文部分软件可以在 <a href="https://apk.letitfly.me" target="_blank" rel="noopener">LetAPKFly</a> 下载到</p>
 </blockquote>
 ]]></content>
       
         <categories>
             
-            <category> Android </category>
+            <category> 开箱 </category>
             
         </categories>
         
@@ -452,7 +598,7 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
 <p>虽然刚开始更换到 <code>Android Studio</code> 时影响了开发速度，但一个星期之后开发效率比使用 <code>Eclipse</code> 更高，这得益于 <code>Android Studio</code> 优秀的 <code>Lint</code> 系统和自动补全机制，以及 <code>XML</code> 值快速一览，让代码可读性大幅度提高。</p>
 <p>在我看来，随着我之后一直使用 <code>Android Studio</code> 进行开发，<code>Android Studio</code> 从 <code>1.3.1</code> 开始迎来稳定的版本，也是从这个版本开始，Android Studio 几乎没再发生过崩溃或者遭遇奇怪的 bug。而现在 Android Studio 稳定版本已经来到了 <code>Android Studio 2.3.3</code>。</p>
 <h1 id="Android-Studio-与-Eclipse-有何不同？为什么不应该继续使用-Eclipse-？"><a href="#Android-Studio-与-Eclipse-有何不同？为什么不应该继续使用-Eclipse-？" class="headerlink" title="Android Studio 与 Eclipse 有何不同？为什么不应该继续使用 Eclipse ？"></a>Android Studio 与 Eclipse 有何不同？为什么不应该继续使用 Eclipse ？</h1><p><code>Android Studio</code> 基于 <code>JetBrain IntelliJ IDEA</code> 深度定制，<code>Eclipse</code> 则是使用 <code>ADT</code> 插件安装至一个已经存在的 <code>Eclipse</code> 中。<br><code>Eclipse ADT</code> 开发插件已经于 2015 年 6 月停止支持，它不再支持新的 Android 开发工具以及组件包。也不会修复已知的 bug 和安全漏洞。</p>
-<p>具体参见 <a href="https://developer.android.com/studio/tools/sdk/eclipse-adt.html" target="_blank" rel="external">这里</a> 和 <a href="https://android-developers.googleblog.com/2015/06/an-update-on-eclipse-android-developer.html" target="_blank" rel="external">这里</a></p>
+<p>具体参见 <a href="https://developer.android.com/studio/tools/sdk/eclipse-adt.html" target="_blank" rel="noopener">这里</a> 和 <a href="https://android-developers.googleblog.com/2015/06/an-update-on-eclipse-android-developer.html" target="_blank" rel="noopener">这里</a></p>
 <p>也因为上面的原因，现在 ADT 已经不能和最新的 SDK 一起工作，Eclipse ADT 插件会报出 SDK 错误的弹框。</p>
 <p><code>Android Studio</code> 使用 <code>Gradle</code> 构建工具，支持代码混编，可以轻易的控制编译流，增加依赖，多渠道打包，代码自动化测试等。<br>同时从 <code>Android Studio 2.x</code> 开始，支持完整的拖拽布局编辑以及为了拖拽编辑而设计的约束视图。<br>同时，还支持 9png 的直接编辑，布局实时预览等。<br><code>Android Studio</code> 还支持直接接入 <code>Firebase</code> 平台，实施低电力损耗的消息推送，错误报告，应用内支付等等。<br>在我看来，如果你不是因为旧代码必须使用 <code>Eclipse</code> 的话（即 Eclipse 到 Android Studio 的转换会发生问题），那么你完全应当使用 <code>Android Studio</code>。</p>
 <h1 id="Android-Studio-的代码文件夹发送起来不方便"><a href="#Android-Studio-的代码文件夹发送起来不方便" class="headerlink" title="Android Studio 的代码文件夹发送起来不方便"></a>Android Studio 的代码文件夹发送起来不方便</h1><p>Eclipse 代码文件夹只有 600K 左右 ，而 <code>Android Studio</code> 的文件夹则高达 30MB<br>我觉得只有以下几种人会有这个问题： </p>
@@ -466,14 +612,14 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
       
         <categories>
             
-            <category> 闲聊 </category>
+            <category> 技术栈 </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> 闲聊 </tag>
+            <tag> Android </tag>
             
         </tags>
         
@@ -482,9 +628,17 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
     <entry>
       <title><![CDATA[LetAPKFly | 让安装包飞]]></title>
       <url>https://liyin.date/2017/05/25/letapkfly/</url>
-      <content type="html"><![CDATA[<p>最近因为某些原因，国内较大的 Android 交流网站兼软件分发平台 —— <strong>酷安</strong>，对所有未实名开发者上传的软件进行了下架，包括但不限于 <strong>MyAndroidTools</strong> 、<strong>AppOps</strong>，在国内 Google Play Store 无法使用，能够提供良心软件下载的 APP 分发平台几乎没有。<br>在此，我们会尽我们的最大努力恢复一些热门软件的国内下载，现在，<a href="https://nfz.moe" target="_blank" rel="external">neoFelhz</a> 和 <a href="https://mat.letitfly.me" target="_blank" rel="external">MAT BBS</a> 创始人 <a href="https://letitfly.me" target="_blank" rel="external">LetItFly</a> 共同发起 —— <a href="https://apk.letitfly.me" target="_blank" rel="external">LetAPKFly</a> 服务，天空之边将提供自动化节点部署支持和一部分存储节点，使用 P2P 同步工具同步资源，某些高频软件将会提供直接的安装包下载链接。<br>稍后，我将引导您加入我们的 P2P 共享网络，越多人加入共享节点，我们就拥有更快的速度，相关教程将发布到项目主页 <a href="https://apk.letitfly.me" target="_blank" rel="external">https://apk.letitfly.me</a> 中<br>我们将会从 APKMirror、APKPure 等可信站点同步更新相关软件，确保安装包是原版未被修改的安装包。<br>虽然身在国内这种混乱的大环境中，但我们不忘本心，让 Android 更好的发展，同时也邀请各大开发者加入 Android 绿色生态公约，为国内的 Android 环境贡献自己的力量！</p>
+      <content type="html"><![CDATA[<p>最近因为某些原因，国内较大的 Android 交流网站兼软件分发平台 —— <strong>酷安</strong>，对所有未实名开发者上传的软件进行了下架，包括但不限于 <strong>MyAndroidTools</strong> 、<strong>AppOps</strong>，在国内 Google Play Store 无法使用，能够提供良心软件下载的 APP 分发平台几乎没有。<br>在此，我们会尽我们的最大努力恢复一些热门软件的国内下载，现在，<a href="https://nfz.moe" target="_blank" rel="noopener">neoFelhz</a> 和 <a href="https://mat.letitfly.me" target="_blank" rel="noopener">MAT BBS</a> 创始人 <a href="https://letitfly.me" target="_blank" rel="noopener">LetItFly</a> 共同发起 —— <a href="https://apk.letitfly.me" target="_blank" rel="noopener">LetAPKFly</a> 服务，天空之边将提供自动化节点部署支持和一部分存储节点，使用 P2P 同步工具同步资源，某些高频软件将会提供直接的安装包下载链接。<br>稍后，我将引导您加入我们的 P2P 共享网络，越多人加入共享节点，我们就拥有更快的速度，相关教程将发布到项目主页 <a href="https://apk.letitfly.me" target="_blank" rel="noopener">https://apk.letitfly.me</a> 中<br>我们将会从 APKMirror、APKPure 等可信站点同步更新相关软件，确保安装包是原版未被修改的安装包。<br>虽然身在国内这种混乱的大环境中，但我们不忘本心，让 Android 更好的发展，同时也邀请各大开发者加入 Android 绿色生态公约，为国内的 Android 环境贡献自己的力量！</p>
+<hr>
+<p>截至 2018 年 4 月 19 日， LetAPKFly 已关闭</p>
 ]]></content>
       
+        <categories>
+            
+            <category> 推广推荐 </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -513,7 +667,7 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
       
         <categories>
             
-            <category> 闲聊 </category>
+            <category> 隐私 </category>
             
         </categories>
         
@@ -580,12 +734,12 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
       <title><![CDATA[PGP]]></title>
       <url>https://liyin.date/2017/04/02/pgp/</url>
       <content type="html"><![CDATA[<h1 id="什么是-PGP-？它能做什么？"><a href="#什么是-PGP-？它能做什么？" class="headerlink" title="什么是 PGP ？它能做什么？"></a>什么是 PGP ？它能做什么？</h1><p>PGP 是 Pretty Good Privacy 的缩写，它是一套用于消息加密、验证的数据交换方法。遵守 OpenPGP 数据加解密标准 (RFC 4880) 。<br>PGP 可以用作 加密、数字签名、认证。</p>
-<h1 id="使用-PGP-与我通讯"><a href="#使用-PGP-与我通讯" class="headerlink" title="使用 PGP 与我通讯"></a>使用 PGP 与我通讯</h1><p>首先下载我的 <a href="/myfiles/attachment/PGP_Public">PGP 公钥</a> 并导入到你的 PGP 加密程序中。<br>注意验证我的公钥指纹为 <code>1735 F315 2977 7C2A F325  9C87 7C57 6AE6 F1FA C85A</code>，如果指纹一致说明你下载的公钥没有被篡改。<br>使用这个公钥加密你的信息，并发送到 <code>wmliyin@outlook.com</code> 主题带有 <code>PGP</code> 字样即可被我的邮箱自动分类。</p>
+<h1 id="使用-PGP-与我通讯"><a href="#使用-PGP-与我通讯" class="headerlink" title="使用 PGP 与我通讯"></a>使用 PGP 与我通讯</h1><p>首先下载我的 <a href="/myfiles/attachment/PGP_Public">PGP 公钥</a> 并导入到你的 PGP 加密程序中。<br>注意验证我的公钥指纹为 <code>1735 F315 2977 7C2A F325  9C87 7C57 6AE6 F1FA C85A</code>，如果指纹一致说明你下载的公钥没有被篡改。<br>使用这个公钥加密你的信息，并发送到 <a href="mailto:`wmliyin@outlook.com" target="_blank" rel="noopener">`wmliyin@outlook.com</a><code>主题带有</code>PGP` 字样即可被我的邮箱自动分类。</p>
 ]]></content>
       
         <categories>
             
-            <category> 安全 </category>
+            <category> 隐私 </category>
             
         </categories>
         
@@ -607,11 +761,11 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
 <h1 id="Qubes-OS-是什么"><a href="#Qubes-OS-是什么" class="headerlink" title="Qubes OS 是什么"></a>Qubes OS 是什么</h1><blockquote>
 <p>Qubes OS是一个面向安全的桌面操作系统，旨在通过隔离提供安全保障。<br>Qubes 通过隔离来保障安全性，并假设不可能有完美的，无漏洞的桌面环境。因为桌面环境有数百万行的代码并与数十亿的软件/硬件密切相关。这些关联中的任何一个关键错误都可能足以让恶意软件控制计算机。<br>为了保护桌面计算机的安全，Qubes 隔离了各种操作环境，因此，如果其中一个操作环境被黑，恶意软件只能得到该环境内的数据。<br>在 Qubes 中，有两个层面的隔离：硬件控制器被隔离到功能域（图形界面，网络，存储），而用户的数字生活由不同的信任级别隔离。例如：工作域（信任度最高），购物域，随机域（信任度最低）。每个域都在独立的虚拟机中运行。<br>———— 维基百科</p>
 </blockquote>
-<p>具体请参看 <a href="https://en.wikipedia.org/wiki/Qubes_OS" target="_blank" rel="external">这里</a></p>
+<p>具体请参看 <a href="https://en.wikipedia.org/wiki/Qubes_OS" target="_blank" rel="noopener">这里</a></p>
 <h1 id="安装-Qubes"><a href="#安装-Qubes" class="headerlink" title="安装 Qubes"></a>安装 Qubes</h1><h2 id="准备分区"><a href="#准备分区" class="headerlink" title="准备分区"></a>准备分区</h2><p>首先准备出一个足够大的分区，我把电脑的最后一个分区清空，分配了大概 120G 的存储空间用来安装 Qubes</p>
 <h2 id="准备安装程序"><a href="#准备安装程序" class="headerlink" title="准备安装程序"></a>准备安装程序</h2><p>因为这次是直接安装到电脑的硬盘而不是虚拟机，所以需要将 iso 文件写入到 U盘 中并引导，U盘写入使用 <code>Rufus</code> 工具来完成  </p>
-<h2 id="下载光盘镜像-与-Rufus"><a href="#下载光盘镜像-与-Rufus" class="headerlink" title="下载光盘镜像 与 Rufus"></a>下载光盘镜像 与 Rufus</h2><p>Qubes OS 的官方网站在 <a href="https://www.qubes-os.org/" target="_blank" rel="external">Qubes OS Offical</a> ，截止当前 2017年3月20日，最新版本为 <strong>Qubes Release 3.2</strong> ，你看到这篇文章的时候很可能已经有比这个版本更新的版本了。选择 iso 进行下载即可。<br>Rufus 在 <a href="https://rufus.akeo.ie/?locale=zh_CN" target="_blank" rel="external">这里</a> 下载，这个软件有中文语言，非常好用。  </p>
-<h2 id="写入启动U盘"><a href="#写入启动U盘" class="headerlink" title="写入启动U盘"></a>写入启动U盘</h2><p>打开 Rufus ，插入U盘，Rufus 会自动识别你的U盘，写入过程会格式化你的U盘，所以确保你的U盘中已经没有你需要的文件。<br>在 Rufus 窗口下方选择 iso 文件并点击开始，这时候 Rufus 会提示你这个镜像是一个混合模式的镜像，询问你是使用 ISO 模式还是 DD模式，这里需要注意的是 Qubes 系统引导必须使用 <code>DD模式</code> 才能成功引导。选择 <code>DD模式</code> 并开始写入。<br><img src="/2017/03/22/qubesos/Qubes-1.png" alt="Qubes-1.png" title=""></p>
+<h2 id="下载光盘镜像-与-Rufus"><a href="#下载光盘镜像-与-Rufus" class="headerlink" title="下载光盘镜像 与 Rufus"></a>下载光盘镜像 与 Rufus</h2><p>Qubes OS 的官方网站在 <a href="https://www.qubes-os.org/" target="_blank" rel="noopener">Qubes OS Offical</a> ，截止当前 2017年3月20日，最新版本为 <strong>Qubes Release 3.2</strong> ，你看到这篇文章的时候很可能已经有比这个版本更新的版本了。选择 iso 进行下载即可。<br>Rufus 在 <a href="https://rufus.akeo.ie/?locale=zh_CN" target="_blank" rel="noopener">这里</a> 下载，这个软件有中文语言，非常好用。  </p>
+<h2 id="写入启动U盘"><a href="#写入启动U盘" class="headerlink" title="写入启动U盘"></a>写入启动U盘</h2><p>打开 Rufus ，插入U盘，Rufus 会自动识别你的U盘，写入过程会格式化你的U盘，所以确保你的U盘中已经没有你需要的文件。<br>在 Rufus 窗口下方选择 iso 文件并点击开始，这时候 Rufus 会提示你这个镜像是一个混合模式的镜像，询问你是使用 ISO 模式还是 DD模式，这里需要注意的是 Qubes 系统引导必须使用 <code>DD模式</code> 才能成功引导。选择 <code>DD模式</code> 并开始写入。<br><img src="/2017/03/22/qubesos/Qubes-1.png"></p>
 <blockquote>
 <p>注意： DD模式写入后会导致你的U盘不可被修改，Windows下也无法正常格式化恢复你的U盘，只能在 Linux 下通过 <code>mkfs.vfat</code> 命令格式化U盘。  </p>
 </blockquote>
@@ -627,21 +781,21 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
 <blockquote>
 <p>如果你不进行其他配置，以后想进入 Qubes OS 都是这样操作。</p>
 </blockquote>
-<p>首次进入系统的时候，Qubes 会询问你进行默认的系统配置，我的设置是配置 <code>网络虚拟机</code> 与 <code>防火墙虚拟机</code> ，取消了 <code>Whonix 虚拟机</code> 的配置，有关 Whonix 虚拟机的相关信息请看 <a href="https://en.wikipedia.org/wiki/Whonix" target="_blank" rel="external">这里</a><br>首次配置结束后就成功进入了 Qubes 系统。</p>
-<h2 id="进入-Qubes-桌面"><a href="#进入-Qubes-桌面" class="headerlink" title="进入 Qubes 桌面"></a>进入 Qubes 桌面</h2><p>进入 Qubes 桌面之后，你会看到 <code>Qubes VM Manager</code> 自动弹出，并显示启动了 <code>dom0</code> <code>sys-net</code> <code>sys-firewall</code> 三个虚拟机，在左上角菜单中可以启动不同的虚拟区域以运行软件。<br><img src="/2017/03/22/qubesos/Qubes-2.png" alt="Qubes-2.png" title=""></p>
-<h2 id="连接网络"><a href="#连接网络" class="headerlink" title="连接网络"></a>连接网络</h2><p>这一步困扰了我比较长的时间，后来我发现这需要在左上的菜单中选择 <code>sys-net</code> 虚拟机 <code>Add-Shortcut</code> 并添加 <code>Network Manager</code> ，这样你就能配置你的网络连接了。<br><img src="/2017/03/22/qubesos/Qubes-3.png" alt="Qubes-3.png" title=""></p>
+<p>首次进入系统的时候，Qubes 会询问你进行默认的系统配置，我的设置是配置 <code>网络虚拟机</code> 与 <code>防火墙虚拟机</code> ，取消了 <code>Whonix 虚拟机</code> 的配置，有关 Whonix 虚拟机的相关信息请看 <a href="https://en.wikipedia.org/wiki/Whonix" target="_blank" rel="noopener">这里</a><br>首次配置结束后就成功进入了 Qubes 系统。</p>
+<h2 id="进入-Qubes-桌面"><a href="#进入-Qubes-桌面" class="headerlink" title="进入 Qubes 桌面"></a>进入 Qubes 桌面</h2><p>进入 Qubes 桌面之后，你会看到 <code>Qubes VM Manager</code> 自动弹出，并显示启动了 <code>dom0</code> <code>sys-net</code> <code>sys-firewall</code> 三个虚拟机，在左上角菜单中可以启动不同的虚拟区域以运行软件。<br><img src="/2017/03/22/qubesos/Qubes-2.png"></p>
+<h2 id="连接网络"><a href="#连接网络" class="headerlink" title="连接网络"></a>连接网络</h2><p>这一步困扰了我比较长的时间，后来我发现这需要在左上的菜单中选择 <code>sys-net</code> 虚拟机 <code>Add-Shortcut</code> 并添加 <code>Network Manager</code> ，这样你就能配置你的网络连接了。<br><img src="/2017/03/22/qubesos/Qubes-3.png"></p>
 <h2 id="安装应用程序"><a href="#安装应用程序" class="headerlink" title="安装应用程序"></a>安装应用程序</h2><p>因为 Qubes 是基于 Fedora 23 操作系统，所以包管理器命令是 <code>dnf</code> 。在 Qubes 中，所有工作虚拟机都是基于 <code>TemplateVM</code> 即<code>模板虚拟机</code>启动的，工作虚拟机只会保存用户文件而不会保存你安装的程序，如果你需要安装到模板虚拟机。然后关闭你的工作虚拟机并重启打开，即可同步你的软件。</p>
 <h2 id="向-dom0-安装软件或更新-dom0"><a href="#向-dom0-安装软件或更新-dom0" class="headerlink" title="向 dom0 安装软件或更新 dom0"></a>向 dom0 安装软件或更新 dom0</h2><p>因为安全性保护，<code>dom0</code> 系统并不连接网络，更新系统可以在 <code>Qubes VM Manager</code> 中右键 <code>dom0</code> 并选择 <code>Update VM</code>。稍后，Qubes 会自动在 <code>sys-firewall</code> 虚拟机中启动下载程序并将文件传输到 <code>dom0</code> 再安装系统更新，当然如果你想要使用命令行，则可以使用 <code>sudo qubes-dom0-update</code> 命令，这个命令也可以用来安装程序到 <code>dom0</code>，执行 <code>sudo qubes-dom0-update 软件包</code> 即可。</p>
 <h1 id="Qubes-特性与功能"><a href="#Qubes-特性与功能" class="headerlink" title="Qubes 特性与功能"></a>Qubes 特性与功能</h1><h2 id="安全剪贴板"><a href="#安全剪贴板" class="headerlink" title="安全剪贴板"></a>安全剪贴板</h2><p>当然，Qubes 中每一个虚拟机的剪贴板是独立的，如果你想跨虚拟机复制文字怎么办呢，答案就是使用全局复制，先将你想复制的文字复制到当前虚拟机的剪贴板中，然后按下 <code>Ctrl + Shift + C</code> ，右上角会提示已复制到全局剪贴板，然后转到目标虚拟机窗口，按下全局粘贴快捷键 <code>Ctrl + Shift + V</code> 然后就可以用粘贴功能粘贴文字了。注意，<code>dom0</code> 的复制只能在右上 Q 标志上右键 <code>copy dom0 clipboard</code> 来进行复制。</p>
 <h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><p>安全剪贴板功能并不能复制文件，你需要打开文件管理器右键发送到 VM，或者使用 <code>qvm-copy-file 虚拟机名 文件名</code> 。文件会被保存在目标虚拟机的 <code>~/home/用户名/QubesIncoming</code> 文件夹下。</p>
-<h2 id="中文输入"><a href="#中文输入" class="headerlink" title="中文输入"></a>中文输入</h2><p>作为非英语母语的人来说，输入法必不可少，那么如何安装中文语言输入呢？<br>启动你的模板虚拟机，然后输入 <code>dnf install ibus-pinyin ibus-qt4</code> ，安装结束后关闭你的模板虚拟机并重启你的工作虚拟机。<br>打开工作虚拟机的命令行，输入 <code>ibus-setup</code> 在弹出的窗口中选择 <code>Yes</code> 然后在配置界面 <code>Input Method</code> 添加一个 <code>Chinese - Pinyin</code> 即可使用中文输入。<br><img src="/2017/03/22/qubesos/Qubes-4.png" alt="Qubes-4.png" title=""> </p>
-<h1 id="所以呢"><a href="#所以呢" class="headerlink" title="所以呢"></a>所以呢</h1><img src="/2017/03/22/qubesos/Qubes-5.png" alt="Qubes-5.png" title="">  
+<h2 id="中文输入"><a href="#中文输入" class="headerlink" title="中文输入"></a>中文输入</h2><p>作为非英语母语的人来说，输入法必不可少，那么如何安装中文语言输入呢？<br>启动你的模板虚拟机，然后输入 <code>dnf install ibus-pinyin ibus-qt4</code> ，安装结束后关闭你的模板虚拟机并重启你的工作虚拟机。<br>打开工作虚拟机的命令行，输入 <code>ibus-setup</code> 在弹出的窗口中选择 <code>Yes</code> 然后在配置界面 <code>Input Method</code> 添加一个 <code>Chinese - Pinyin</code> 即可使用中文输入。<br><img src="/2017/03/22/qubesos/Qubes-4.png"> </p>
+<h1 id="所以呢"><a href="#所以呢" class="headerlink" title="所以呢"></a>所以呢</h1><img src="/2017/03/22/qubesos/Qubes-5.png">  
 <p>我试用了大概1个星期，感觉上 Qubes 的使用并不是很方便，而且内存占用巨大，启动后基本上要占用超过 5G 的内存，运行 Firefox 或者其他软件之后这种现象更加严重。 VM 之间的传输非常不方便，作为日常试用会大幅度的降低效率，不适合作为平时日常使用的操作系统使用。<br>不过作为安全性来说我认为还是非常不错的，这应该又是一个安全到几乎偏执的一个操作系统。<br>再见 Qubes OS ，你好 OpenSUSE。</p>
 ]]></content>
       
         <categories>
             
-            <category> Linux </category>
+            <category> 技术栈 </category>
             
         </categories>
         
@@ -658,13 +812,13 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
       <title><![CDATA[友链安全标记 & 友链检查器]]></title>
       <url>https://liyin.date/2017/03/19/linkchecker/</url>
       <content type="html"><![CDATA[<p>最近我对的友链页做了2个小修改</p>
-<h1 id="友链安全标记"><a href="#友链安全标记" class="headerlink" title="友链安全标记"></a>友链安全标记</h1><p>友链页面上所有与我交换友链时使用 <code>https</code> 的站点会在名称后显示一个绿色的安全锁标识，至于为何我如此看重 <code>https</code> 请看 neoFelhz 的这篇文章 <a href="https://blog.nfz.moe/archives/the-importance-of-using-https.html" target="_blank" rel="external">不仅仅是锦上添花 ———— 谈启用 HTTPS 的重要性</a> 。</p>
-<h1 id="友链检查器"><a href="#友链检查器" class="headerlink" title="友链检查器"></a>友链检查器</h1><p>友链检查器使用 <code>TravisCI</code> + <code>Github Pages</code> 的方法，后端使用 <code>Python</code> 检查链接的可用性并生成 jsonp 文件，然后放置在 <code>Github Pages</code> 上。<br>友链页上的 javascript 代码会自动读取并识别相应的卡片，然后将非 200 回复（3xx 的跳转会被追踪到目标）的友链卡片透明度设置为 <code>0.4</code>。<br>TravisCI 每天自动执行一次友链检查器。<br>代码已使用 GPLv3 协议开源至 <a href="https://github.com/cubesky/linkChecker" target="_blank" rel="external">Github</a><br>最后一次构建状态 <a href="https://travis-ci.org/cubesky/linkChecker" target="_blank" rel="external"><img src="https://travis-ci.org/cubesky/linkChecker.svg?branch=master" alt="Build Status"></a></p>
+<h1 id="友链安全标记"><a href="#友链安全标记" class="headerlink" title="友链安全标记"></a>友链安全标记</h1><p>友链页面上所有与我交换友链时使用 <code>https</code> 的站点会在名称后显示一个绿色的安全锁标识，至于为何我如此看重 <code>https</code> 请看 neoFelhz 的这篇文章 <a href="https://blog.nfz.moe/archives/the-importance-of-using-https.html" target="_blank" rel="noopener">不仅仅是锦上添花 ———— 谈启用 HTTPS 的重要性</a> 。</p>
+<h1 id="友链检查器"><a href="#友链检查器" class="headerlink" title="友链检查器"></a>友链检查器</h1><p>友链检查器使用 <code>TravisCI</code> + <code>Github Pages</code> 的方法，后端使用 <code>Python</code> 检查链接的可用性并生成 jsonp 文件，然后放置在 <code>Github Pages</code> 上。<br>友链页上的 javascript 代码会自动读取并识别相应的卡片，然后将非 200 回复（3xx 的跳转会被追踪到目标）的友链卡片透明度设置为 <code>0.4</code>。<br>TravisCI 每天自动执行一次友链检查器。<br>代码已使用 GPLv3 协议开源至 <a href="https://github.com/cubesky/linkChecker" target="_blank" rel="noopener">Github</a><br>最后一次构建状态 <a href="https://travis-ci.org/cubesky/linkChecker" target="_blank" rel="noopener"><img src="https://travis-ci.org/cubesky/linkChecker.svg?branch=master" alt="Build Status"></a></p>
 ]]></content>
       
         <categories>
             
-            <category> 博客升级 </category>
+            <category> 技术栈 </category>
             
         </categories>
         
@@ -696,7 +850,7 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
 <li>Generic ARM 带有默认 ARM 内核，带有 uboot 加载器</li>
 </ul>
 <h1 id="折腾记"><a href="#折腾记" class="headerlink" title="折腾记"></a>折腾记</h1><p>这次我是在 Hyper-V 虚拟机中运行的 Alpine Linux，这中间还是有一些坑需要注意的。</p>
-<h2 id="下载-Alpine-Linux"><a href="#下载-Alpine-Linux" class="headerlink" title="下载 Alpine Linux"></a>下载 Alpine Linux</h2><p>到 <a href="https://alpinelinux.org/downloads/" target="_blank" rel="external">Alpine Linux 下载页</a> 选择下载适合自己的版本，需要注意的是，如果你跟我一样是在 Hyper-V 虚拟机中运行 Alpine Linux ，那么请选择 Vanilla 版本，其他版本都不能正常加载。</p>
+<h2 id="下载-Alpine-Linux"><a href="#下载-Alpine-Linux" class="headerlink" title="下载 Alpine Linux"></a>下载 Alpine Linux</h2><p>到 <a href="https://alpinelinux.org/downloads/" target="_blank" rel="noopener">Alpine Linux 下载页</a> 选择下载适合自己的版本，需要注意的是，如果你跟我一样是在 Hyper-V 虚拟机中运行 Alpine Linux ，那么请选择 Vanilla 版本，其他版本都不能正常加载。</p>
 <h2 id="创建虚拟机"><a href="#创建虚拟机" class="headerlink" title="创建虚拟机"></a>创建虚拟机</h2><p>创建虚拟机并载入 Alpine Linux 镜像。</p>
 <h2 id="安装-Alpine-Linux"><a href="#安装-Alpine-Linux" class="headerlink" title="安装 Alpine Linux"></a>安装 Alpine Linux</h2><p>先执行</p>
 <pre class="line-numbers language-bash"><code class="language-bash">setup-alpine
@@ -728,14 +882,14 @@ rc-update add dbus
 <h3 id="启动桌面"><a href="#启动桌面" class="headerlink" title="启动桌面"></a>启动桌面</h3><p>执行</p>
 <pre class="line-numbers language-bash"><code class="language-bash">rc-service lxdm start
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后你就应该看见以下界面<br><img src="/2017/03/18/alpine-linux-setup/Alpine-Linux-1.png" alt="Alpine-Linux-1.png" title=""><br>然后选择一个用户登录，一般情况下你应该会发现，这里没法进入桌面，这也是官方 wiki 没有写的一个地方。<br>在左下角 Desktop 项，将 <code>Default</code> 更改为 <code>Xfce Session</code> ，即可正常登录。<br><img src="/2017/03/18/alpine-linux-setup/Alpine-Linux-2.png" alt="Alpine-Linux-2.png" title=""></p>
+<p>然后你就应该看见以下界面<br><img src="/2017/03/18/alpine-linux-setup/Alpine-Linux-1.png"><br>然后选择一个用户登录，一般情况下你应该会发现，这里没法进入桌面，这也是官方 wiki 没有写的一个地方。<br>在左下角 Desktop 项，将 <code>Default</code> 更改为 <code>Xfce Session</code> ，即可正常登录。<br><img src="/2017/03/18/alpine-linux-setup/Alpine-Linux-2.png"></p>
 <h1 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h1><p>至此 Alpine Linux 配置完成。<br>占用内存仅仅 37M ，非常的小巧。适合用在树莓派或者其他低内存设备上。</p>
 <h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>Alpine Linux 并未提供中文输入法，你无法在 Alpine Linux 中输入中文！<br>我自己尝试编译 ibus 但是缺少大量依赖，于是我又去编译依赖库，然后依赖库又有依赖库….<br>最终我放弃编译输入法….</p>
 ]]></content>
       
         <categories>
             
-            <category> Linux </category>
+            <category> 技术栈 </category>
             
         </categories>
         
@@ -751,7 +905,7 @@ rc-update add dbus
     <entry>
       <title><![CDATA[加入了喵窝~]]></title>
       <url>https://liyin.date/2017/02/24/join-into-nyaacat/</url>
-      <content type="html"><![CDATA[<h1 id="喵窝是什么"><a href="#喵窝是什么" class="headerlink" title="喵窝是什么"></a>喵窝是什么</h1><p>喵窝是 NyaaCat 社区 的 Minecraft 服务器，在<a href="https://nyaa.cat" target="_blank" rel="external">这里</a></p>
+      <content type="html"><![CDATA[<h1 id="喵窝是什么"><a href="#喵窝是什么" class="headerlink" title="喵窝是什么"></a>喵窝是什么</h1><p>喵窝是 NyaaCat 社区 的 Minecraft 服务器，在<a href="https://nyaa.cat" target="_blank" rel="noopener">这里</a></p>
 <h1 id="这几天"><a href="#这几天" class="headerlink" title="这几天"></a>这几天</h1><p>喵先是提交了新玩家加入申请，谢谢 神楽坂雅詩 （雅诗姐姐~） 的邀请~<br>进入服务器之后，（也许是新人少吗？）一下来了很多人~ YUKIQAQ 热情的为我介绍了喵窝的各个设施，还带我参观了各个不同的城市和村落，让我对不同的风格有了大概的印象。（然后并没有足够的资金买….）<br>刚刚来到喵窝不久，还有很多地方可供我发掘，慢慢来吧~</p>
 ]]></content>
       
@@ -784,7 +938,7 @@ rc-update add dbus
       
         <categories>
             
-            <category> 博客升级 </category>
+            <category> 技术栈 </category>
             
         </categories>
         
@@ -805,7 +959,9 @@ rc-update add dbus
       <content type="html"><![CDATA[<blockquote>
 <p>嗯，我承认是因为我域名买多了….</p>
 </blockquote>
-<p>因为需要的网站入口可能会越来越多，所以考虑了一下，写了个个人入口页面，可以到达我的所有服务。<br>我自己很少写前端的，偶尔写的几个前端是用 LayoutIt 那个 Bootstrap 可视化布局工具拽出来的，所以这次也打算自己从头写下试试….<br>于是乎 <a href="https://liyin.party" target="_blank" rel="external">天空传送</a> 诞生了~<br>使用了 <a href="http://materializecss.com/" target="_blank" rel="external">Materializecss</a>  ，不过感觉做的依然不是很美观……（残念…</p>
+<p>因为需要的网站入口可能会越来越多，所以考虑了一下，写了个个人入口页面，可以到达我的所有服务。<br>我自己很少写前端的，偶尔写的几个前端是用 LayoutIt 那个 Bootstrap 可视化布局工具拽出来的，所以这次也打算自己从头写下试试….<br>于是乎 <a href="https://liyin.party" target="_blank" rel="noopener">天空传送</a> 诞生了~<br>使用了 <a href="http://materializecss.com/" target="_blank" rel="noopener">Materializecss</a>  ，不过感觉做的依然不是很美观……（残念…</p>
+<hr>
+<p>2018 年 4 月 19 日更新： 已关闭</p>
 ]]></content>
       
         <categories>
@@ -850,28 +1006,28 @@ rc-update add dbus
     <entry>
       <title><![CDATA[正方教务系统登录页修复]]></title>
       <url>https://liyin.date/2017/01/31/zf-login-page-fix/</url>
-      <content type="html"><![CDATA[<p>哼，我看着正方教务系统不爽很久了，特别是那个登录页，输入框不齐，验证码飘在输入框中间，看着无比的难受。<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-2.png" alt="ZF-Loginpage-Fix-2.png" title=""><br>然后，某次正方系统更新之后，浏览器的自动填充也遇到了问题<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-3.png" alt="ZF-Loginpage-Fix-3.png" title=""><br>而我呢，又是一个密码管理器的重度使用者（每个网站都使用不同的密码，密码强度平均 100%），这就逼着我去修复这个令人不爽的自动填充问题。</p>
+      <content type="html"><![CDATA[<p>哼，我看着正方教务系统不爽很久了，特别是那个登录页，输入框不齐，验证码飘在输入框中间，看着无比的难受。<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-2.png"><br>然后，某次正方系统更新之后，浏览器的自动填充也遇到了问题<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-3.png"><br>而我呢，又是一个密码管理器的重度使用者（每个网站都使用不同的密码，密码强度平均 100%），这就逼着我去修复这个令人不爽的自动填充问题。</p>
 <blockquote>
 <p><strong>一切能显示在浏览器上的元素都能被修改，只要网站需要让浏览器正常显示内容，那他就得符合浏览器的规范</strong><br><strong>你不能修改服务器上的内容，但你能修改浏览器显示给你的内容</strong></p>
 </blockquote>
-<p>所以，这时候我们就要打开 Chrome 按下 F12 启动开发者工具，来检查这个网页的各种元素和请求。<br>当我看到正方教务系统登录页的 DOM 之后…<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-4.png" alt="ZF-Loginpage-Fix-4.png" title=""></p>
-<p>喵喵喵？正方的前端用 dd 列表标签做分割？说好的 div 呢？<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-5.png" alt="ZF-Loginpage-Fix-5.png" title=""></p>
-<p>然后就是这段，也不对齐，也不去除注释的 Javascript 代码，仔细一看…….<br>为什么会有两个密码输入框…..<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-6.png" alt="ZF-Loginpage-Fix-6.png" title=""><br><em>注：图中 <code>style</code> 内的 <code>base64</code> 编码的图片是密码管理器插入的，与正方系统无关</em></p>
-<p>而且还调用了上面那段混乱的 Javascript 代码的 <code>update</code> 和 <code>sava</code> 函数…..<br>然后 <code>update</code> 和 <code>sava</code> 函数的作用就是把两个输入框的 <code>display</code> 样式设置为 <code>none</code> 或者 <code>inline</code>。完全意义不明啊！<br>这也是自动密码填充问题的罪魁祸首，于是我将 <code>type</code> 不为 <code>password</code> 的输入框删掉，再次尝试填充，成功了！<br>然后，我按了下 <code>Tab</code> 键想切换到验证码输入框中，这时！<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-7.png" alt="ZF-Loginpage-Fix-7.png" title=""><br>密码框不见了！<br>这是个大问题啊，我立刻想到这是那段 <code>js</code> 代码惹的祸，于是</p>
+<p>所以，这时候我们就要打开 Chrome 按下 F12 启动开发者工具，来检查这个网页的各种元素和请求。<br>当我看到正方教务系统登录页的 DOM 之后…<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-4.png"></p>
+<p>喵喵喵？正方的前端用 dd 列表标签做分割？说好的 div 呢？<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-5.png"></p>
+<p>然后就是这段，也不对齐，也不去除注释的 Javascript 代码，仔细一看…….<br>为什么会有两个密码输入框…..<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-6.png"><br><em>注：图中 <code>style</code> 内的 <code>base64</code> 编码的图片是密码管理器插入的，与正方系统无关</em></p>
+<p>而且还调用了上面那段混乱的 Javascript 代码的 <code>update</code> 和 <code>sava</code> 函数…..<br>然后 <code>update</code> 和 <code>sava</code> 函数的作用就是把两个输入框的 <code>display</code> 样式设置为 <code>none</code> 或者 <code>inline</code>。完全意义不明啊！<br>这也是自动密码填充问题的罪魁祸首，于是我将 <code>type</code> 不为 <code>password</code> 的输入框删掉，再次尝试填充，成功了！<br>然后，我按了下 <code>Tab</code> 键想切换到验证码输入框中，这时！<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-7.png"><br>密码框不见了！<br>这是个大问题啊，我立刻想到这是那段 <code>js</code> 代码惹的祸，于是</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript">update<span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>覆盖掉 <code>update</code> 函数的实现，让它失去作用。由于默认的真实密码是被隐藏的，所以要加一句</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#TextBox2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'display'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>让输入框可见。<br>这时候我打开了 <code>Tempermonkey</code> 这是一个用户脚本管理插件，他可以在目标页自动插入对应的 <code>.user.js</code> 用户脚本。<br>先新建一个脚本，并设置下可用范围<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-8.png" alt="ZF-Loginpage-Fix-8.png" title=""></p>
-<p>然后，由于正方系统没有使用 <code>jQuery</code> 所以，我需要增加一个 <code>jquery</code> 的引用<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-9.png" alt="ZF-Loginpage-Fix-9.png" title=""></p>
+<p>让输入框可见。<br>这时候我打开了 <code>Tempermonkey</code> 这是一个用户脚本管理插件，他可以在目标页自动插入对应的 <code>.user.js</code> 用户脚本。<br>先新建一个脚本，并设置下可用范围<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-8.png"></p>
+<p>然后，由于正方系统没有使用 <code>jQuery</code> 所以，我需要增加一个 <code>jquery</code> 的引用<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-9.png"></p>
 <p>然后就可以在函数体内增加自动注入的脚本（详见下方安装脚本）</p>
 <p>反正已经搞定了自动填充，那就把剩下的看着不爽的问题也解决下吧~<br>首先就是，文本框<strong>不一样长</strong>啊！（摔<br>强迫症感觉很不爽啊！<br>于是，现在！立刻！马上！加入了如下代码</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#TextBox2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'width'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这样，密码框就和用户名框一样长了。<br>剩下的就是更正验证码区的问题了，其实这个地方的主要问题就是！<br><strong>谁写的 <code>style</code> ！给我站出来！会不会用对齐！会不会用相对布局！会不会用绝对布局！</strong><br><strong>在验证码框的顶层元素上加相对布局，再给验证码图标放个绝对布局，你怎么不上天呢！</strong><br>经过了15分钟的修正后验证码的位置恢复了正常<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-10.png" alt="ZF-Loginpage-Fix-10.png" title="">)</p>
+<p>这样，密码框就和用户名框一样长了。<br>剩下的就是更正验证码区的问题了，其实这个地方的主要问题就是！<br><strong>谁写的 <code>style</code> ！给我站出来！会不会用对齐！会不会用相对布局！会不会用绝对布局！</strong><br><strong>在验证码框的顶层元素上加相对布局，再给验证码图标放个绝对布局，你怎么不上天呢！</strong><br>经过了15分钟的修正后验证码的位置恢复了正常<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-10.png">)</p>
 <p>因为要做成脚本嘛，所以也再在页面底部加些脚本加载信息，提示用户正方教务的登录页做的多么的<strong>烂</strong>！<br><strong>烂</strong>到需要让用户自己写脚本来矫正这些问题！</p>
-<p>最终效果<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-1.png" alt="ZF-Loginpage-Fix-1.png" title=""><br>左边是修复之前/右边是修复之后</p>
+<p>最终效果<br><img src="/2017/01/31/zf-login-page-fix/ZF-Loginpage-Fix-1.png"><br>左边是修复之前/右边是修复之后</p>
 <p>不多说了，脚本在下方，安装了 <code>Tempermonkey</code> 用户脚本管理器之后，点击下面的安装按钮就会弹出脚本安装页了~<br>不用担心有任何的风险，代码全部未加密、未混淆，你可以自己修改它。他也不会向任何服务器发送你的信息，正方教务系统也不会知道你正在使用这个脚本，放心大胆的去使用吧！</p>
 <p><link rel="stylesheet" href="/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="/myfiles/userjs/FixZFLoginpage.user.js">安装 正方教务系统登录页修复脚本</a>  </p>
 <hr>
@@ -901,21 +1057,21 @@ rc-update add dbus
       <title><![CDATA[用 Docker 搭建 Minecraft 服务端]]></title>
       <url>https://liyin.date/2017/01/21/docker-minecraft-server/</url>
       <content type="html"><![CDATA[<h1 id="为什么要写这个"><a href="#为什么要写这个" class="headerlink" title="为什么要写这个"></a>为什么要写这个</h1><p>因为到了假期，NV 假期服务器即将开服啦~<br>以往我们使用的是很坑很坑的阿里云，各种卡顿，价格昂贵，所以这次我想到可以使用 Docker 容器来架设服务器，于是就有了这篇文章~<br>如果你想加入服务器游玩的话，请看最后一节，服务器的QQ群~ </p>
-<h1 id="Docker-是什么"><a href="#Docker-是什么" class="headerlink" title="Docker 是什么"></a>Docker 是什么</h1><img src="/2017/01/21/docker-minecraft-server/Minecraft-With-Docker-Docker.svg" alt="Docker" title="Docker"> 
+<h1 id="Docker-是什么"><a href="#Docker-是什么" class="headerlink" title="Docker 是什么"></a>Docker 是什么</h1><img src="/2017/01/21/docker-minecraft-server/Minecraft-With-Docker-Docker.svg" title="Docker"> 
 <p>Docker 是一个虚拟化容器，他提供一种轻量级应用运行环境，保持开发环境和生产环境的一致化。它与虚拟机的最大区别在于，每个容器不包含自己的操作系统内核，而是由宿主系统提供内核运行，这让容器可以在相同的硬件条件下进行更细颗粒度的资源调节，充分使用系统资源。</p>
-<h1 id="Minecraft"><a href="#Minecraft" class="headerlink" title="Minecraft"></a>Minecraft</h1><img src="/2017/01/21/docker-minecraft-server/Minecraft-With-Docker-Minecraft.svg" alt="Minecraft" title="Minecraft"> 
+<h1 id="Minecraft"><a href="#Minecraft" class="headerlink" title="Minecraft"></a>Minecraft</h1><img src="/2017/01/21/docker-minecraft-server/Minecraft-With-Docker-Minecraft.svg" title="Minecraft"> 
 <p>Minecraft 是由 Mojang 公司开发的一款沙盒类开放世界游戏，现在已被 Microsoft 公司收购。在 MCP 计划的带领下涌现了很多优秀的 Mod 对游戏的可玩性有着巨大的提升，在此期间，Mod 加载器 ModLoader 、 Forge 、 LiteLoader 陆续出现，让各个 Mod 得到了协调统一。同时，在服务端方面出现了 Bukkit 、 Spigot 、 Sponge 等支持插件的服务端，让游戏服务器更容易管理。<br>在漫长的岁月中 Minecraft 从最初的版本发展到了 1.11.2 ，经历了 1.2.5 Mod 时代的辉煌。<br>同时，Minecraft 本体也历经 红石更新 / 地形更新 / 寒霜更新 / 战斗更新 / 冒险更新 一步一步的完善。<br>Mod 加载器也从最初的 ModLoader 变为 ModLoader 与 Forge 并存，到 1.5 时代 ModLoader 停止开发，退出了历史舞台，Forge 提供了 FML (ForgeModLoader) 来兼容 ModLoader 开发的 Mod。<br>到现在 LiteLoader 作为可与 Forge 加载器共存在同一个游戏中，让玩家同时享受2种加载器带来的 Mod。</p>
-<h1 id="SpongeForge"><a href="#SpongeForge" class="headerlink" title="SpongeForge"></a>SpongeForge</h1><p>SpongeForge 是新一代的服务端插件解决方案，他解决了历史遗留中插件和 Mod 共存下的种种难处，这也是现在 1.10 版本以上的服务端插件加载方案。同时，我今天也将使用它构建一个同时支持插件和 Mod 的服务端。<br>SpongeForge 官网：<a href="https://www.spongepowered.org" target="_blank" rel="external">点击此处</a></p>
+<h1 id="SpongeForge"><a href="#SpongeForge" class="headerlink" title="SpongeForge"></a>SpongeForge</h1><p>SpongeForge 是新一代的服务端插件解决方案，他解决了历史遗留中插件和 Mod 共存下的种种难处，这也是现在 1.10 版本以上的服务端插件加载方案。同时，我今天也将使用它构建一个同时支持插件和 Mod 的服务端。<br>SpongeForge 官网：<a href="https://www.spongepowered.org" target="_blank" rel="noopener">点击此处</a></p>
 <p><em>PS 为什么这些外国人开发的服务端都跟水过不去….</em><br>水桶 –&gt; 水龙头 –&gt; 炼药锅 –&gt; 海绵</p>
 <h1 id="如何搭建"><a href="#如何搭建" class="headerlink" title="如何搭建"></a>如何搭建</h1><p>说了那么多，我们该开始真正的搭建一个服务端了！<br>我这次以 1.10.2 为例  </p>
 <h2 id="搭建服务端"><a href="#搭建服务端" class="headerlink" title="搭建服务端"></a>搭建服务端</h2><p>因为我们需要一个同时支持插件和 Mod 的服务端，所以我先去找了下在 1.7 时代最常用的服务端 <code>KCauldron</code> ，然而，他并不支持 1.10.2 ，所以，我换了一种方案——使用 Forge + SpongeForge 同时支持插件和 Mod 。</p>
-<h3 id="下载-Forge-服务端"><a href="#下载-Forge-服务端" class="headerlink" title="下载 Forge 服务端"></a>下载 <code>Forge</code> 服务端</h3><img src="/2017/01/21/docker-minecraft-server/Minecraft-With-Docker-Forge.png" alt="Minecraft-With-Docker-Forge.png" title="">  
-<p>先来到 <code>Forge</code> 的<a href="https://files.minecraftforge.net" target="_blank" rel="external">下载页</a>，下载 1.10.2 版的 <code>Forge Installer</code> ，然后双击打开会看到下图。<br><img src="/2017/01/21/docker-minecraft-server/Minecraft-With-Docker-ForgeInstaller.png" alt="Minecraft-With-Docker-ForgeInstaller.png" title=""><br>选择 <code>Install Server</code> ，然后选择一个空目录，点击 <code>确定</code> 即可完成服务端的下载。  </p>
+<h3 id="下载-Forge-服务端"><a href="#下载-Forge-服务端" class="headerlink" title="下载 Forge 服务端"></a>下载 <code>Forge</code> 服务端</h3><img src="/2017/01/21/docker-minecraft-server/Minecraft-With-Docker-Forge.png">  
+<p>先来到 <code>Forge</code> 的<a href="https://files.minecraftforge.net" target="_blank" rel="noopener">下载页</a>，下载 1.10.2 版的 <code>Forge Installer</code> ，然后双击打开会看到下图。<br><img src="/2017/01/21/docker-minecraft-server/Minecraft-With-Docker-ForgeInstaller.png"><br>选择 <code>Install Server</code> ，然后选择一个空目录，点击 <code>确定</code> 即可完成服务端的下载。  </p>
 <h3 id="首次运行"><a href="#首次运行" class="headerlink" title="首次运行"></a>首次运行</h3><p>现在，执行 <code>java -jar forge-1.10.2-12.18.3.2185-universal.jar</code> (中间的版本号请自己根据情况修改) ，会发现服务端启动了几秒之后自动退出了，这是到底为什么呢？  </p>
 <h3 id="同意-EULA"><a href="#同意-EULA" class="headerlink" title="同意 EULA"></a>同意 EULA</h3><p>这是因为 1.7 版本以上的服务端必须同意 Mojang 的用户协议才能启动，现在会发现根目录下多出了 <code>eula.txt</code> 文件，打开这个文件，更改里面的 <code>eula=false</code> 为 <code>eula=true</code> 后，再次启动服务端，就会发现服务端已经被成功启动了。 </p>
 <h3 id="安装-Mod"><a href="#安装-Mod" class="headerlink" title="安装 Mod"></a>安装 Mod</h3><p>这一步我相信只做过客户端整合的人都会非常熟悉，把你需要的 Mod 放入 <code>mods</code> 文件夹，并确认版本符合就可以了。<br>当然，有些 Mod 并不支持服务端，这时你只能忍痛去掉他们了。</p>
-<h3 id="安装插件支持"><a href="#安装插件支持" class="headerlink" title="安装插件支持"></a>安装插件支持</h3><p>由于 1.10.2 这里使用 SpongeForge 来支持插件，所以到 <a href="https://www.spongepowered.org/downloads" target="_blank" rel="external">SpongeForge 下载页</a>下载 <code>SpongeForge</code> 并放入 mods 文件夹即可。</p>
-<h3 id="寻找并安装插件"><a href="#寻找并安装插件" class="headerlink" title="寻找并安装插件"></a>寻找并安装插件</h3><p>这里和安装 Mod 一样，只需要找到对应版本的插件放入服务端的 mods 文件夹里就可以了。<br><a href="https://forums.spongepowered.org/c/plugins/plugin-releases" target="_blank" rel="external">Sponge 插件列表</a>  </p>
+<h3 id="安装插件支持"><a href="#安装插件支持" class="headerlink" title="安装插件支持"></a>安装插件支持</h3><p>由于 1.10.2 这里使用 SpongeForge 来支持插件，所以到 <a href="https://www.spongepowered.org/downloads" target="_blank" rel="noopener">SpongeForge 下载页</a>下载 <code>SpongeForge</code> 并放入 mods 文件夹即可。</p>
+<h3 id="寻找并安装插件"><a href="#寻找并安装插件" class="headerlink" title="寻找并安装插件"></a>寻找并安装插件</h3><p>这里和安装 Mod 一样，只需要找到对应版本的插件放入服务端的 mods 文件夹里就可以了。<br><a href="https://forums.spongepowered.org/c/plugins/plugin-releases" target="_blank" rel="noopener">Sponge 插件列表</a>  </p>
 <h2 id="配置服务端"><a href="#配置服务端" class="headerlink" title="配置服务端"></a>配置服务端</h2><h3 id="服务端设置"><a href="#服务端设置" class="headerlink" title="服务端设置"></a>服务端设置</h3><p>因为服务端的默认设置不太符合中国国情<del>（咳咳）</del> 所以，我们需要做一些修改。<br>打开 <code>server.properties</code> 文件，修改以下配置  </p>
 <pre class="line-numbers language-yaml"><code class="language-yaml">online = false <span class="token comment" spellcheck="true">#关闭正版验证</span>
 motd = Winter Vacation Server 2017 <span class="token comment" spellcheck="true">#标语</span>
@@ -926,7 +1082,7 @@ motd = Winter Vacation Server 2017 <span class="token comment" spellcheck="true"
 <h4 id="FlexibleLogin"><a href="#FlexibleLogin" class="headerlink" title="FlexibleLogin"></a>FlexibleLogin</h4><p>因为关闭了正版验证，所以我们需要额外的登录插件来实现登录，<code>FlexibleLogin</code> 正是 <code>Sponge</code> 体系下的登录认证插件，它甚至支持 <code>TOTP</code> 模式创建动态登录密码。</p>
 <h4 id="PermissionManager"><a href="#PermissionManager" class="headerlink" title="PermissionManager"></a>PermissionManager</h4><p>用于管理权限，细致的调整玩家可以使用的功能和命令。  </p>
 <h4 id="WorldEdit"><a href="#WorldEdit" class="headerlink" title="WorldEdit"></a>WorldEdit</h4><p>我相信各位建筑师和腐竹们应该不会陌生，游戏内方便的大范围地形修改插件。  </p>
-<h4 id="Web-API"><a href="#Web-API" class="headerlink" title="Web-API"></a>Web-API</h4><p>因为 Docker 化之后没法直接访问控制台，所以我们需要一个替代控制台的方案，<code>Web-API</code> 是个不错的选择。<br>这个插件为了安全可以设置访问密钥，访问 <a href="https://valandur.github.io/Web-API/redoc.html" target="_blank" rel="external">帮助文档</a>   以获得更多消息<br>访问 <code>http://127.0.0.1:8080/api/cmd</code> 来执行命令并获取返回值</p>
+<h4 id="Web-API"><a href="#Web-API" class="headerlink" title="Web-API"></a>Web-API</h4><p>因为 Docker 化之后没法直接访问控制台，所以我们需要一个替代控制台的方案，<code>Web-API</code> 是个不错的选择。<br>这个插件为了安全可以设置访问密钥，访问 <a href="https://valandur.github.io/Web-API/redoc.html" target="_blank" rel="noopener">帮助文档</a>   以获得更多消息<br>访问 <code>http://127.0.0.1:8080/api/cmd</code> 来执行命令并获取返回值</p>
 <h3 id="权限调配"><a href="#权限调配" class="headerlink" title="权限调配"></a>权限调配</h3><p>先创建3个组，分别为 <code>players</code> <code>builders</code> <code>admin</code></p>
 <h4 id="players-组"><a href="#players-组" class="headerlink" title="players 组"></a>players 组</h4><p>将这个组设置为基础，这是所有玩家的基础组，拥有基础权限</p>
 <pre><code>nucleus.suicide.exempt.*
@@ -955,7 +1111,7 @@ nucleus.fly.base
 </code></pre><p>主要允许建筑师使用 <code>WorldEdit</code> 插件来完成建筑，同时给予飞行权限</p>
 <h4 id="admin-组"><a href="#admin-组" class="headerlink" title="admin 组"></a>admin 组</h4><p>给予 <code>*</code> 权限，是服务器的管理者 </p>
 <h4 id="Sponge-下的权限管理"><a href="#Sponge-下的权限管理" class="headerlink" title="Sponge 下的权限管理"></a>Sponge 下的权限管理</h4><p>在 Sponge 下，一旦启动权限插件，op权限就会大部分失效，需要执行权限插件的添加权限命令，为管理员添加 <code>*</code> 权限才能正常工作</p>
-<pre><code>/pm users your_username set permission *
+<pre><code>/pm users your_username set permission * 
 </code></pre><p>如果你已经创建了权限组，则可以使用下面的命令将一个人添加到组</p>
 <pre><code>/pm users your_username add group your_groupname
 </code></pre><h2 id="选择-Docker-镜像"><a href="#选择-Docker-镜像" class="headerlink" title="选择 Docker 镜像"></a>选择 Docker 镜像</h2><p>Docker 的起始是由一个基础镜像开始的，你可以选择 <code>Ubuntu</code> 镜像从头开始配置，或者找一个符合你要求的镜像开始配置，我这次选择的是 <code>psiag/oracle-java</code> 镜像开始的，这个镜像包含配置好的 <code>java 8</code> 可以直接使用。  </p>
@@ -979,7 +1135,7 @@ docker build -t thisimagetag <span class="token keyword">.</span>
 <span class="token keyword">WORKDIR</span> /mcserver/  
 <span class="token keyword">VOLUME</span> /mcserver/world  
 <span class="token keyword">VOLUME</span> /mcserver/crash<span class="token punctuation">-</span>reports  
-<span class="token keyword">CMD</span> <span class="token punctuation">[</span><span class="token string">"/usr/bin/java"</span><span class="token punctuation">,</span><span class="token string">"-jar"</span><span class="token punctuation">,</span><span class="token string">"forge-1.10.2-12.18.3.2185-universal.jar"</span><span class="token punctuation">,</span><span class="token string">"nogui"</span><span class="token punctuation">]</span>
+<span class="token keyword">CMD</span> <span class="token punctuation">[</span><span class="token string">"/usr/bin/java"</span><span class="token punctuation">,</span><span class="token string">"-jar"</span><span class="token punctuation">,</span><span class="token string">"forge-1.10.2-12.18.3.2185-universal.jar"</span><span class="token punctuation">,</span><span class="token string">"nogui"</span><span class="token punctuation">]</span>  
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Dockerfile-解释"><a href="#Dockerfile-解释" class="headerlink" title="Dockerfile 解释"></a>Dockerfile 解释</h3><ol>
 <li>使用  <code>FROM</code>  引入带有  <code>java 8</code> 的镜像  </li>
@@ -1005,7 +1161,7 @@ docker build -t thisimagetag <span class="token keyword">.</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>来完成推送镜像到注册服务<br><strong>注：这一步取决于你的网络和注册服务的网络情况，推送镜像可能需要数十分钟</strong>  </p>
 <h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><h3 id="命令行运行"><a href="#命令行运行" class="headerlink" title="命令行运行"></a>命令行运行</h3><p>先创建一个 world 的空文件夹，然后执行  </p>
-<pre class="line-numbers language-bash"><code class="language-bash">docker run --name mc -d -v world:/mcserver/world -p 25565:25565 -p 8080:8080 -it thisimagetag
+<pre class="line-numbers language-bash"><code class="language-bash">docker run --name mc -d -v world:/mcserver/world -p 25565:25565 -p 8080:8080 -it thisimagetag  
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>就可以直接启动服务端了~ （thisimagetag 是这个镜像的标签）</p>
 <h3 id="使用云"><a href="#使用云" class="headerlink" title="使用云"></a>使用云</h3><p>如果你使用容器云 CaaS 那么在你上一步上传镜像之后，需要在面板上进行如下操作 </p>
@@ -1017,12 +1173,12 @@ docker build -t thisimagetag <span class="token keyword">.</span>
 <li>启动容器，等待部署完成  </li>
 <li>Enjoy!    </li>
 </ol>
-<h1 id="欢迎来到-NV假期休闲服"><a href="#欢迎来到-NV假期休闲服" class="headerlink" title="欢迎来到 NV假期休闲服"></a>欢迎来到 NV假期休闲服</h1><p>欢迎到我们的服务器游玩<br>群号码：579263743<br>或者可以扫描加群二维码<br><img src="/2017/01/21/docker-minecraft-server/Minecraft-With-Docker-Qrcode.jpg" alt="579263743" title="579263743"><br>点击这个链接也可以哦<br><a href="https://shang.qq.com/wpa/qunwpa?idkey=a6c344d3e14336506dd53cda62dc41b8e0294cbc646c25f8ce6e57b307b5fb60" target="_blank" rel="external"><img src="https://img.shields.io/badge/QQ%20%E7%BE%A4-579263743-blue.svg?style=flat-square" alt="579263743"></a></p>
+<h1 id="欢迎来到-NV假期休闲服"><a href="#欢迎来到-NV假期休闲服" class="headerlink" title="欢迎来到 NV假期休闲服"></a>欢迎来到 NV假期休闲服</h1><p>欢迎到我们的服务器游玩<br>群号码：579263743<br>或者可以扫描加群二维码<br><img src="/2017/01/21/docker-minecraft-server/Minecraft-With-Docker-Qrcode.jpg" width="579263743"><br>点击这个链接也可以哦<br><a href="https://shang.qq.com/wpa/qunwpa?idkey=a6c344d3e14336506dd53cda62dc41b8e0294cbc646c25f8ce6e57b307b5fb60" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/QQ%20%E7%BE%A4-579263743-blue.svg?style=flat-square" alt="579263743"></a></p>
 ]]></content>
       
         <categories>
             
-            <category> 云 </category>
+            <category> 技术栈 </category>
             
         </categories>
         
@@ -1046,7 +1202,7 @@ docker build -t thisimagetag <span class="token keyword">.</span>
       <url>https://liyin.date/2017/01/16/2017-first-snow/</url>
       <content type="html"><![CDATA[<h1 id="实训"><a href="#实训" class="headerlink" title="实训"></a>实训</h1><p>今天是实训课的最后一天，虽然实训课没什么难度，但也用了我几天的时间来制作。 <del>（其实是因为经常下午不小心睡着，导致没在开发）</del><br>因为实训的时间很长，而且没什么难度，所以就尝试了下使用 RxJava2 来开发 Swing 界面的程序。<br>在使用过程中，我渐渐的发现，RxJava 本身会带给 Java 开发良好的代码阅读性和便捷的流式处理能力。<br>由于 RxJava2 还没有对 JDBC 的直接支持，所以没法对数据集直接进行 Map 操作，这导致了一点小小的不便。不过，使用 flatMap 的方法解决起来也是相当的便捷，仅需要几个 flatMap 和 Map 操作即可处理完整个流程。</p>
 <h1 id="雪"><a href="#雪" class="headerlink" title="雪"></a>雪</h1><p>中午午饭过后，发现外边飘起了点点雪花 <del>（然而 AQI 根本没变低啊，摔）</del> 这应该是今年的第一场雪了吧….不知道已经有多少年没见到过大雪了…..<br>（明明这篇博客主题叫雪….然而写雪的部分却是最少的….） <del>我只是想找个话题而已</del></p>
-<h1 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h1><p>快递的时间算的刚刚好，在这在校的最后一天，快递送到了学校的快递点，这次是一个小型的路由器，有多小呢？<br>请看下图….<br><img src="/2017/01/16/2017-first-snow/2017-First-Snow-1.jpg" alt="路由器" title="路由器"><br>它装载着 OpenWrt 开源路由系统，可以进行很多的配置，当然，这样的代价是复杂的配置界面和极其难以理解的配置方法。<br>内置 3db 天线，基本随身携带刚刚好。<br>当然也可以用这个来劫持周围的无线网设备，使他们进入虚假的登录页面，盗取他人的信息，或者中继一个无线网络进行路由器抓包捕获 <strong>（请不要做这种事，这是违法的！）</strong> 。</p>
+<h1 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h1><p>快递的时间算的刚刚好，在这在校的最后一天，快递送到了学校的快递点，这次是一个小型的路由器，有多小呢？<br>请看下图….<br><img src="/2017/01/16/2017-first-snow/2017-First-Snow-1.jpg" title="路由器"><br>它装载着 OpenWrt 开源路由系统，可以进行很多的配置，当然，这样的代价是复杂的配置界面和极其难以理解的配置方法。<br>内置 3db 天线，基本随身携带刚刚好。<br>当然也可以用这个来劫持周围的无线网设备，使他们进入虚假的登录页面，盗取他人的信息，或者中继一个无线网络进行路由器抓包捕获 <strong>（请不要做这种事，这是违法的！）</strong> 。</p>
 <blockquote>
 <p><strong> 为了您的安全，请一定确保在进行需要安全的操作时保证地址栏处于 https 绿锁状态！（另外，不要使用 360 浏览器等国内浏览器，目前很多国内浏览器对证书的认证并不安全！）在这里，我希望有能力使用安全隧道的大家，在进行需要安全操作（如 支付 等）时，启用您的安全隧道，保证不被公开的路由设备截获或遭遇中间人攻击。</strong> </p>
 </blockquote>
@@ -1063,8 +1219,8 @@ docker build -t thisimagetag <span class="token keyword">.</span>
 <h1 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h1><p>你知道吗？其实， <strong>博客主页的标题</strong> 和 <strong>右侧的博客 Logo</strong> 都是可以点进相关的页面的哟~</p>
 <h1 id="TODO-寒假"><a href="#TODO-寒假" class="headerlink" title="TODO 寒假"></a>TODO 寒假</h1><p>这个寒假到来了，在这个寒假中，我会首先对这个主题进行一些修改。</p>
 <ul>
-<li>[√] 支持文章置顶 （现在已由 <a href="https://github.com/viosey/hexo-theme-material/tree/sky-food" target="_blank" rel="external">hexo-theme-material/sky-food</a> 分支初步完成，由 <a href="https://github.com/cubesky/hexo-helper-post-top" target="_blank" rel="external">hexo-helper-post-top</a> 插件提供支持）</li>
-<li>[√] 支持分页 Metadata Info 和 Opengraph Info <a href="https://github.com/viosey/hexo-theme-material/issues/70" target="_blank" rel="external">Issue #70</a></li>
+<li>[√] 支持文章置顶 （现在已由 <a href="https://github.com/viosey/hexo-theme-material/tree/sky-food" target="_blank" rel="noopener">hexo-theme-material/sky-food</a> 分支初步完成，由 <a href="https://github.com/cubesky/hexo-helper-post-top" target="_blank" rel="noopener">hexo-helper-post-top</a> 插件提供支持）</li>
+<li>[√] 支持分页 Metadata Info 和 Opengraph Info <a href="https://github.com/viosey/hexo-theme-material/issues/70" target="_blank" rel="noopener">Issue #70</a></li>
 <li>[√] 让主题支持加载队列，提高某些网页组件的响应速度</li>
 <li>[ ] 添加自动化测试脚本，供 CI 进行基础测试，并生成每次的 Demo 页面到 pages 服务</li>
 </ul>
@@ -1100,12 +1256,12 @@ docker build -t thisimagetag <span class="token keyword">.</span>
     <entry>
       <title><![CDATA[博客主题版本升级 1.2.5]]></title>
       <url>https://liyin.date/2017/01/05/blog-update-1-2-5/</url>
-      <content type="html"><![CDATA[<p>这几天在考试，也没怎么写博文。今天刚弄了点博客的主题更新，来更新一下。<br>之前的版本中，我在 <a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="external">hexo-material-theme</a> 主题上做了很多的更改，导致在升级主题的时候没法使用 <code>git pull</code> 进行快速升级。<br>所以在官方 1.2.5 版本主题更新之后，我重新进行了 <code>clone</code> 操作，然后使用了主题官方提供的 <code>head.yml</code> 进行了不修改主题 ejs 文件的外挂式修改。<br>今天官方主题代码仓库也开启了 <code>canary</code> 分支用于放置开发中的版本。不过，我在博客上还是喜欢使用稳定版本，有些开发版本的小功能我还是想要加入到我的博客中的，所以我自己制作了将一些开发版本的功能带回稳定版本的方案，也是通过 javascript 来在 DOM 加载完毕之后动态插入内容到 DOM 中。这样就不会在下次更新的时候出现文件冲突，导致升级失败。<br>PS 改了一下午还真是麻烦……<br><del>PS2 Windows 10 的输入法还莫名其妙的卡死整个窗口，不知道什么原因……..</del> （用 DISM 神器修好了…..）</p>
+      <content type="html"><![CDATA[<p>这几天在考试，也没怎么写博文。今天刚弄了点博客的主题更新，来更新一下。<br>之前的版本中，我在 <a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="noopener">hexo-material-theme</a> 主题上做了很多的更改，导致在升级主题的时候没法使用 <code>git pull</code> 进行快速升级。<br>所以在官方 1.2.5 版本主题更新之后，我重新进行了 <code>clone</code> 操作，然后使用了主题官方提供的 <code>head.yml</code> 进行了不修改主题 ejs 文件的外挂式修改。<br>今天官方主题代码仓库也开启了 <code>canary</code> 分支用于放置开发中的版本。不过，我在博客上还是喜欢使用稳定版本，有些开发版本的小功能我还是想要加入到我的博客中的，所以我自己制作了将一些开发版本的功能带回稳定版本的方案，也是通过 javascript 来在 DOM 加载完毕之后动态插入内容到 DOM 中。这样就不会在下次更新的时候出现文件冲突，导致升级失败。<br>PS 改了一下午还真是麻烦……<br><del>PS2 Windows 10 的输入法还莫名其妙的卡死整个窗口，不知道什么原因……..</del> （用 DISM 神器修好了…..）</p>
 ]]></content>
       
         <categories>
             
-            <category> 博客升级 </category>
+            <category> 技术栈 </category>
             
         </categories>
         
@@ -1123,7 +1279,7 @@ docker build -t thisimagetag <span class="token keyword">.</span>
     <entry>
       <title><![CDATA[Project My Screen App]]></title>
       <url>https://liyin.date/2016/12/27/project-my-screen-app/</url>
-      <content type="html"><![CDATA[<p>今天向还在使用微软 Lumia 手机的 <strong>1%</strong> 用户推荐一个小软件<br>名叫 <a href="https://www.microsoft.com/en-us/download/details.aspx?id=42536" target="_blank" rel="external">Project My Screen App</a> <del>（微软改名部不来改下名字么=- = 这名字透着一股山寨的感觉….）</del><br>他能够通过USB线将手机屏幕同步到电脑显示并可以在电脑上操作手机。<br>支持 Windows Phone 8.1 到 Windows 10 Mobile 应该可以算是全系列都支持了吧…<br><img src="/2016/12/27/project-my-screen-app/Project-My-Screen-1.png" alt="Project My Screen App" title="Project My Screen App"><br>不过这个软件还是有一定局限性的….<br>比如：</p>
+      <content type="html"><![CDATA[<p>今天向还在使用微软 Lumia 手机的 <strong>1%</strong> 用户推荐一个小软件<br>名叫 <a href="https://www.microsoft.com/en-us/download/details.aspx?id=42536" target="_blank" rel="noopener">Project My Screen App</a> <del>（微软改名部不来改下名字么=- = 这名字透着一股山寨的感觉….）</del><br>他能够通过USB线将手机屏幕同步到电脑显示并可以在电脑上操作手机。<br>支持 Windows Phone 8.1 到 Windows 10 Mobile 应该可以算是全系列都支持了吧…<br><img src="/2016/12/27/project-my-screen-app/Project-My-Screen-1.png" title="Project My Screen App"><br>不过这个软件还是有一定局限性的….<br>比如：</p>
 <ul>
 <li>在手机息屏之后无法在电脑上唤醒手机，只能自己敲一敲手机屏幕，或者按下电源键点亮屏幕后再操作</li>
 <li>无法下拉通知栏</li>
@@ -1134,7 +1290,7 @@ docker build -t thisimagetag <span class="token keyword">.</span>
       
         <categories>
             
-            <category> 软件推荐 </category>
+            <category> 推广推荐 </category>
             
         </categories>
         
@@ -1178,7 +1334,7 @@ docker build -t thisimagetag <span class="token keyword">.</span>
       <url>https://liyin.date/2016/12/26/zf-auto-tech-rate/</url>
       <content type="html"><![CDATA[<p>这个工具会帮助你填写正方教务系统的教学质量评价，免去你一个个点击下拉列表的痛苦。反正正方系统是实名的全都往好了填不就行了~ </p>
 <p>将下面的按钮拖动到书签栏上来保存这个功能 在评价页点击这个书签即可自动评价咯~  </p>
-<p><link rel="stylesheet" href="https://skyedge.b0.upaiyun.com/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="javascript:void(function(){var s=document.createElement('script');s.setAttribute('src','https://liyin.date/myfiles/javascriptbookmark/pjjsblet.js');document.body.appendChild(s);})();" target="_blank" rel="external">正方教务系统自动教学评价</a>  </p>
+<p><link rel="stylesheet" href="https://skyedge.b0.upaiyun.com/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="javascript:void(function(){var s=document.createElement('script');s.setAttribute('src','https://liyin.date/myfiles/javascriptbookmark/pjjsblet.js');document.body.appendChild(s);})();" target="_blank" rel="noopener">正方教务系统自动教学评价</a>  </p>
 <p><strong>PS</strong><br>这篇文章的上面这个按钮使用了 Bootstrap 的部分 CSS 文件…<br>为什么是部分呢…<br>因为这个主题用的 class 标签里的某些值被原版 Bootstrap 更改了，直接用原版加上去整篇文章都消失不见了……<br>我做梦都没想到我有一天得自己手动提取 CSS 来干这事…..<br>(我承认我不是一个写前端网页的……)</p>
 ]]></content>
       

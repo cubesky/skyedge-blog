@@ -8,8 +8,47 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Wed, 31 Jan 2018 08:54:46 GMT</pubDate>
+    <pubDate>Thu, 19 Apr 2018 03:48:39 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>对博客分类进行了一些整理</title>
+      <link>https://liyin.date/2018/04/19/blog-categories-sort/</link>
+      <guid>https://liyin.date/2018/04/19/blog-categories-sort/</guid>
+      <pubDate>Thu, 19 Apr 2018 11:41:14 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;之前本博客的分类非常混乱，基本上就当作标签一样来用…. 导致根本无法正常的分类博文，于是最近对博文进行了重新分类。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;类别&lt;/th&gt;
+&lt;th style=&quot;text-al
+        
+      
+      </description>
+      
+      <comments>https://liyin.date/2018/04/19/blog-categories-sort/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Google 分析 与 Do Not Track</title>
+      <link>https://liyin.date/2018/04/19/googleanalytic-dnt/</link>
+      <guid>https://liyin.date/2018/04/19/googleanalytic-dnt/</guid>
+      <pubDate>Thu, 19 Apr 2018 11:16:52 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;Google-Analytics&quot;&gt;&lt;a href=&quot;#Google-Analytics&quot; class=&quot;headerlink&quot; title=&quot;Google Analytics&quot;&gt;&lt;/a&gt;Google Analytics&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https
+        
+      
+      </description>
+      
+      <comments>https://liyin.date/2018/04/19/googleanalytic-dnt/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>再见 2017， 你好 2018</title>
@@ -32,7 +71,10 @@
       <pubDate>Wed, 29 Nov 2017 16:13:02 GMT</pubDate>
       <description>
       
-        &lt;p&gt;昨天晚上跟同学聊天的时候脑洞大开，于是各种编段子，后来整理了下发到了我的 &lt;a href=&quot;https://t.me/lynote&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Telegram 频道&lt;/a&gt; 上，经过其他人转发之后……… 开启了编段子的夜
+        
+        
+          &lt;p&gt;昨天晚上跟同学聊天的时候脑洞大开，于是各种编段子，后来整理了下发到了我的 &lt;a href=&quot;https://t.me/lynote&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Telegram 频道&lt;/a&gt; 上，经过其他人转发之后……… 开启了编段子的夜
+        
       
       </description>
       
@@ -46,9 +88,12 @@
       <pubDate>Sat, 18 Nov 2017 14:33:17 GMT</pubDate>
       <description>
       
-        &lt;p&gt;时间往往过得很快，这个月似乎发生了不少事情，梳理下思路来想想这个到现在都干了什么…..&lt;/p&gt;
+        
+        
+          &lt;p&gt;时间往往过得很快，这个月似乎发生了不少事情，梳理下思路来想想这个到现在都干了什么…..&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;上月底我受同学邀请去了一家手游公司工作，主要从事手游 SDK 的相关开发（所以我也不知道手游的策划们是怎么干活的），对于我来说，难度属于并不是很难，
+        
       
       </description>
       
@@ -62,10 +107,13 @@
       <pubDate>Sat, 18 Nov 2017 14:12:12 GMT</pubDate>
       <description>
       
-        &lt;blockquote&gt;
+        
+        
+          &lt;blockquote&gt;
 &lt;p&gt;说起来很久都没写博客了呢，估计这两天会写一篇博文记录下最近的事情~&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;引&quot;&gt;&lt;a href=&quot;#引&quot; class=&quot;headerlink&quot; title=&quot;引&quot;&gt;&lt;/a&gt;引&lt;/h1&gt;&lt;p&gt;2017 年
+        
       
       </description>
       
@@ -79,7 +127,10 @@
       <pubDate>Fri, 29 Sep 2017 21:04:27 GMT</pubDate>
       <description>
       
-        &lt;p&gt;前几天，收到了一份从 &lt;a href=&quot;https://ikk.me&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Kookxiang&lt;/a&gt; 寄来的阿里月饼！ &lt;strong&gt;ありがとう&lt;/strong&gt;&lt;br&gt;那么，来开箱吧！&lt;br&gt;&lt;img src=
+        
+        
+          &lt;p&gt;前几天，收到了一份从 &lt;a href=&quot;https://ikk.me&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Kookxiang&lt;/a&gt; 寄来的阿里月饼！ &lt;strong&gt;ありがとう&lt;/strong&gt;&lt;br&gt;那么，来开箱吧！&lt;br&gt;&lt;img src=
+        
       
       </description>
       
@@ -93,7 +144,10 @@
       <pubDate>Fri, 15 Sep 2017 17:33:49 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;LetITFly-BBS&quot;&gt;&lt;a href=&quot;#LetITFly-BBS&quot; class=&quot;headerlink&quot; title=&quot;LetITFly BBS&quot;&gt;&lt;/a&gt;LetITFly BBS&lt;/h1&gt;&lt;p&gt;&lt;code&gt;LetITFly BBS&lt;/code&gt; 的前身是
+        
+        
+          &lt;h1 id=&quot;LetITFly-BBS&quot;&gt;&lt;a href=&quot;#LetITFly-BBS&quot; class=&quot;headerlink&quot; title=&quot;LetITFly BBS&quot;&gt;&lt;/a&gt;LetITFly BBS&lt;/h1&gt;&lt;p&gt;&lt;code&gt;LetITFly BBS&lt;/code&gt; 的前身是
+        
       
       </description>
       
@@ -107,10 +161,13 @@
       <pubDate>Tue, 11 Jul 2017 23:17:24 GMT</pubDate>
       <description>
       
-        &lt;blockquote&gt;
+        
+        
+          &lt;blockquote&gt;
 &lt;p&gt;今天有人提醒我好久没写博文了 Orz&lt;br&gt;最近确实很忙，有好几件事情都要做，然而今天又跑了趟图书大厦…..&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;嘛，为什么今天突然说起转运的事情了呢…..&lt;br&gt;因为之前一直在 StartedJP 有个想买的
+        
       
       </description>
       
@@ -124,40 +181,14 @@
       <pubDate>Sun, 02 Jul 2017 20:49:38 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;使用感受&quot;&gt;&lt;a href=&quot;#使用感受&quot; class=&quot;headerlink&quot; title=&quot;使用感受&quot;&gt;&lt;/a&gt;使用感受&lt;/h1&gt;&lt;h2 id=&quot;硬件方面&quot;&gt;&lt;a href=&quot;#硬件方面&quot; class=&quot;headerlink&quot; title=&quot;硬件方面&quot;&gt;&lt;/a
+        
+        
+          &lt;h1 id=&quot;使用感受&quot;&gt;&lt;a href=&quot;#使用感受&quot; class=&quot;headerlink&quot; title=&quot;使用感受&quot;&gt;&lt;/a&gt;使用感受&lt;/h1&gt;&lt;h2 id=&quot;硬件方面&quot;&gt;&lt;a href=&quot;#硬件方面&quot; class=&quot;headerlink&quot; title=&quot;硬件方面&quot;&gt;&lt;/a
+        
       
       </description>
       
       <comments>https://liyin.date/2017/07/02/oneplus5/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Android 开发为什么不应该继续使用 Eclipse</title>
-      <link>https://liyin.date/2017/06/18/why-not-continue-use-eclipse-on-android-program/</link>
-      <guid>https://liyin.date/2017/06/18/why-not-continue-use-eclipse-on-android-program/</guid>
-      <pubDate>Sun, 18 Jun 2017 20:53:45 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;借着我现在学校正在教 Android 开发的契机，聊一聊为什么你应当使用 &lt;code&gt;Android Studio&lt;/code&gt; 而不再使用 &lt;code&gt;Eclipse + ADT&lt;/code&gt; 的方式。&lt;/p&gt;
-&lt;h1 id=&quot;我与-Android-开发&quot;&gt;&lt;a href
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/06/18/why-not-continue-use-eclipse-on-android-program/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>LetAPKFly | 让安装包飞</title>
-      <link>https://liyin.date/2017/05/25/letapkfly/</link>
-      <guid>https://liyin.date/2017/05/25/letapkfly/</guid>
-      <pubDate>Thu, 25 May 2017 22:40:42 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;最近因为某些原因，国内较大的 Android 交流网站兼软件分发平台 —— &lt;strong&gt;酷安&lt;/strong&gt;，对所有未实名开发者上传的软件进行了下架，包括但不限于 &lt;strong&gt;MyAndroidTools&lt;/strong&gt; 、&lt;strong&gt;AppOps&lt;/str
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/05/25/letapkfly/#disqus_thread</comments>
     </item>
     
   </channel>
