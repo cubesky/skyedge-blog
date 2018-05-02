@@ -8,8 +8,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Wed, 25 Apr 2018 07:37:06 GMT</pubDate>
+    <pubDate>Wed, 02 May 2018 10:33:18 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>在 GNU/Linux 上使用 SSR</title>
+      <link>https://liyin.date/2018/05/02/use-ssr-on-gnu-linux/</link>
+      <guid>https://liyin.date/2018/05/02/use-ssr-on-gnu-linux/</guid>
+      <pubDate>Wed, 02 May 2018 17:39:45 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;最近正好手里有了一些闲钱，于是就想着把现在电脑里装的双系统里的 openSuSE 单独找一台电脑装，于是翻了翻闲鱼收了一台 ThinkPad
+        
+      
+      </description>
+      
+      <comments>https://liyin.date/2018/05/02/use-ssr-on-gnu-linux/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>对博客分类进行了一些整理</title>
@@ -172,23 +189,6 @@
       </description>
       
       <comments>https://liyin.date/2017/07/11/buy-and-trans-jp/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>一加5使用感受与折腾</title>
-      <link>https://liyin.date/2017/07/02/oneplus5/</link>
-      <guid>https://liyin.date/2017/07/02/oneplus5/</guid>
-      <pubDate>Sun, 02 Jul 2017 20:49:38 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h1 id=&quot;使用感受&quot;&gt;&lt;a href=&quot;#使用感受&quot; class=&quot;headerlink&quot; title=&quot;使用感受&quot;&gt;&lt;/a&gt;使用感受&lt;/h1&gt;&lt;h2 id=&quot;硬件方面&quot;&gt;&lt;a href=&quot;#硬件方面&quot; class=&quot;headerlink&quot; title=&quot;硬件方面&quot;&gt;&lt;/a
-        
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/07/02/oneplus5/#disqus_thread</comments>
     </item>
     
   </channel>

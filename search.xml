@@ -4,6 +4,53 @@
   
     
     <entry>
+      <title><![CDATA[在 GNU/Linux 上使用 SSR]]></title>
+      <url>https://liyin.date/2018/05/02/use-ssr-on-gnu-linux/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近正好手里有了一些闲钱，于是就想着把现在电脑里装的双系统里的 openSuSE 单独找一台电脑装，于是翻了翻闲鱼收了一台 ThinkPad x220 用来装 openSuSE。</p>
+<img src="/2018/05/02/use-ssr-on-gnu-linux/x220.png" title="Thinkpad_x220">
+<p>本来想着桌面环境使用嘛，就不想每次大版本升级的时候都要改仓库地址再升级这么麻烦，于是就选择了滚动版本 —— openSuSE Tumbleweed 风滚草</p>
+<img src="/2018/05/02/use-ssr-on-gnu-linux/Tumbleweed.png" title="Tumbleweed">
+<p>顺便想了想，自己维护服务器还是很麻烦 <del>（就是懒）</del> ，于是就找了一家认识的服务商直接买了服务。<br>不过，遇到了麻烦…. 这个服务商 <strong>不支持</strong> 原版 SS ！而 GNU/Linux 上并没有类似 SS-qt 的实现，经过 neoFelhz 的推荐，找到了 <a href="https://github.com/erguotou520/electron-ssr" target="_blank" rel="noopener"><code>electron-ssr</code></a> 这个跨平台方案，在 <a href="https://github.com/erguotou520/electron-ssr/releases" target="_blank" rel="noopener">Release</a> 中可以找到各个系统的预编译包，下载并安装就行了。  </p>
+<h1 id="electron-ssr-与-Linux-发行版"><a href="#electron-ssr-与-Linux-发行版" class="headerlink" title="electron-ssr 与 Linux 发行版"></a>electron-ssr 与 Linux 发行版</h1><h2 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian / Ubuntu"></a>Debian / Ubuntu</h2><p>这个系列的发行版请下载 deb 后缀的包，并使用下面的命令安装</p>
+<pre class="line-numbers language-bash"><code class="language-bash">deb -i electron-ssr_版本_amd64.deb
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装过后就可以在菜单中找到 electron-ssr 了</p>
+<h2 id="RedHat-CentOS"><a href="#RedHat-CentOS" class="headerlink" title="RedHat / CentOS"></a>RedHat / CentOS</h2><p>这个系列的发行版请下载 rpm 后缀的包，并使用下面的命令安装</p>
+<pre class="line-numbers language-bash"><code class="language-bash">rpm -ivh electron-ssr.rpm
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>同样安装好后就可以在菜单中找到 electron-ssr 了</p>
+<h2 id="openSuSE"><a href="#openSuSE" class="headerlink" title="openSuSE"></a>openSuSE</h2><p>这个比较特殊一点，如果你按照 RedHat 那个直接安装就会出现依赖解决失败，无法安装。BOOOOOOOOM！<br>这是由于 electron-builer 认为全世界 rpm 都是 RedHat <code>(╯‵□′)╯︵┻━┻</code><br>electron-builder 要求安装以下依赖，<code>libnotify</code>、<code>libappindicator</code>、<code>libXScrnSaver</code> ，但在 openSuSE 上的名称分别为 <code>libnotify4</code>、<code>libappindicator1</code>、<code>libXScrnSaver</code> ，所以就找不到了，你需要下面这一点点操作：<br>首先到 Yast2 中安装 <code>libnotify4</code> 和 <code>libappindicator1</code> ，或者执行</p>
+<pre class="line-numbers language-bash"><code class="language-bash">zypper <span class="token keyword">in</span> libnotify4 libappindicator1
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>之后打开浏览器访问 <a href="https://software.opensuse.org/package/libXScrnSaver" target="_blank" rel="noopener">https://software.opensuse.org/package/libXScrnSaver</a> 并点击你系统版本对应的 <code>一键安装</code> ， Yast 会自动弹出并安装软件包。<br>然后回到 rpm 那里执行</p>
+<pre class="line-numbers language-bash"><code class="language-bash">rpm -ivh --nodeps electron-ssr.rpm
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>过后，electron-ssr 就会出现在你的菜单中，启动并使用吧！</p>
+<h2 id="Arch"><a href="#Arch" class="headerlink" title="Arch"></a>Arch</h2><p>用 Arch 的都是 dalao ！ 那里有 pacman 的包（为什么不是 AUR …） 自己摸索下吧！  </p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>其实使用上就没什么难度了，全中文的界面，我想你既然都选择了这个 <code>Linux is free only when your time is free.</code> 的系统了，那就自己研究下吧！</p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>由于 electron-ssr 是使用 <code>gsetting</code> 设置系统代理的，所以如果你没使用 GNOME 的话就可能发生设置失败的问题，这个问题作者已知但不知道解决方案，如果你知道可以告诉作者。（我直接用浏览器插件了，根本没开系统代理）</p>
+<hr>
+<p>其实折腾这个的过程中，自己 <code>npm run build</code> 过，装错过包，搞崩过 KDE，后来发现也不行，装了一堆包系统崩了… 然后通过 Snapper Rollback 回滚之后整个系统居然 Read-Only 了，无奈重装… （老宋： 用 <strong>Ubuntu</strong> 啊！）</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术栈 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> SSR </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[对博客分类进行了一些整理]]></title>
       <url>https://liyin.date/2018/04/19/blog-categories-sort/</url>
       <content type="html"><![CDATA[<p>之前本博客的分类非常混乱，基本上就当作标签一样来用…. 导致根本无法正常的分类博文，于是最近对博文进行了重新分类。</p>
