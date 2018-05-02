@@ -16,14 +16,14 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>安装过后就可以在菜单中找到 electron-ssr 了</p>
 <h2 id="RedHat-CentOS"><a href="#RedHat-CentOS" class="headerlink" title="RedHat / CentOS"></a>RedHat / CentOS</h2><p>这个系列的发行版请下载 rpm 后缀的包，并使用下面的命令安装</p>
-<pre class="line-numbers language-bash"><code class="language-bash">rpm -ivh electron-ssr.rpm
+<pre class="line-numbers language-bash"><code class="language-bash">rpm -ivh electron-ssr_版本.x86_64.rpm
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>同样安装好后就可以在菜单中找到 electron-ssr 了</p>
 <h2 id="openSuSE"><a href="#openSuSE" class="headerlink" title="openSuSE"></a>openSuSE</h2><p>这个比较特殊一点，如果你按照 RedHat 那个直接安装就会出现依赖解决失败，无法安装。BOOOOOOOOM！<br>这是由于 electron-builer 认为全世界 rpm 都是 RedHat <code>(╯‵□′)╯︵┻━┻</code><br>electron-builder 要求安装以下依赖，<code>libnotify</code>、<code>libappindicator</code>、<code>libXScrnSaver</code> ，但在 openSuSE 上的名称分别为 <code>libnotify4</code>、<code>libappindicator1</code>、<code>libXScrnSaver</code> ，所以就找不到了，你需要下面这一点点操作：<br>首先到 Yast2 中安装 <code>libnotify4</code> 和 <code>libappindicator1</code> ，或者执行</p>
 <pre class="line-numbers language-bash"><code class="language-bash">zypper <span class="token keyword">in</span> libnotify4 libappindicator1
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>之后打开浏览器访问 <a href="https://software.opensuse.org/package/libXScrnSaver" target="_blank" rel="noopener">https://software.opensuse.org/package/libXScrnSaver</a> 并点击你系统版本对应的 <code>一键安装</code> ， Yast 会自动弹出并安装软件包。<br>然后回到 rpm 那里执行</p>
-<pre class="line-numbers language-bash"><code class="language-bash">rpm -ivh --nodeps electron-ssr.rpm
+<pre class="line-numbers language-bash"><code class="language-bash">rpm -ivh --nodeps electron-ssr_版本.x86_64.rpm
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>过后，electron-ssr 就会出现在你的菜单中，启动并使用吧！</p>
 <h2 id="Arch"><a href="#Arch" class="headerlink" title="Arch"></a>Arch</h2><p>用 Arch 的都是 dalao ！ 那里有 pacman 的包（为什么不是 AUR …） 自己摸索下吧！  </p>
