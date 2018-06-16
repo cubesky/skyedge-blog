@@ -8,8 +8,27 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Fri, 15 Jun 2018 20:18:08 GMT</pubDate>
+    <pubDate>Sat, 16 Jun 2018 04:29:01 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>闲聊·记录-2018年6月</title>
+      <link>https://liyin.date/2018/06/16/talk-2018-06/</link>
+      <guid>https://liyin.date/2018/06/16/talk-2018-06/</guid>
+      <pubDate>Sat, 16 Jun 2018 11:20:52 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;不知不觉又过去的一个月… 看了看上一次记录是在 2017年11月，已经过了半年了啊，所以也就写写这半年都干了些什么吧（x  &lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;去年10月我受同学邀请进入了 &lt;a href=&quot;http://www.icesimba.com&quot; target
+        
+      
+      </description>
+      
+      <comments>https://liyin.date/2018/06/16/talk-2018-06/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>在 GNU/Linux 上使用 SSR</title>
@@ -169,26 +188,6 @@
       </description>
       
       <comments>https://liyin.date/2017/09/15/lifbbs/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>海淘与转运（日本）</title>
-      <link>https://liyin.date/2017/07/11/buy-and-trans-jp/</link>
-      <guid>https://liyin.date/2017/07/11/buy-and-trans-jp/</guid>
-      <pubDate>Tue, 11 Jul 2017 23:17:24 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;今天有人提醒我好久没写博文了 Orz&lt;br&gt;最近确实很忙，有好几件事情都要做，然而今天又跑了趟图书大厦…..&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;嘛，为什么今天突然说起转运的事情了呢…..&lt;br&gt;因为之前一直在 StartedJP 有个想买的
-        
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/07/11/buy-and-trans-jp/#disqus_thread</comments>
     </item>
     
   </channel>
