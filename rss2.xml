@@ -8,8 +8,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Thu, 26 Jul 2018 20:22:00 GMT</pubDate>
+    <pubDate>Thu, 26 Jul 2018 21:19:38 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>写在 Telegram 账号被封禁之后</title>
+      <link>https://liyin.date/2018/07/27/write-after-telegram-banned/</link>
+      <guid>https://liyin.date/2018/07/27/write-after-telegram-banned/</guid>
+      <pubDate>Fri, 27 Jul 2018 05:16:10 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;我的 Telegram 账户被封禁，在没有任何违反 ToS 的情况下被封禁了，我在尝试修复 telegramircd 中的兼容问题而尝试更换 Telethon 库的版本，突然我就在没有得到任何警告的情况下被封禁了，账号变成了 Deleted Account，所有客户端被强制
+        
+      
+      </description>
+      
+      <comments>https://liyin.date/2018/07/27/write-after-telegram-banned/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>闲聊·记录-2018年6月</title>
@@ -166,23 +183,6 @@
       </description>
       
       <comments>https://liyin.date/2017/09/29/unbox-alimooncake/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>LetITFly BBS 重新开放啦</title>
-      <link>https://liyin.date/2017/09/15/lifbbs/</link>
-      <guid>https://liyin.date/2017/09/15/lifbbs/</guid>
-      <pubDate>Fri, 15 Sep 2017 17:33:49 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h1 id=&quot;LetITFly-BBS&quot;&gt;&lt;a href=&quot;#LetITFly-BBS&quot; class=&quot;headerlink&quot; title=&quot;LetITFly BBS&quot;&gt;&lt;/a&gt;LetITFly BBS&lt;/h1&gt;&lt;p&gt;&lt;code&gt;LetITFly BBS&lt;/code&gt; 的前身是
-        
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/09/15/lifbbs/#disqus_thread</comments>
     </item>
     
   </channel>
