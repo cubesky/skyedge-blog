@@ -114,9 +114,9 @@
         
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> SSR </tag>
+            
+            <tag> Linux </tag>
             
         </tags>
         
@@ -818,9 +818,9 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
         
         <tags>
             
-            <tag> 崩溃 </tag>
-            
             <tag> Adobe </tag>
+            
+            <tag> 崩溃 </tag>
             
         </tags>
         
@@ -843,9 +843,9 @@ fastboot boot <span class="token operator">&lt;</span>TWRP的文件名<span clas
             
             <tag> 闲聊 </tag>
             
-            <tag> btrfs </tag>
-            
             <tag> 崩溃 </tag>
+            
+            <tag> btrfs </tag>
             
         </tags>
         
