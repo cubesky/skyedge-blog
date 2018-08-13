@@ -8,8 +8,28 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Sun, 12 Aug 2018 20:21:17 GMT</pubDate>
+    <pubDate>Mon, 13 Aug 2018 09:22:13 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>新疆·记</title>
+      <link>https://liyin.date/2018/08/13/xinjiang-note/</link>
+      <guid>https://liyin.date/2018/08/13/xinjiang-note/</guid>
+      <pubDate>Mon, 13 Aug 2018 17:10:45 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;风光&quot;&gt;&lt;a href=&quot;#风光&quot; class=&quot;headerlink&quot; title=&quot;风光&quot;&gt;&lt;/a&gt;风光&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;注：风光不是本文主要记录的目的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;记&quot;&gt;&lt;a href=&quot;#记
+        
+      
+      </description>
+      
+      <comments>https://liyin.date/2018/08/13/xinjiang-note/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>写在 Telegram 账号被封禁之后</title>
@@ -166,23 +186,6 @@
       </description>
       
       <comments>https://liyin.date/2017/11/18/bplayer/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>开箱测评 | 阿里月饼</title>
-      <link>https://liyin.date/2017/09/29/unbox-alimooncake/</link>
-      <guid>https://liyin.date/2017/09/29/unbox-alimooncake/</guid>
-      <pubDate>Fri, 29 Sep 2017 21:04:27 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;前几天，收到了一份从 &lt;a href=&quot;https://ikk.me&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Kookxiang&lt;/a&gt; 寄来的阿里月饼！ &lt;strong&gt;ありがとう&lt;/strong&gt;&lt;br&gt;那么，来开箱吧！&lt;br&gt;&lt;img src=
-        
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/09/29/unbox-alimooncake/#disqus_thread</comments>
     </item>
     
   </channel>
