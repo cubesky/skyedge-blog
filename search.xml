@@ -1201,9 +1201,9 @@ rc-update add dbus
         
         <tags>
             
-            <tag> 正方教务 </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> 正方教务 </tag>
             
         </tags>
         
