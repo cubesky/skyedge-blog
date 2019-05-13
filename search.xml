@@ -4,6 +4,73 @@
   
     
     <entry>
+      <title><![CDATA[在星际蜗牛上使用 Microsoft Hyper-V Server 2016]]></title>
+      <url>https://liyin.date/2019/05/13/star-snail-use-ms-hyperv-server-2016/</url>
+      <content type="html"><![CDATA[<h1 id="星际蜗牛"><a href="#星际蜗牛" class="headerlink" title="星际蜗牛"></a>星际蜗牛</h1><p>最近星际蜗牛的灵车机器在市面上大量出现，价格已经达到了只需要 240元 - 280元 一台的状况。想了想我还有一块以前 NAS 拆下的闲置硬盘，于是就考虑着是不是应该搞个新的 NAS 了….<br>然后又看到 <a href="https://blog.yuuta.moe/2019/04/29/install-hyper-v-server-on-vultr/" target="_blank" rel="noopener">Yuuta 在 Vultr 上体验了一下 Microsoft Hyper-V Server 2016 的安装</a>，于是乎，我就萌生了一个大胆的想法 ———— 用星际蜗牛的 J1900 安装 Hyper-V Server 并且可以开个虚拟机替代我之前使用的树莓派同时承载 HomeAssistant。<br><img src="/2019/05/13/star-snail-use-ms-hyperv-server-2016/starsnail.jpg" title="Star-Snail">  </p>
+<h1 id="Microsoft-Hyper-V-Server-2016-准备"><a href="#Microsoft-Hyper-V-Server-2016-准备" class="headerlink" title="Microsoft Hyper-V Server 2016 准备"></a>Microsoft Hyper-V Server 2016 准备</h1><p>收到机器和硬件 Debug 就不多说了，这个机器自带 4G 内存和 16G 灵车 SSD，以及一个灵车电源，如果想要完全驱动4块硬盘的话，建议更换电源。而 16G 灵车 SSD 的性能也不怎么样，容量也不够，所以就用我这里一块从笔记本电脑上拆下来的 Intel 240G 固态塞进4号盘位锁起来作为 VM 的数据盘。<br>先到微软 <a href="https://www.microsoft.com/en-us/evalcenter/evaluate-hyper-v-server-2016/" target="_blank" rel="noopener">Evaluate 中心</a> ，然后通过 Rufus 写入到 U盘里，然后直接插入到星际蜗牛上按 Esc 进入 BIOS 选择安装U盘即可开始安装。<br><img src="/2019/05/13/star-snail-use-ms-hyperv-server-2016/install.jpg" title="Install">  </p>
+<h1 id="为-Intel-i211-网卡准备驱动程序"><a href="#为-Intel-i211-网卡准备驱动程序" class="headerlink" title="为 Intel i211 网卡准备驱动程序"></a>为 Intel i211 网卡准备驱动程序</h1><p>由于 Intel i211 网卡并不支持 Windows Server 系统，所以我们需要修改它的驱动程序定义文件，将 Win10 的驱动程序强制安装到 Windows Server 系统上。<br>先到 Intel 官网下载 Intel i211 ProSet 驱动程序，下载后解压缩到一个文件夹中，然后复制 PRO1000 文件夹到 U盘上，然后找到 <code>Winx64\NDIS63\e1r63x64.inf</code> 打开并将下面一行复制到 <code>[Intel.NTamd64.6.2]</code> 的最下方  </p>
+<pre><code>%E1539NC.DeviceDesc%            = E1539.6.2.1,         PCI\VEN_8086&amp;DEV_1539
+</code></pre><p>先在服务器上输入 </p>
+<pre class="line-numbers language-batch"><code class="language-batch"><span class="token command"><span class="token keyword">bcdedit</span> -set loadoptions DISABLE_INTEGRITY_CHECKS</span>
+<span class="token command"><span class="token keyword">bcdedit</span> -set TESTSIGNING ON</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>关闭驱动签名检查，然后重启。<br>重启后到服务器上找到这个文件的路径输入进行安装  </p>
+<pre class="line-numbers language-batch"><code class="language-batch"><span class="token command"><span class="token keyword">pnputil</span> /add-driver e1r63x64.inf <span class="token parameter attr-name">/install</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装之后重启就可以看见网卡了<br><img src="/2019/05/13/star-snail-use-ms-hyperv-server-2016/i211.png" title="I211"><br>之后输入下方的命令重新开启驱动签名检查  </p>
+<pre class="line-numbers language-batch"><code class="language-batch"><span class="token command"><span class="token keyword">bcdedit</span> -set loadoptions ENABLE_INTEGRITY_CHECKS</span>
+<span class="token command"><span class="token keyword">bcdedit</span> -set TESTSIGNING OFF</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1 id="启动远程管理"><a href="#启动远程管理" class="headerlink" title="启动远程管理"></a>启动远程管理</h1><p>由于我没有加入到域，所以需要手动进行授权。<br>在服务器配置中输入 <code>4</code> 然后按 <code>1</code> 启用远程管理<br>然后输入 <code>7</code> - <code>E</code> - <code>1</code> 启用远程桌面并选择仅允许更安全的客户端<br>切换到后面的命令行中输入 <code>powershell</code> 进入 PowerShell 然后输入  </p>
+<pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token function">Enable-PSRemoting</span>
+Enable<span class="token operator">-</span>WSManCredSSP <span class="token operator">-</span>role server
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>至此，服务器的准备完成。</p>
+<h1 id="为客户端准备远程管理"><a href="#为客户端准备远程管理" class="headerlink" title="为客户端准备远程管理"></a>为客户端准备远程管理</h1><p>打开 PowerShell 输入  </p>
+<pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token function">Enable-PSRemoting</span>
+winrm quickconfig
+<span class="token function">Set-Item</span> WSMan:\localhost\Client\TrustedHosts <span class="token operator">-</span>Value <span class="token string">"服务器 IP"</span>
+Enable<span class="token operator">-</span>WSManCredSSP <span class="token operator">-</span>Role client <span class="token operator">-</span>DelegateComputer <span class="token string">"服务器 IP"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/2019/05/13/star-snail-use-ms-hyperv-server-2016/prepareclient-1.png" title="Prepare-Client">    
+<p>然后启动 <code>gpedit.msc</code> 然后进入 <code>计算机配置</code>-<code>管理模板</code>-<code>系统</code>-<code>凭据分配</code> 在左侧选择 <code>允许分配新的凭据用于仅NTLM服务器身份验证</code> 选择已启用，在下方添加 <code>wsman/服务器 IP</code> 然后确定。<br><img src="/2019/05/13/star-snail-use-ms-hyperv-server-2016/prepareclient-2.png" title="Prepare-Client">    </p>
+<h1 id="连接远程服务器"><a href="#连接远程服务器" class="headerlink" title="连接远程服务器"></a>连接远程服务器</h1><p>在 Windows 10 Pro 中安装 Hyper-V 管理器，然后在右侧选择<code>连接到服务器</code>，然后输入服务器 IP 地址，然后选择使用其他账户登录，输入服务器设置的用户名和密码进行连接。  </p>
+<blockquote>
+<p>注意：如果你没有加入域，请在你即将使用的用户名前面加一个 <code>\</code> 否则无法找到用户名  </p>
+</blockquote>
+<img src="/2019/05/13/star-snail-use-ms-hyperv-server-2016/connect.png" title="Connect">     
+<h1 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h1><p>由于无法将安装镜像远程地传给服务器，所以我选择用 U盘 复制(喂！)…<br>之后就和一般使用 Hyper-V 安装系统一样啦！<br>不过如果像这个主机一样没有 TPM ，那么你在选择 UEFI 启动之后会发现安全选项卡无法正常显示，你也就无法关闭 SecureBoot 造成你无法安装一些系统。解决方法是在 Powershell 中输入  </p>
+<pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token function">Set</span><span class="token operator">-</span>VMFirmware VM名称 <span class="token operator">-</span>EnableSecureBoot off
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>关闭 SecureBoot</p>
+<h1 id="硬盘挂载"><a href="#硬盘挂载" class="headerlink" title="硬盘挂载"></a>硬盘挂载</h1><p>如果你像我一样想要让一个硬盘直接挂载到虚拟机中的话，你需要先让目标硬盘脱机，操作很容易，先输入 <code>diskpart</code> 进入磁盘管理命令行输入  </p>
+<pre class="line-numbers language-batch"><code class="language-batch"><span class="token command"><span class="token keyword">list</span> disk</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后注意看哪一个是你想要选择的硬盘就输入(将 N 替换为那个硬盘的数字) </p>
+<pre class="line-numbers language-batch"><code class="language-batch"><span class="token command"><span class="token keyword">select</span> disk N</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后输入 <code>offline</code> 即可。<br><img src="/2019/05/13/star-snail-use-ms-hyperv-server-2016/offlinedisk-1.png" title="Offline-Disk"><br>这时，你就可以在虚拟机属性里，找到硬盘驱动器，选择这个物理硬盘了。<br><img src="/2019/05/13/star-snail-use-ms-hyperv-server-2016/offlinedisk-2.png" title="Offline-Disk">   </p>
+<h1 id="最终？"><a href="#最终？" class="headerlink" title="最终？"></a>最终？</h1><p>最终我就获得了一个性能还不错的虚拟服务器（x<br>它接替了我树莓派的工作，运行 HomeAssistant 和 WakeOnLan，同时承载了 NAS 的功能。<br><img src="/2019/05/13/star-snail-use-ms-hyperv-server-2016/final-1.jpg" title="Final"><br>同时，纪念下之前被我跑了4个 docker 容器摧残的树莓派<br><img src="/2019/05/13/star-snail-use-ms-hyperv-server-2016/final-2.jpg" title="Final">   </p>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术栈 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 折腾 </tag>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[新疆·记]]></title>
       <url>https://liyin.date/2018/08/13/xinjiang-note/</url>
       <content type="html"><![CDATA[<h1 id="风光"><a href="#风光" class="headerlink" title="风光"></a>风光</h1><blockquote>
