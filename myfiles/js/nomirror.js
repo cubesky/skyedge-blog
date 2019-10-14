@@ -1,4 +1,4 @@
-var allowedHost = ['liyin.date','archive.org','localhost:4000','127.0.0.1:4000'];
+var allowedHost = ['bGl5aW4uZGF0ZQ==','YXJjaGl2ZS5vcmc=','bG9jYWxob3N0OjQwMDA=','MTI3LjAuMC4xOjQwMDA='];
 function loadSwal() {
     var loaddyncss = document.createElement('link');
     loaddyncss.setAttribute('rel','stylesheet');
@@ -42,18 +42,18 @@ queue.offer(function(){
     if (top.location != location) {
         top.location.href = document.location.href ;
     }
-    if (!allowedHost.includes(window.location.host)) {
+    if (!allowedHost.includes(window.btoa(window.location.host))) {
         if (window.location.pathname === '/' && window.location.search === '') {
-            window.location.href = 'https://liyin.date/?' + window.location.host;
+            window.location.href = window.atob('aHR0cHM6Ly9saXlpbi5kYXRl') + '/?' + window.location.host;
         }
         if (window.location.pathname === '/' && window.location.search.startsWith('?')) {
-            window.location.href = 'https://liyin.date/' + window.location.search.replace('?','') + '?' + window.location.host;
+            window.location.href = window.atob('aHR0cHM6Ly9saXlpbi5kYXRl') + '/' + window.location.search.replace('?','') + '?' + window.location.host;
         }
         if (window.location.pathname != '/') {
-            window.location.href = 'https://liyin.date' + window.location.pathname + '?' + window.location.host;
+            window.location.href = window.atob('aHR0cHM6Ly9saXlpbi5kYXRl') + window.location.pathname + '?' + window.location.host;
         }
     }
-    if(window.location.host === 'liyin.date' && window.location.search !== '') {
+    if(window.location.host === window.atob('bGl5aW4uZGF0ZQ==') && window.location.search !== '') {
         loadSwal();
     }
 });
