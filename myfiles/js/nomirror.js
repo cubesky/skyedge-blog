@@ -1,4 +1,4 @@
-var allowedHost = ['bGl5aW4uZGF0ZQ==','YXJjaGl2ZS5vcmc=','bG9jYWxob3N0OjQwMDA=','MTI3LjAuMC4xOjQwMDA='];
+var allowedHost = ['bGl5aW4uZGF0ZQ==','YXJjaGl2ZS5vcmc=','bG9jYWxob3N0OjQwMDA=','MTI3LjAuMC4xOjQwMDA=', 'bGl5aW4ucmJxLmRlc2k='];
 function loadSwal() {
     var loaddyncss = document.createElement('link');
     loaddyncss.setAttribute('rel','stylesheet');
