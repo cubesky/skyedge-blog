@@ -8,8 +8,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Wed, 22 Jan 2020 20:05:43 GMT</pubDate>
+    <pubDate>Thu, 23 Jan 2020 12:28:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>用 Jupyter 让 Wolfram Engine 更好用</title>
+      <link>https://liyin.date/2020/01/23/use-jupyter-with-wolfram-engine/</link>
+      <guid>https://liyin.date/2020/01/23/use-jupyter-with-wolfram-engine/</guid>
+      <pubDate>Thu, 23 Jan 2020 20:16:05 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;Wolfram-语言和引擎&quot;&gt;&lt;a href=&quot;#Wolfram-语言和引擎&quot; class=&quot;headerlink&quot; title=&quot;Wolfram 语言和引擎&quot;&gt;&lt;/a&gt;Wolfram 语言和引擎&lt;/h1&gt;&lt;p&gt;Wolfram Mathematica 是一个比较完
+        
+      
+      </description>
+      
+      <comments>https://liyin.date/2020/01/23/use-jupyter-with-wolfram-engine/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>在星际蜗牛上使用 Microsoft Hyper-V Server 2016</title>
@@ -164,25 +181,6 @@
       </description>
       
       <comments>https://liyin.date/2017/11/29/android-optimize-app/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>闲聊·记录 | 2017年11月</title>
-      <link>https://liyin.date/2017/11/18/talk-2017-11/</link>
-      <guid>https://liyin.date/2017/11/18/talk-2017-11/</guid>
-      <pubDate>Sat, 18 Nov 2017 14:33:17 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;时间往往过得很快，这个月似乎发生了不少事情，梳理下思路来想想这个到现在都干了什么…..&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;上月底我受同学邀请去了一家手游公司工作，主要从事手游 SDK 的相关开发（所以我也不知道手游的策划们是怎么干活的），对于我来说，难度属于并不是很难，
-        
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/11/18/talk-2017-11/#disqus_thread</comments>
     </item>
     
   </channel>
