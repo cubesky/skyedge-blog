@@ -8,8 +8,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Sat, 29 Feb 2020 20:05:43 GMT</pubDate>
+    <pubDate>Sun, 01 Mar 2020 08:32:55 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>使用 Matrix 接收微信消息</title>
+      <link>https://liyin.date/2020/03/01/matrix-wechat-bridge/</link>
+      <guid>https://liyin.date/2020/03/01/matrix-wechat-bridge/</guid>
+      <pubDate>Sun, 01 Mar 2020 16:29:36 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;我周围的人都知道我很讨厌微信————臃肿、慢速、开放性低而且还极其费电，于是呢我当然发挥裁剪流氓软件的能力，直接把微信的后台打了个半残，所以我周围的人一直说我微信经常找不到我，那是当然的，微信连后台都没了，能实时找得到我就怪了。&lt;br&gt;所以用其他聊天软件代收微信消息就显得很
+        
+      
+      </description>
+      
+      <comments>https://liyin.date/2020/03/01/matrix-wechat-bridge/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>用 Jupyter 让 Wolfram Engine 更好用</title>
@@ -164,23 +181,6 @@
       </description>
       
       <comments>https://liyin.date/2018/01/02/bye_2017_hello_2018/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Android 的优化软件们</title>
-      <link>https://liyin.date/2017/11/29/android-optimize-app/</link>
-      <guid>https://liyin.date/2017/11/29/android-optimize-app/</guid>
-      <pubDate>Wed, 29 Nov 2017 16:13:02 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;昨天晚上跟同学聊天的时候脑洞大开，于是各种编段子，后来整理了下发到了我的 &lt;a href=&quot;https://t.me/lynote&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Telegram 频道&lt;/a&gt; 上，经过其他人转发之后……… 开启了编段子的夜
-        
-      
-      </description>
-      
-      <comments>https://liyin.date/2017/11/29/android-optimize-app/#disqus_thread</comments>
     </item>
     
   </channel>

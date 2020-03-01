@@ -1,0 +1,298 @@
+<!DOCTYPE html><html style="display: none;" lang="zh"><head><meta charset="utf-8"><script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://skyedge.disqus.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://fonts.loli.net"/><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><link rel="manifest" href="/manifest.json"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title> 使用 Matrix 接收微信消息 | 天空·边界</title><link rel="icon shortcut" type="image/ico" href="/myfiles/images/favicon.png"><link rel="icon" href="/myfiles/images/favicon.png"><meta name="format-detection" content="telephone=no"/><meta name="description" itemprop="description" content="天空的边界到底在哪里？"><meta name="keywords" content="SkyEdge, CubeSky,微信,Matrix,Wechaty"><meta name="theme-color" content="#66CCFF"><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><!--[if lte IE 9]><link rel="stylesheet" href="/css/ie-blocker.css"><script src="/js/ie-blocker.zhCN.js"></script><![endif]--><script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script><script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script><style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script><style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script><style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #80D4FF;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #66CCFF !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #66CCFF !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #66CCFF !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #80D4FF;
+    text-decoration: underline;
+  }
+
+</style><style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style><link href="https://fonts.loli.net/css?family=Roboto:300,400,500" rel="stylesheet"><style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script><script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="天空·边界"><meta name="msapplication-starturl" content="https://liyin.date/2020/03/01/matrix-wechat-bridge/"><meta name="msapplication-navbutton-color" content="#66CCFF"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="天空·边界"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="/myfiles/images/favicon.png"><link rel=alternate type="application/rss+xml" href="/rss2.xml"><meta property="og:url" content="https://liyin.date/2020/03/01/matrix-wechat-bridge/"><meta property="og:type" content="blog"><meta property="og:title" content="使用 Matrix 接收微信消息 | 天空·边界"><meta property="og:image" content="/myfiles/images/favicon.png"><meta property="og:description" content="天空的边界到底在哪里？"><meta property="og:article:tag" content="微信"><meta property="og:article:tag" content="Matrix"><meta property="og:article:tag" content="Wechaty"><meta property="article:published_time" content="Sun Mar 01 2020 16:29:36 GMT+0000"><meta property="article:modified_time" content="Sun Mar 01 2020 08:32:55 GMT+0000"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://liyin.date/2020/03/01/matrix-wechat-bridge/index.html"/><script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://liyin.date/2020/03/01/matrix-wechat-bridge/index.html",
+    "headline": "使用 Matrix 接收微信消息",
+    "datePublished": "Sun Mar 01 2020 16:29:36 GMT+0000",
+    "dateModified": "Sun Mar 01 2020 08:32:55 GMT+0000",
+    "author": {
+        "@type": "Person",
+        "name": "天空之间",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/myfiles/images/avatar.min.png"
+        },
+        "description": "相传胜利者肯定手持正义,那仅是因为正义可以被胜利者定义"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "天空·边界",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/myfiles/images/favicon.png"
+        }
+    },
+    "keywords": ",微信,Matrix,WechatySkyEdge, CubeSky",
+    "description": "天空的边界到底在哪里？",
+}
+</script><script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-100006766-1', 'auto');ga('require','dnt');ga('send', 'pageview');
+</script><script async src=//storage.googleapis.com/outfox/dnt_min.js></script><script src="/myfiles/js/nomirror.js"></script><meta http-equiv="Content-Security-Policy" content="worker-src 'self'"><link rel="stylesheet" href="/css/prism.css" type="text/css"><link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body id="scheme-Paradox" class="lazy"><div class="material-layout  mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div> <button class="MD-burger-icon sidebar-toggle"><span id="MD-burger-id" class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"> <i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-NodeJS"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 NodeJS</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用-Yarn"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用 Yarn</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装所需的-Puppet"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装所需的 Puppet</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建配置文件"><span class="post-toc-number">4.</span> <span class="post-toc-text">创建配置文件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开始运行"><span class="post-toc-number">5.</span> <span class="post-toc-text">开始运行</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Let’s-Go！"><span class="post-toc-number">6.</span> <span class="post-toc-text">Let’s Go！</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于登出"><span class="post-toc-number">7.</span> <span class="post-toc-text">关于登出</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Matrix-AppService-Wechaty"><span class="post-toc-number">8.</span> <span class="post-toc-text">Matrix-AppService-Wechaty</span></a></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50"><script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script><p class="article-headline-p"> 使用 Matrix 接收微信消息</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"> <img src="/myfiles/images/avatar.min.png" width="44px" height="44px" alt="Author Avatar"/></div><div> <strong>天空之间</strong> <span>3月 01, 2020</span></div><div class="section-spacer"></div> <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaElEQVR42u3awW7CMBAEUP7/p9trJUQ7s3ZMRF9OCELixyFedufx9dHHAw8PDw8PDw8P72a8R3z8PP/5Cq8+/f2c59ev3knWhoeHh3eS98ejNua1sJUrv/wWHh4e3kFevhkky80Xndy32Kjw8PDwbsb7vZxtS208PDy8/8CbNTJmhTUeHh7e/Xn5H/68OdtuLfl2goeHh/de3spj/erXb5vv4eHh4W0KXeXNiFl7N7lmEbrCw8PDu4DXxp7yUjspstvoQDRyw8PDwzvCm4212k9nLYykyMbDw8M7ycvbAXnBnW8VK60HPDw8vHfxVob66xtJu9lEgQY8PDy8g7yVVkJ7hbysr6NgeHh4eAd5UcFaDr1a6tv2PTw8PLyYtzLoyluxs4jAcD14eHh4F/OS4jhps7at2/a7+U+Dh4eHdzUvL6xnLd08OLUS/8LDw8M7z8sL4ivGY0tBgSQZgYeHh7eVN9sGcnxbNLeled2lxsPDw1vmrTcCkveTsntXOxgPDw/vDC9fYr70tiBuzxlGB/Dw8PCWeSvjq7YR3BboecGNh4eHd5KXN1jzGydBhPyOdbwADw8P7wivfVi3788GY3njGA8PD+8kb2/cahYzza8ZNS/w8PDwLua1x0osoI0mDKMGeHh4eBfzHvExK3BXogmze+Hh4eGd4eVDpnbYn5TOedm9LTqAh4eHt4mXj6BmTYfZhlT/EHh4eHg34+0quNstIdmo8PDw8O7MawGzGMEw8oWHh4d3kJcvNB9WbYiflsFZPDw8vDO8WSNgPXLaxmSHGwMeHh7eVt7nHXh4eHh4eHh4eDc4vgHaKdmFvhC9TAAAAABJRU5ErkJggg=="></ul> <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"> <a class="post_tag-link" href="/tags/Matrix/">Matrix</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Wechaty/">Wechaty</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/微信/">微信</a></ul> <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=使用 Matrix 接收微信消息&url=https://liyin.date/2020/03/01/matrix-wechat-bridge/index.html&pic=https://liyin.date/myfiles/images/favicon.png&searchPic=false&style=simple" target="_blank"><li class="mdl-menu__item"> 分享到微博</li></a><a class="post_share-link" href="https://twitter.com/intent/tweet?text=使用 Matrix 接收微信消息&url=https://liyin.date/2020/03/01/matrix-wechat-bridge/index.html&via=天空之间" target="_blank"><li class="mdl-menu__item"> 分享到 Twitter</li></a><a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://liyin.date/2020/03/01/matrix-wechat-bridge/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Facebook</li></a><a class="post_share-link" href="https://plus.google.com/share?url=https://liyin.date/2020/03/01/matrix-wechat-bridge/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Google+</li></a><a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=天空·边界&title=使用 Matrix 接收微信消息&summary=天空的边界到底在哪里？&pics=https://liyin.date/myfiles/images/favicon.png&url=https://liyin.date/2020/03/01/matrix-wechat-bridge/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 QQ</li></a><a class="post_share-link" href="https://telegram.me/share/url?url=https://liyin.date/2020/03/01/matrix-wechat-bridge/index.html&text=使用 Matrix 接收微信消息" target="_blank"><li class="mdl-menu__item"> 分享到 Telegram</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><p>我周围的人都知道我很讨厌微信————臃肿、慢速、开放性低而且还极其费电，于是呢我当然发挥裁剪流氓软件的能力，直接把微信的后台打了个半残，所以我周围的人一直说我微信经常找不到我，那是当然的，微信连后台都没了，能实时找得到我就怪了。<br>所以用其他聊天软件代收微信消息就显得很重要了，之前我用过 EH Forwarder Bot 将微信的消息转发到 Telegram，用了一段时间之后我发现它比较麻烦，在登录之后所有消息都是被 Bot 账号发送给你，而且如果你想将一个微信群组单独连接，就得自己创建群组，拉入 Bot，然后再选择连接。而且因为微信这个协议连接的问题，经常会出现突然就收不到消息，或者突然掉线的问题，所以后来我就不再使用 EH Forwarder Bot 了。（当然也是由于我那个时候买了第二台手机..）<br>然后今年因为一些原因，我和朋友分别建立了自己的 Matrix 服务器。然后我发现官网上有一个叫做 Bridge 的功能，具体来说就是可以将其他聊天协议上的用户和群组以虚拟用户和 Portal 群组的方式加入 Matrix 中，就如同他们本来就是 Matrix 用户一样。<br>作为尝试，我先建立了一个 Telegram Bridge 用来连接我的 Telegram 账号，连接倒是成功了，而且也正常收到消息，也可以回复，但是因为我的 Telegram 消息量太大了，造成了我服务器经常性的响应缓慢，后来不得已关闭了 Telegram Bridge。<br>同时，我看到 Bridge 介绍中有一个 <a href="https://github.com/huan" target="_blank" rel="noopener">Huan</a> 开发的叫做 Wechaty 的 Bridge，而我的微信消息并没有那么多，所以就想要尝试一下。</p><h1 id="安装-NodeJS"><a href="#安装-NodeJS" class="headerlink" title="安装 NodeJS"></a>安装 NodeJS</h1><p>其实安装 NodeJS 搜索一下就能找到怎么安装，所以在此就简略啦。我使用一台国内的 VPS 安装 Debian Stable 作为 Wechaty 的运行服务器。避免因为微信异地登录而被封禁。不过由于 Wechaty 最好使用 NodeJS v10，而且因为使用官方源安装之后 Node 有一部分存储于系统的某些固定目录下，有一些 Node 包会调用重编译之类的命令进而引起权限问题导致失败，所以我建议使用 nvm 来安装 NodeJS。<br>安装 NVM 就十分简单了，直接执行</p><pre class="line-numbers language-bash"><code class="language-bash">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>等待安装好就可以了。<br>待 NVM 安装完成后输入</p><pre class="line-numbers language-bash"><code class="language-bash">nvm <span class="token function">install</span> v10.18.0
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>完成 NodeJS v10.18.0 的安装和配置。</p><h1 id="使用-Yarn"><a href="#使用-Yarn" class="headerlink" title="使用 Yarn"></a>使用 Yarn</h1><p>虽然 <a href="https://github.com/wechaty/matrix-appservice-wechaty" target="_blank" rel="noopener">matrix-appservice-wechaty</a> 的 README 上写着使用 <code>npm install -g matrix-appservice-wechaty</code> 进行安装，但在我安装的过程中，反复遇到在安装 grpc 时执行 node-pre-gyp 失败的问题，经过多方查找发现，使用 Yarn 管理器就可以快速解决这个问题，所以我们先安装 Yarn。</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g yarn
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后通过 yarn 安装 matrix-appservice-wechaty，不过注意因为现在版本是在快速更新修复 bug 的状态，所以建议安装 next 版本</p><pre class="line-numbers language-bash"><code class="language-bash">yarn global add matrix-appservice-wechaty@next
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="安装所需的-Puppet"><a href="#安装所需的-Puppet" class="headerlink" title="安装所需的 Puppet"></a>安装所需的 Puppet</h1><p>在 matrix-appservice-wechaty 的程序中，我们需要定义一个 Puppet 来指示这个 AppService 使用什么微信后端来进行通信。现在可以选择的后端有 <code>Puppeteer</code> <code>Padplus</code> <code>Macpro</code> <code>Mock</code> <code>Wechat4u</code> 这几种。其中 <code>Puppeteer</code> 和 <code>Wechat4u</code> 基于 Web 协议，<code>Padplus</code> 基于 iPad 微信协议，<code>Macpro</code> 基于 MacOS 微信协议。选择合适的协议后使用下面的命令来安装。</p><pre class="line-numbers language-bash"><code class="language-bash">yarn global add wechaty-puppet-后端名
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><blockquote><p>注：后端名为全小写，如 <code>wechaty-puppet-wechat4u</code></p></blockquote><blockquote><p>注2：某些后端是收费的，请注意查看各后端的部署信息。</p></blockquote><p>目前已知 next 版本的 appservice 在使用 PadPlus 作为后端时需要 next 版本的 PadPlus。 <code>wechaty-puppet-padplus@next</code></p><h1 id="创建配置文件"><a href="#创建配置文件" class="headerlink" title="创建配置文件"></a>创建配置文件</h1><p>先复制 <a href="https://github.com/wechaty/matrix-appservice-wechaty/blob/master/config/config.sample.yaml" target="_blank" rel="noopener">config.sample.yaml</a> 到 config.yaml ，我建议单独为它创建一个文件夹，方便之后将所有的数据文件都放在这一个文件夹里。</p><pre><code>domain: aka.cn
+homeserverUrl: http://matrix.aka.cn:8008
+registration: wechaty-registration.yaml
+</code></pre><p>将示例中的 aka.cn 替换为你的 Matrix Synapse 服务器地址。将 homeserverUrl 替换为你的 Synapse 服务器终结点地址。然后运行命令创建注册文件。</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">export</span> APP_SERVER_ENDPOINT<span class="token operator">=</span><span class="token string">'http://localhost:8788'</span>
+
+matrix-appservice-wechaty \
+  --config  config.yaml \
+  --url     <span class="token string">"<span class="token variable">$APP_SERVER_ENDPOINT</span>"</span> \
+  --generate-registration
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>注意如果你的 Synapse 服务器和 Wechaty 服务器不是同一个服务器则要将 APP_SERVER_ENDPOINT 的地址设置为 Wechaty 服务器的地址，同时注意防火墙开放端口。</p><blockquote><p>注：如果你的服务器在国内的 VPS 上，请注意备案问题。如果没有备案，Matrix 服务器连接可能会被你的 VPS 服务商阻挡。</p></blockquote><p>上述命令运行后将会生成一个名为 <code>wechaty-registration.yaml</code> 的文件，将它复制到你的 Synapse 服务器上。<br>编辑 Synapse 的 <code>homeserver.yaml</code> 文件，在其中的 <code>app_service_config_files</code> 项内加入 <code>wechaty-registration.yaml</code> 的路径，保存并重启 Synapse 服务器。</p><blockquote><p>注：每次运行 <code>--generate-registration</code> 后都需要重新复制并重启 Synapse 服务器。</p></blockquote><h1 id="开始运行"><a href="#开始运行" class="headerlink" title="开始运行"></a>开始运行</h1><p>一般来说，直接在有 <code>config.yaml</code> 和 <code>wechaty-registration.yaml</code> 运行下面这个命令就可以了。</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">export</span> WECHATY_PUPPET<span class="token operator">=</span>wechaty-puppet-后端名
+
+matrix-appservice-wechaty \
+  --config  config.yaml \
+  --file    wechaty-registration.yaml
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>不过要注意，如果你使用 PadPlus 那些需要付费或者 Token 的 Puppet 后端，那么也需要 export 对应的变量，如 <code>export WECHATY_PUPPET_PADPLUS_TOKEN=xxxxxxxxxxxxxxxxxxxxx</code><br>不过我创建了一个 start.sh 以方便运行</p><blockquote><p>注意： padplus 版本需要额外安装 <code>qrcode-terminal</code> 否则会出现错误。</p></blockquote><pre class="line-numbers language-sh"><code class="language-sh">#!/bin/bash
+. /home/user/.nvm/nvm.sh
+export WECHATY_PUPPET=wechaty-puppet-后端名
+matrix-appservice-wechaty \
+  --config  config.yaml \
+  --file    wechaty-registration.yaml
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p>注：将 user 更换为你的用户名</p></blockquote><p>chmod +x /path/to/config/start.sh</p><p>同时还可以创建一个 systemd 配置来自动启动（如果你的 Wechaty 和 Synapse 不在同一个服务器则不要加 <code>After</code> 那行）</p><pre><code>[Unit]
+Description=Matrix Bridge WeChaty
+After=matrix-synapse.service
+
+[Service]
+Type=simple
+WorkingDirectory=/path/to/config/
+ExecStart=/path/to/config/start.sh
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>执行 <code>systemctl daemon-reload</code>。<br>之后就可以使用 <code>systemctl enable</code> 命令和 <code>systemctl start</code> 命令来启动 Wechaty Matrix Bridge 了。<br>仅建议在调试完成，可以成功运行的情况下使用 systemctl 启动。</p><h1 id="Let’s-Go！"><a href="#Let’s-Go！" class="headerlink" title="Let’s Go！"></a>Let’s Go！</h1><p>来到你的 Matrix 客户端上，对 <code>@wechaty:你的服务器</code> 发起 <strong>私聊</strong> ，等待 Bot 加入后它应该会提示</p><pre><code>This room has been registered as your bridge management/status room.
+</code></pre><p>看到这条提示后输入 <code>!login</code>，首次使用时 Bot 应该会提示</p><pre><code>You are not enable matrix-appservice-wechaty yet.
+</code></pre><p>之后会立刻提示 <code>I had enabled it for you.</code><br>这时，Wechaty 就正式注册为 AppService 了。<br>再次发送 <code>!login</code> 后，如果你没有安装你指定的 puppet，PuppetManager 会自动进行安装，稍等即可。如果安装过于缓慢，可以考虑按 Ctrl + C 终止程序，然后自己用 yarn 手动安装后再启动。<br>当 puppet 成功启动后，Matrix 端会生成一个二维码的链接，打开并扫描二维码就可以完成登录了。</p><h1 id="关于登出"><a href="#关于登出" class="headerlink" title="关于登出"></a>关于登出</h1><p>给 wechaty 机器人发送 !logout 就行啦！</p><blockquote><p>注意：截至到目前 latest 版本 (0.6.3) 没有这个命令，需要 next 版本 (0.7.2)</p></blockquote><h1 id="Matrix-AppService-Wechaty"><a href="#Matrix-AppService-Wechaty" class="headerlink" title="Matrix-AppService-Wechaty"></a>Matrix-AppService-Wechaty</h1><p>这个通讯桥目前是一个刚开始开发没有多长时间的状态，只能解决基础的消息互通问题，如果遇到对方发送的是链接消息的情况，Matrix 这边会显示一个超长的 xml 结构，期待之后版本更新能带来更多的功能！<br>同时借助 <a href="https://github.com/wechaty/wechaty-puppet-padplus" target="_blank" rel="noopener">Wechaty-Puppet-PadPlus</a> ，那些无法使用 Web 版微信的用户可以使用 iPad 协议来进行连接。因为我刚刚完成部署，所以稳定性我还不是非常清楚，不过因为这个协议是通过客户端级协议完成的，目测会稳定一些。<br>非常感谢 <a href="https://github.com/huan" target="_blank" rel="noopener">huan</a> 开发的 <a href="https://github.com/wechaty/wechaty" target="_blank" rel="noopener">Wechaty</a>，让微信桥接和微信机器人有更多可能！</p><p>同时我也推荐一下他开发的 <a href="https://github.com/huan/docker-wechat" target="_blank" rel="noopener">Docker-Wechat</a> ，用 Docker 解决了使用 Linux 微信比较麻烦的问题。想了想我用 CrossOver 安装微信，然后用起来还有一堆的 bug 就感觉这个真的非常好。</p><blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;"><p> <strong>本文使用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0 中国大陆</a> 协议许可<br>具体请参见 <a href="https://liyin.date/creativecommons/">知识共享协议</a></strong><br> <strong>本文链接：</strong><a href="https://liyin.date/2020/03/01/matrix-wechat-bridge/">https://liyin.date/2020/03/01/matrix-wechat-bridge/</a></p></blockquote></div><div id="disqus-comment"><div id="disqus_thread"></div><style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0;
+            display: none
+        }
+</style><div class="btn_click_load"> <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button></div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://liyin.date/2020/03/01/matrix-wechat-bridge/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://liyin.date/2020/03/01/matrix-wechat-bridge/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script><script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $.ajax({
+        url: 'https://disqus.com/next/config.json',
+        timeout: 4000,
+        type: 'GET',
+        success: (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//skyedge.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            $('.disqus_click_btn').css('display','none');
+        })(),
+        error: function() {
+          $('.disqus_click_btn').css('display','block');
+        }
+    });
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//skyedge.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.disqus_click_btn').css('display','none');
+    });
+</script></div><style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"><div class="section-spacer"></div> <a href="/2020/01/23/use-jupyter-with-wolfram-engine/" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);"><div class="top-bar"></div> <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple"> <i class="material-icons">clear_all</i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"> <img src="/myfiles/images/avatar.min.png" alt="天空之间's avatar"></div> <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">skyedge@liyin.party<b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li> <a href="mailto:skyedge@liyin.party" target="_blank" title="Email Me"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"> <a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">4</span></a></ul></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/categories/Javascipt-书签工具/">Javascipt 书签工具<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/崩溃/">崩溃<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/开箱/">开箱<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术栈/">技术栈<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/推广推荐/">推广推荐<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/购物/">购物<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/闲聊/">闲聊<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/隐私/">隐私<span class="sidebar_archives-count">3</span></a></ul></li><li> <a href="/tags" title="标签">标签</a></li><li> <a href="/links" title="永远的好伙伴">永远的好伙伴</a></li><li> <a href="/2017/04/02/pgp/" title="PGP 密钥">PGP 密钥</a></li><li> <a href="/timeline" title="时间轴">时间轴</a></li><li> <a href="/bangumi" title="天空看的番">天空看的番</a></li><li> <a href="/creativecommons" title="知识共享协议">知识共享协议</a></li><li> <a href="/about" title="关于我">关于我</a></li></ul><div class="sidebar-divider"></div><a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank"><div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple"> 主题 - Material <span class="sidebar-badge badge-circle">i</span></div></a></div></aside><div id="back-to-top" class="toTop-wrap"> <a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"> <a href="http://weibo.com/1343816555" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo"> <span class="visuallyhidden">Weibo</span></button></a> <a href="https://github.com/cubesky" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"> <span class="visuallyhidden">Github</span></button></a> <a href="https://space.bilibili.com/1520967" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili"> <span class="visuallyhidden">Bilibili</span></button></a></div><div id="copyright"> Copyright&nbsp;©&nbsp;<span year></span>&nbsp;天空·边界<br> <a href="https://www.upyun.com/" target="_blank" title="upyun"><img src="/img/upyun_logo.svg" alt="upyun"></a></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script><script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script><script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script><script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script><script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script><script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script><script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script><script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2016;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script></main></div></body></html>
