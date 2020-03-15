@@ -8,8 +8,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Sat, 14 Mar 2020 20:05:42 GMT</pubDate>
+    <pubDate>Sun, 15 Mar 2020 16:12:38 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>在非 Windows Server 系统上启用 RemoteApp Host</title>
+      <link>https://liyin.date/2020/03/16/use-remoteapp-host-on-non-windows-server/</link>
+      <guid>https://liyin.date/2020/03/16/use-remoteapp-host-on-non-windows-server/</guid>
+      <pubDate>Mon, 16 Mar 2020 00:06:56 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;没错！我就是来水博客的！（理直气壮）&lt;br&gt;之前我在我的 &lt;a href=&quot;https://t.me/lynote/1522&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Telegram 频道&lt;/a&gt; 里说过用 RemoteApp 来进行类似本地软件体验
+        
+      
+      </description>
+      
+      <comments>https://liyin.date/2020/03/16/use-remoteapp-host-on-non-windows-server/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>使用 Matrix 接收微信消息</title>
@@ -167,20 +184,6 @@
       </description>
       
       <comments>https://liyin.date/2018/04/19/googleanalytic-dnt/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>再见 2017， 你好 2018</title>
-      <link>https://liyin.date/2018/01/02/bye_2017_hello_2018/</link>
-      <guid>https://liyin.date/2018/01/02/bye_2017_hello_2018/</guid>
-      <pubDate>Tue, 02 Jan 2018 16:34:30 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;新年和圣诞都过去了，随着圣诞节过去，这个博客也已经建立了1年，最近手边的事情太多没赶上年底写完总结，于是推迟到了现在，真是怠惰啊….&lt;/p&gt;
-      
-      </description>
-      
-      <comments>https://liyin.date/2018/01/02/bye_2017_hello_2018/#disqus_thread</comments>
     </item>
     
   </channel>
