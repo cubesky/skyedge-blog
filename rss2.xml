@@ -8,8 +8,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>天空的边界到底在哪里？</description>
-    <pubDate>Fri, 24 Apr 2020 20:05:41 GMT</pubDate>
+    <pubDate>Sat, 25 Apr 2020 00:54:09 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>用 VR 设备观看 B 站360度视频</title>
+      <link>https://liyin.date/2020/04/25/bilibili-360-video-in-vr/</link>
+      <guid>https://liyin.date/2020/04/25/bilibili-360-video-in-vr/</guid>
+      <pubDate>Sat, 25 Apr 2020 08:09:03 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;最近B站开始测试 360 度视频的功能，看了看我手边的 Vive，用这个看效果会不会不太一样呢？&lt;br&gt;不过B站的播放器是不支持 WebXR 技术的，只能用一些方法看看能不能把 BabylonJS 之类支持 WebXR 的 WebGL 渲染框架插入到页面上，然后用 Baby
+        
+      
+      </description>
+      
+      <comments>https://liyin.date/2020/04/25/bilibili-360-video-in-vr/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>在非 Windows Server 系统上启用 RemoteApp Host</title>
@@ -167,23 +184,6 @@
       </description>
       
       <comments>https://liyin.date/2018/04/19/blog-categories-sort/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Google 分析 与 Do Not Track</title>
-      <link>https://liyin.date/2018/04/19/googleanalytic-dnt/</link>
-      <guid>https://liyin.date/2018/04/19/googleanalytic-dnt/</guid>
-      <pubDate>Thu, 19 Apr 2018 11:16:52 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h1 id=&quot;Google-Analytics&quot;&gt;&lt;a href=&quot;#Google-Analytics&quot; class=&quot;headerlink&quot; title=&quot;Google Analytics&quot;&gt;&lt;/a&gt;Google Analytics&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https
-        
-      
-      </description>
-      
-      <comments>https://liyin.date/2018/04/19/googleanalytic-dnt/#disqus_thread</comments>
     </item>
     
   </channel>

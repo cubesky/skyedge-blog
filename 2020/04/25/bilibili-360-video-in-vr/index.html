@@ -1,0 +1,291 @@
+<!DOCTYPE html><html style="display: none;" lang="zh"><head><meta charset="utf-8"><script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://skyedge.disqus.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://fonts.loli.net"/><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><link rel="manifest" href="/manifest.json"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title> 用 VR 设备观看 B 站360度视频 | 天空·边界</title><link rel="icon shortcut" type="image/ico" href="/myfiles/images/favicon.png"><link rel="icon" href="/myfiles/images/favicon.png"><meta name="format-detection" content="telephone=no"/><meta name="description" itemprop="description" content="天空的边界到底在哪里？"><meta name="keywords" content="SkyEdge, CubeSky,Javascript,Bilibili,VR"><meta name="theme-color" content="#66CCFF"><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><!--[if lte IE 9]><link rel="stylesheet" href="/css/ie-blocker.css"><script src="/js/ie-blocker.zhCN.js"></script><![endif]--><script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script><script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script><style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script><style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script><style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #80D4FF;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #66CCFF !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #66CCFF !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #66CCFF !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #80D4FF;
+    text-decoration: underline;
+  }
+
+</style><style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style><link href="https://fonts.loli.net/css?family=Roboto:300,400,500" rel="stylesheet"><style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script><script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="天空·边界"><meta name="msapplication-starturl" content="https://liyin.date/2020/04/25/bilibili-360-video-in-vr/"><meta name="msapplication-navbutton-color" content="#66CCFF"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="天空·边界"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="/myfiles/images/favicon.png"><link rel=alternate type="application/rss+xml" href="/rss2.xml"><meta property="og:url" content="https://liyin.date/2020/04/25/bilibili-360-video-in-vr/"><meta property="og:type" content="blog"><meta property="og:title" content="用 VR 设备观看 B 站360度视频 | 天空·边界"><meta property="og:image" content="/myfiles/images/favicon.png"><meta property="og:description" content="天空的边界到底在哪里？"><meta property="og:article:tag" content="Javascript"><meta property="og:article:tag" content="Bilibili"><meta property="og:article:tag" content="VR"><meta property="article:published_time" content="Sat Apr 25 2020 08:09:03 GMT+0000"><meta property="article:modified_time" content="Sat Apr 25 2020 00:54:09 GMT+0000"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://liyin.date/2020/04/25/bilibili-360-video-in-vr/index.html"/><script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://liyin.date/2020/04/25/bilibili-360-video-in-vr/index.html",
+    "headline": "用 VR 设备观看 B 站360度视频",
+    "datePublished": "Sat Apr 25 2020 08:09:03 GMT+0000",
+    "dateModified": "Sat Apr 25 2020 00:54:09 GMT+0000",
+    "author": {
+        "@type": "Person",
+        "name": "天空之间",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/myfiles/images/avatar.min.png"
+        },
+        "description": "相传胜利者肯定手持正义,那仅是因为正义可以被胜利者定义"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "天空·边界",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/myfiles/images/favicon.png"
+        }
+    },
+    "keywords": ",Javascript,Bilibili,VRSkyEdge, CubeSky",
+    "description": "天空的边界到底在哪里？",
+}
+</script><script>if(navigator.doNotTrack!=="1"){
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-100006766-1', 'auto');ga('send', 'pageview');
+}</script><script src="/myfiles/js/nomirror.js"></script><meta http-equiv="Content-Security-Policy" content="worker-src 'self'"><link rel="stylesheet" href="/css/prism.css" type="text/css"><link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body id="scheme-Paradox" class="lazy"><div class="material-layout  mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div> <button class="MD-burger-icon sidebar-toggle"><span id="MD-burger-id" class="MD-burger-layer"></span></button><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50"><script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script><p class="article-headline-p"> 用 VR 设备观看 B 站360度视频</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"> <img src="/myfiles/images/avatar.min.png" width="44px" height="44px" alt="Author Avatar"/></div><div> <strong>天空之间</strong> <span>4月 25, 2020</span></div><div class="section-spacer"></div> <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACx0lEQVR42u3aW27DMAwEwNz/0u0BUri7lFO40vgraB7S6KMLknp9Hfm8sLGxsbGxsbGxsR/JfsXPDz/09m77yfYXVvaMjY2NvTf7l3/97z8RbHf2rXz1+lvY2NjYB7CTUEmo+WeuSfl+onWxsbGxsYM4SQqDPH7uOhpsbGxs7Da0Zo2kWXBiY2NjY7cNmmTTSYs///sjemnY2NjYj2fnQ9PnvP7T+TY2Njb2g9ntk5cTbZi1g4R659jY2Nibsle2vs4YRtFon9jY2NjnsJPm0V3Bk7+bfPKXyMTGxsbemj1bfnYQeQhF49t88IyNjY29KXsWOe3lyGTT7dHXTStsbGzsTdnJKDdZIA+h9QOdNcKwsbGxT2C3Y4CkVJgVHnnJsTToxcbGxt6CPSshrmF5EdLykmOqL19iY2Nj/3N2GyTJknlA3huBw9zGxsbGPoDdlhCz4UHShFppgWFjY2PvzV5ZuN3QrOxpoy4KMGxsbOzt2LMoaje63jbKv4WNjY19Aru9NFMExuiKT3tw+erY2NjYu7KThn4SYG0TKh8zrw8zsLGxsfdmt6VF+8l8PJxH2vDIsLGxsbdmJxvKW1ErZcPKULluKmFjY2Nvx15v4l/z2jJjNpDGxsbGPo29Ek75Mc1ib/1iEDY2NvZp7OsQypv+syZRvnoSk9jY2NjYecspCY+8IMkPri1psLGxsU9gt/h2JJCvlYfiR5pK2NjY2Fuw77o6mQfbrBDK94mNjY29K7t92uNoN50HVX2s2NjY2Juy15ecjQdmraLZa2xsbOwT2HcVCSuhlbNnx4eNjY19Ans20G3HsXc1j+pRBDY2NjZ20MRZOaz8yG4uRbCxsbEPZueXexJ8/pd2dIGNjY19DjtpKs3iJL8SNFvl4700bGxs7Mez28ZN0ipqYy9vPOX7x8bGxj6Bfc6DjY2NjY2NjY2N/ZjnG5h2XP9QHRPpAAAAAElFTkSuQmCC"></ul> <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"> <a class="post_tag-link" href="/tags/Bilibili/">Bilibili</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Javascript/">Javascript</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/VR/">VR</a></ul> <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=用 VR 设备观看 B 站360度视频&url=https://liyin.date/2020/04/25/bilibili-360-video-in-vr/index.html&pic=https://liyin.date/myfiles/images/favicon.png&searchPic=false&style=simple" target="_blank"><li class="mdl-menu__item"> 分享到微博</li></a><a class="post_share-link" href="https://twitter.com/intent/tweet?text=用 VR 设备观看 B 站360度视频&url=https://liyin.date/2020/04/25/bilibili-360-video-in-vr/index.html&via=天空之间" target="_blank"><li class="mdl-menu__item"> 分享到 Twitter</li></a><a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://liyin.date/2020/04/25/bilibili-360-video-in-vr/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Facebook</li></a><a class="post_share-link" href="https://plus.google.com/share?url=https://liyin.date/2020/04/25/bilibili-360-video-in-vr/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Google+</li></a><a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=天空·边界&title=用 VR 设备观看 B 站360度视频&summary=天空的边界到底在哪里？&pics=https://liyin.date/myfiles/images/favicon.png&url=https://liyin.date/2020/04/25/bilibili-360-video-in-vr/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 QQ</li></a><a class="post_share-link" href="https://telegram.me/share/url?url=https://liyin.date/2020/04/25/bilibili-360-video-in-vr/index.html&text=用 VR 设备观看 B 站360度视频" target="_blank"><li class="mdl-menu__item"> 分享到 Telegram</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><p>最近B站开始测试 360 度视频的功能，看了看我手边的 Vive，用这个看效果会不会不太一样呢？<br>不过B站的播放器是不支持 WebXR 技术的，只能用一些方法看看能不能把 BabylonJS 之类支持 WebXR 的 WebGL 渲染框架插入到页面上，然后用 BabylonJS 来播放。<br>最开始我看到 BabylonJS 的 VideoDome 对象，可以直接创建全景视频的世界对象，但它要传入一个视频地址。通过 video 标签定位发现，B站的 video 标签上是一个 blob URL，我把它提取出来在同页面传给 BabylonJS，结果并不行。因为这个是一个由 Media Extension 创建的 blob 并不是一个真的视频文件。于是只能再找找有没有别的方法了。<br>猜测了一下全局变量发现，有一个叫做 player 的全局对象里，可以通过调用 <code>player.getPlayurl()</code> 获得一个带有鉴权的播放地址，不过因为本来我就想在当前页播放，所以鉴权和 Cookies 基本没什么问题。把这个 URL 传给 BabylonJS 就可以啦。<br>剩下的就很简单了，使用 <code>scene.createDefaultVRExperience()</code> 创建一个带有 VR 支持的 BabylonJS 场景。然后创建 VideoDome 放进去就行了。BabylonJS 会自动生成进入 VR 的按钮。<br>代码也放在了 <a href="https://gist.github.com/cubesky/b1ffa99be008ed89886aa48497a78058" target="_blank" rel="noopener">Github Gist</a></p><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> cav <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cav<span class="token punctuation">.</span>style<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token string">'100%'</span><span class="token punctuation">;</span>
+cav<span class="token punctuation">.</span>style<span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token string">'100%'</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#v_tag'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>cav<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> babylon <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+babylon<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'https://cdn.babylonjs.com/babylon.js'</span><span class="token punctuation">;</span>
+babylon<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">var</span> engine <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BABYLON<span class="token punctuation">.</span>Engine</span><span class="token punctuation">(</span>cav<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> createScene <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> scene <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BABYLON<span class="token punctuation">.</span>Scene</span><span class="token punctuation">(</span>engine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> vrHelper <span class="token operator">=</span> scene<span class="token punctuation">.</span><span class="token function">createDefaultVRExperience</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vrHelper<span class="token punctuation">.</span>teleportationEnabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> videoDome <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BABYLON<span class="token punctuation">.</span>VideoDome</span><span class="token punctuation">(</span>
+        <span class="token string">"videoDome"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span>player<span class="token punctuation">.</span><span class="token function">getPlayurl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            resolution<span class="token punctuation">:</span> <span class="token number">32</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        scene
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vrHelper<span class="token punctuation">.</span>currentVRCamera<span class="token punctuation">.</span><span class="token function">attachControl</span><span class="token punctuation">(</span>cav<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> scene<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> scene <span class="token operator">=</span> <span class="token function">createScene</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+engine<span class="token punctuation">.</span><span class="token function">runRenderLoop</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    scene<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    engine<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>babylon<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><p>Chrome 从不知道哪个版本开始，就出现了无法访问 OpenVR 设备的问题，后来搜索发现，需要在 <code>chrome://flags</code> 里，关闭 <code>XR device sandboxing</code>。关闭之后顺利唤醒 SteamVR。</p><hr><p>这段代码其实还有一些问题，比如音频和重定位视频位置，只能再研究怎么处理了。<br>将下面的按钮拖动到书签栏上来保存这个功能 在B站带有全景视频的页面上点击书签就行啦~</p><p><link rel="stylesheet" href="/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="javascript:(function(){var cav = document.createElement('canvas');cav.style.width = '100%';cav.style.height = '100%';document.querySelector('#v_tag').append(cav);var babylon = document.createElement('script');babylon.src = 'https://cdn.babylonjs.com/babylon.js';babylon.onload = function() {var engine = new BABYLON.Engine(cav,true);var createScene = function () {var scene = new BABYLON.Scene(engine);var vrHelper = scene.createDefaultVRExperience();vrHelper.teleportationEnabled = false;var videoDome = new BABYLON.VideoDome('videoDome',[player.getPlayurl()],{resolution: 32},scene);vrHelper.currentVRCamera.attachControl(cav, true);return scene;};var scene = createScene();engine.runRenderLoop(function() {scene.render();});window.addEventListener('resize', function() {engine.resize();});};document.body.appendChild(babylon);})()" target="_blank" rel="noopener">B站VR全景</a></p><blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;"><p> <strong>本文使用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0 中国大陆</a> 协议许可<br>具体请参见 <a href="https://liyin.date/creativecommons/">知识共享协议</a></strong><br> <strong>本文链接：</strong><a href="https://liyin.date/2020/04/25/bilibili-360-video-in-vr/">https://liyin.date/2020/04/25/bilibili-360-video-in-vr/</a></p></blockquote></div><div id="disqus-comment"><div id="disqus_thread"></div><style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0;
+            display: none
+        }
+</style><div class="btn_click_load"> <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button></div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://liyin.date/2020/04/25/bilibili-360-video-in-vr/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://liyin.date/2020/04/25/bilibili-360-video-in-vr/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script><script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $.ajax({
+        url: 'https://disqus.com/next/config.json',
+        timeout: 4000,
+        type: 'GET',
+        success: (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//skyedge.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            $('.disqus_click_btn').css('display','none');
+        })(),
+        error: function() {
+          $('.disqus_click_btn').css('display','block');
+        }
+    });
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//skyedge.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.disqus_click_btn').css('display','none');
+    });
+</script></div><style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"><div class="section-spacer"></div> <a href="/2020/03/16/use-remoteapp-host-on-non-windows-server/" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);"><div class="top-bar"></div> <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple"> <i class="material-icons">clear_all</i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"> <img src="/myfiles/images/avatar.min.png" alt="天空之间's avatar"></div> <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">skyedge@liyin.party<b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li> <a href="mailto:skyedge@liyin.party" target="_blank" title="Email Me"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"> <a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">4</span></a></ul></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/categories/Javascipt-书签工具/">Javascipt 书签工具<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/崩溃/">崩溃<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/开箱/">开箱<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术栈/">技术栈<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/推广推荐/">推广推荐<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/购物/">购物<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/闲聊/">闲聊<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/隐私/">隐私<span class="sidebar_archives-count">3</span></a></ul></li><li> <a href="/tags" title="标签">标签</a></li><li> <a href="/links" title="永远的好伙伴">永远的好伙伴</a></li><li> <a href="/2017/04/02/pgp/" title="PGP 密钥">PGP 密钥</a></li><li> <a href="/timeline" title="时间轴">时间轴</a></li><li> <a href="/bangumi" title="天空看的番">天空看的番</a></li><li> <a href="/creativecommons" title="知识共享协议">知识共享协议</a></li><li> <a href="/about" title="关于我">关于我</a></li></ul><div class="sidebar-divider"></div><a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank"><div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple"> 主题 - Material <span class="sidebar-badge badge-circle">i</span></div></a></div></aside><div id="back-to-top" class="toTop-wrap"> <a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"> <a href="http://weibo.com/1343816555" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo"> <span class="visuallyhidden">Weibo</span></button></a> <a href="https://github.com/cubesky" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"> <span class="visuallyhidden">Github</span></button></a> <a href="https://space.bilibili.com/1520967" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili"> <span class="visuallyhidden">Bilibili</span></button></a></div><div id="copyright"> Copyright&nbsp;©&nbsp;<span year></span>&nbsp;天空·边界<br> <a href="https://www.upyun.com/" target="_blank" title="upyun"><img src="/img/upyun_logo.svg" alt="upyun"></a></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script><script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script><script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script><script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script><script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script><script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script><script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script><script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2016;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script></main></div></body></html>

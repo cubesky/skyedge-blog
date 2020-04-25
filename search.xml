@@ -4,6 +4,69 @@
   
     
     <entry>
+      <title><![CDATA[用 VR 设备观看 B 站360度视频]]></title>
+      <url>https://liyin.date/2020/04/25/bilibili-360-video-in-vr/</url>
+      <content type="html"><![CDATA[<p>最近B站开始测试 360 度视频的功能，看了看我手边的 Vive，用这个看效果会不会不太一样呢？<br>不过B站的播放器是不支持 WebXR 技术的，只能用一些方法看看能不能把 BabylonJS 之类支持 WebXR 的 WebGL 渲染框架插入到页面上，然后用 BabylonJS 来播放。<br>最开始我看到 BabylonJS 的 VideoDome 对象，可以直接创建全景视频的世界对象，但它要传入一个视频地址。通过 video 标签定位发现，B站的 video 标签上是一个 blob URL，我把它提取出来在同页面传给 BabylonJS，结果并不行。因为这个是一个由 Media Extension 创建的 blob 并不是一个真的视频文件。于是只能再找找有没有别的方法了。<br>猜测了一下全局变量发现，有一个叫做 player 的全局对象里，可以通过调用 <code>player.getPlayurl()</code> 获得一个带有鉴权的播放地址，不过因为本来我就想在当前页播放，所以鉴权和 Cookies 基本没什么问题。把这个 URL 传给 BabylonJS 就可以啦。<br>剩下的就很简单了，使用 <code>scene.createDefaultVRExperience()</code> 创建一个带有 VR 支持的 BabylonJS 场景。然后创建 VideoDome 放进去就行了。BabylonJS 会自动生成进入 VR 的按钮。<br>代码也放在了 <a href="https://gist.github.com/cubesky/b1ffa99be008ed89886aa48497a78058" target="_blank" rel="noopener">Github Gist</a>  </p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> cav <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cav<span class="token punctuation">.</span>style<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token string">'100%'</span><span class="token punctuation">;</span>
+cav<span class="token punctuation">.</span>style<span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token string">'100%'</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#v_tag'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>cav<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> babylon <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+babylon<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'https://cdn.babylonjs.com/babylon.js'</span><span class="token punctuation">;</span>
+babylon<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">var</span> engine <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BABYLON<span class="token punctuation">.</span>Engine</span><span class="token punctuation">(</span>cav<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> createScene <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> scene <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BABYLON<span class="token punctuation">.</span>Scene</span><span class="token punctuation">(</span>engine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> vrHelper <span class="token operator">=</span> scene<span class="token punctuation">.</span><span class="token function">createDefaultVRExperience</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vrHelper<span class="token punctuation">.</span>teleportationEnabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> videoDome <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BABYLON<span class="token punctuation">.</span>VideoDome</span><span class="token punctuation">(</span>
+        <span class="token string">"videoDome"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span>player<span class="token punctuation">.</span><span class="token function">getPlayurl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            resolution<span class="token punctuation">:</span> <span class="token number">32</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        scene
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vrHelper<span class="token punctuation">.</span>currentVRCamera<span class="token punctuation">.</span><span class="token function">attachControl</span><span class="token punctuation">(</span>cav<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> scene<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> scene <span class="token operator">=</span> <span class="token function">createScene</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+engine<span class="token punctuation">.</span><span class="token function">runRenderLoop</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    scene<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    engine<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>babylon<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<p>Chrome 从不知道哪个版本开始，就出现了无法访问 OpenVR 设备的问题，后来搜索发现，需要在 <code>chrome://flags</code> 里，关闭 <code>XR device sandboxing</code>。关闭之后顺利唤醒 SteamVR。  </p>
+<hr>
+<p>这段代码其实还有一些问题，比如音频和重定位视频位置，只能再研究怎么处理了。<br>将下面的按钮拖动到书签栏上来保存这个功能 在B站带有全景视频的页面上点击书签就行啦~  </p>
+<p><link rel="stylesheet" href="/myfiles/css/bootstrap_liyin.css"><br><a class="btn btn-info" href="javascript:(function(){var cav = document.createElement('canvas');cav.style.width = '100%';cav.style.height = '100%';document.querySelector('#v_tag').append(cav);var babylon = document.createElement('script');babylon.src = 'https://cdn.babylonjs.com/babylon.js';babylon.onload = function() {var engine = new BABYLON.Engine(cav,true);var createScene = function () {var scene = new BABYLON.Scene(engine);var vrHelper = scene.createDefaultVRExperience();vrHelper.teleportationEnabled = false;var videoDome = new BABYLON.VideoDome('videoDome',[player.getPlayurl()],{resolution: 32},scene);vrHelper.currentVRCamera.attachControl(cav, true);return scene;};var scene = createScene();engine.runRenderLoop(function() {scene.render();});window.addEventListener('resize', function() {engine.resize();});};document.body.appendChild(babylon);})()" target="_blank" rel="noopener">B站VR全景</a>  </p>
+]]></content>
+      
+        <categories>
+            
+            <category> Javascipt 书签工具 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+            <tag> Bilibili </tag>
+            
+            <tag> VR </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在非 Windows Server 系统上启用 RemoteApp Host]]></title>
       <url>https://liyin.date/2020/03/16/use-remoteapp-host-on-non-windows-server/</url>
       <content type="html"><![CDATA[<p>没错！我就是来水博客的！（理直气壮）<br>之前我在我的 <a href="https://t.me/lynote/1522" target="_blank" rel="noopener">Telegram 频道</a> 里说过用 RemoteApp 来进行类似本地软件体验的远程访问的方法。但那个方法要架设 Windows Server 服务器，激活 RemoteApp 服务并且要搞各种许可证，非常的麻烦。<br>现在！我们有一个全新的方法啦！不需要3个小时，只需要3分钟（只要在支持列表里）就可以体验到 RemoteApp！<br>我们只需要一个名为 <a href="https://github.com/kimmknight/remoteapptool" target="_blank" rel="noopener">RemoteApp Tool</a> 的开源软件，打开它的 Github 页面并在下方 Download 中下载 Latest Installer，不要忘记在 Requirements 里面下载 <a href="https://wixtoolset.org/releases/" target="_blank" rel="noopener">WiX Toolset</a>。安装好之后，在开始菜单找到 RemoteApp Tool, 打开它！  </p>
